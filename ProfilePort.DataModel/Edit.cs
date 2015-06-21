@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProfilePort.DataModel
 {
-    public class Class1
+     public abstract class Edit
     {
+        public DateTime DateCreated { get; set; }
+        public DateTime DateUpdated { get; set; }
     }
 }
