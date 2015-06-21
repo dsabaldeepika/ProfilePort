@@ -1,7 +1,7 @@
 using System;
 using System.Data.Entity.Migrations;
 
-public partial class init : DbMigration
+public partial class initss : DbMigration
 {
     public override void Up()
     {
@@ -29,11 +29,22 @@ public partial class init : DbMigration
                     EmailAddress2 = c.String(),
                     PhoneNumber = c.String(),
                     PhoneNumber2 = c.String(),
-                    UserId = c.String(nullable: false, maxLength: 128),
-                    DateCreated = c.DateTime(nullable: false),
-                    DateUpdated = c.DateTime(nullable: false),
                 })
-            .PrimaryKey(t => t.Id)
+            .PrimaryKey(t => t.Id);
+        
+        CreateTable(
+            "dbo.Educations",
+            c => new
+                {
+                    EducationId = c.Int(nullable: false, identity: true),
+                    School = c.String(),
+                    DatesAttended = c.DateTime(),
+                    FieldofStudy = c.String(),
+                    Activities = c.String(),
+                    Description = c.String(),
+                    UserId = c.String(nullable: false, maxLength: 128),
+                })
+            .PrimaryKey(t => t.EducationId)
             .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
             .Index(t => t.UserId);
         
@@ -72,22 +83,6 @@ public partial class init : DbMigration
                     ClaimValue = c.String(),
                 })
             .PrimaryKey(t => t.Id)
-            .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
-            .Index(t => t.UserId);
-        
-        CreateTable(
-            "dbo.Educations",
-            c => new
-                {
-                    EducationId = c.Int(nullable: false, identity: true),
-                    School = c.String(),
-                    DatesAttended = c.DateTime(),
-                    FieldofStudy = c.String(),
-                    Activities = c.String(),
-                    Description = c.String(),
-                    UserId = c.String(nullable: false, maxLength: 128),
-                })
-            .PrimaryKey(t => t.EducationId)
             .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
             .Index(t => t.UserId);
         
@@ -204,14 +199,14 @@ public partial class init : DbMigration
             "dbo.Profiles",
             c => new
                 {
-                    Id = c.Int(nullable: false, identity: true),
+                    ProfileId = c.Int(nullable: false, identity: true),
                     Sex = c.String(),
                     DateOfBirth = c.DateTime(nullable: false),
                     PicFile = c.String(),
                     IsLookingForJob = c.Boolean(nullable: false),
                     UserId = c.String(nullable: false, maxLength: 128),
                 })
-            .PrimaryKey(t => t.Id)
+            .PrimaryKey(t => t.ProfileId)
             .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
             .Index(t => t.UserId);
         
@@ -231,7 +226,6 @@ public partial class init : DbMigration
     {
         DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
         DropForeignKey("dbo.Profiles", "UserId", "dbo.AspNetUsers");
-        DropForeignKey("dbo.ContactInfoes", "UserId", "dbo.AspNetUsers");
         DropForeignKey("dbo.Skills", "UserId", "dbo.AspNetUsers");
         DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
         DropForeignKey("dbo.Notes", "UserId", "dbo.AspNetUsers");
@@ -253,10 +247,9 @@ public partial class init : DbMigration
         DropIndex("dbo.Jobs", new[] { "UserId" });
         DropIndex("dbo.Interests", new[] { "UserId" });
         DropIndex("dbo.Favorites", new[] { "UserId" });
-        DropIndex("dbo.Educations", new[] { "UserId" });
         DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
         DropIndex("dbo.AspNetUsers", "UserNameIndex");
-        DropIndex("dbo.ContactInfoes", new[] { "UserId" });
+        DropIndex("dbo.Educations", new[] { "UserId" });
         DropTable("dbo.AspNetRoles");
         DropTable("dbo.Profiles");
         DropTable("dbo.Skills");
@@ -267,9 +260,9 @@ public partial class init : DbMigration
         DropTable("dbo.Jobs");
         DropTable("dbo.Interests");
         DropTable("dbo.Favorites");
-        DropTable("dbo.Educations");
         DropTable("dbo.AspNetUserClaims");
         DropTable("dbo.AspNetUsers");
+        DropTable("dbo.Educations");
         DropTable("dbo.ContactInfoes");
     }
 }

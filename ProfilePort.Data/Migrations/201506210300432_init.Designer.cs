@@ -13,7 +13,7 @@ namespace ProfilePort.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201506202231143_init"; }
+            get { return "201506210300432_init"; }
         }
         
         string IMigrationMetadata.Source

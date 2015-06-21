@@ -32,8 +32,6 @@ namespace ProfilePort.Data.Migrations
                         PhoneNumber = c.String(),
                         PhoneNumber2 = c.String(),
                         UserId = c.String(nullable: false, maxLength: 128),
-                        DateCreated = c.DateTime(nullable: false),
-                        DateUpdated = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
@@ -44,6 +42,8 @@ namespace ProfilePort.Data.Migrations
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
+                        FirstName = c.String(),
+                        LastName = c.String(),
                         Created = c.DateTime(nullable: false),
                         LastLogin = c.DateTime(nullable: false),
                         IsDeleted = c.Boolean(nullable: false),
@@ -81,7 +81,7 @@ namespace ProfilePort.Data.Migrations
                     {
                         EducationId = c.Int(nullable: false, identity: true),
                         School = c.String(),
-                        DatesAttended = c.DateTime(nullable: false),
+                        DatesAttended = c.DateTime(),
                         FieldofStudy = c.String(),
                         Activities = c.String(),
                         Description = c.String(),
@@ -126,7 +126,7 @@ namespace ProfilePort.Data.Migrations
                         Description = c.String(),
                         YearsExperience = c.Int(nullable: false),
                         StartDate = c.DateTime(nullable: false),
-                        EndDate = c.DateTime(nullable: false),
+                        EndDate = c.DateTime(),
                         UserId = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => t.JobId)
@@ -201,6 +201,21 @@ namespace ProfilePort.Data.Migrations
                 .Index(t => t.UserId);
             
             CreateTable(
+                "dbo.Profiles",
+                c => new
+                    {
+                        ProfileId = c.Int(nullable: false, identity: true),
+                        Sex = c.String(),
+                        DateOfBirth = c.DateTime(nullable: false),
+                        PicFile = c.String(),
+                        IsLookingForJob = c.Boolean(nullable: false),
+                        UserId = c.String(nullable: false, maxLength: 128),
+                    })
+                .PrimaryKey(t => t.ProfileId)
+                .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
+                .Index(t => t.UserId);
+            
+            CreateTable(
                 "dbo.AspNetRoles",
                 c => new
                     {
@@ -215,6 +230,7 @@ namespace ProfilePort.Data.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.Profiles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.ContactInfoes", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.Skills", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
@@ -227,6 +243,7 @@ namespace ProfilePort.Data.Migrations
             DropForeignKey("dbo.Educations", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.Profiles", new[] { "UserId" });
             DropIndex("dbo.Skills", new[] { "UserId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
@@ -241,6 +258,7 @@ namespace ProfilePort.Data.Migrations
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.ContactInfoes", new[] { "UserId" });
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Profiles");
             DropTable("dbo.Skills");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.Notes");

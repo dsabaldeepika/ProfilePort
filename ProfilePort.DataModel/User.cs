@@ -47,6 +47,8 @@ namespace ProfilePort.DataModel
         [InverseProperty("User")]
         public virtual List<Job> Jobs { get; set; }
 
+        
+
 
     }
 }

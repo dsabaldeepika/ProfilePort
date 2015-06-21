@@ -11,6 +11,8 @@
     <AssemblyName>ProfilePort.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -84,37 +86,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="Migrations\201506202231143_init.cs" />
-    <Compile Include="Migrations\201506202231143_init.Designer.cs">
-      <DependentUpon>201506202231143_init.cs</DependentUpon>
+    <Compile Include="Migrations\201506210300432_init.cs" />
+    <Compile Include="Migrations\201506210300432_init.Designer.cs">
+      <DependentUpon>201506210300432_init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201506202329574_Sabal.cs" />
-    <Compile Include="Migrations\201506202329574_Sabal.Designer.cs">
-      <DependentUpon>201506202329574_Sabal.cs</DependentUpon>
+    <Compile Include="Migrations\201506210304471_initss.cs" />
+    <Compile Include="Migrations\201506210304471_initss.Designer.cs">
+      <DependentUpon>201506210304471_initss.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201506202331215_inint.cs" />
-    <Compile Include="Migrations\201506202331215_inint.Designer.cs">
-      <DependentUpon>201506202331215_inint.cs</DependentUpon>
+    <Compile Include="Migrations\201506210306403_initss.cs" />
+    <Compile Include="Migrations\201506210306403_initss.Designer.cs">
+      <DependentUpon>201506210306403_initss.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201506202332445_inits.cs" />
-    <Compile Include="Migrations\201506202332445_inits.Designer.cs">
-      <DependentUpon>201506202332445_inits.cs</DependentUpon>
+    <Compile Include="Migrations\201506210308027_sam.cs" />
+    <Compile Include="Migrations\201506210308027_sam.Designer.cs">
+      <DependentUpon>201506210308027_sam.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201506202356371_updated.cs" />
-    <Compile Include="Migrations\201506202356371_updated.Designer.cs">
-      <DependentUpon>201506202356371_updated.cs</DependentUpon>
+    <Compile Include="Migrations\201506210309071_contactinfoupdated.cs" />
+    <Compile Include="Migrations\201506210309071_contactinfoupdated.Designer.cs">
+      <DependentUpon>201506210309071_contactinfoupdated.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201506210101472_seed.cs" />
-    <Compile Include="Migrations\201506210101472_seed.Designer.cs">
-      <DependentUpon>201506210101472_seed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506210107060_init1.cs" />
-    <Compile Include="Migrations\201506210107060_init1.Designer.cs">
-      <DependentUpon>201506210107060_init1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506210114099_init.cs" />
-    <Compile Include="Migrations\201506210114099_init.Designer.cs">
-      <DependentUpon>201506210114099_init.cs</DependentUpon>
+    <Compile Include="Migrations\201506210316088_conta.cs" />
+    <Compile Include="Migrations\201506210316088_conta.Designer.cs">
+      <DependentUpon>201506210316088_conta.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -130,32 +124,33 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201506202231143_init.resx">
-      <DependentUpon>201506202231143_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506210300432_init.resx">
+      <DependentUpon>201506210300432_init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506202329574_Sabal.resx">
-      <DependentUpon>201506202329574_Sabal.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506210304471_initss.resx">
+      <DependentUpon>201506210304471_initss.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506202331215_inint.resx">
-      <DependentUpon>201506202331215_inint.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506210306403_initss.resx">
+      <DependentUpon>201506210306403_initss.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506202332445_inits.resx">
-      <DependentUpon>201506202332445_inits.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506210308027_sam.resx">
+      <DependentUpon>201506210308027_sam.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506202356371_updated.resx">
-      <DependentUpon>201506202356371_updated.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506210309071_contactinfoupdated.resx">
+      <DependentUpon>201506210309071_contactinfoupdated.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506210101472_seed.resx">
-      <DependentUpon>201506210101472_seed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506210107060_init1.resx">
-      <DependentUpon>201506210107060_init1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506210114099_init.resx">
-      <DependentUpon>201506210114099_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506210316088_conta.resx">
+      <DependentUpon>201506210316088_conta.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
