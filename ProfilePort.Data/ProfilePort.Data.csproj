@@ -86,29 +86,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="Migrations\201506210300432_init.cs" />
-    <Compile Include="Migrations\201506210300432_init.Designer.cs">
-      <DependentUpon>201506210300432_init.cs</DependentUpon>
+    <Compile Include="Migrations\201506212144140_sdf.cs" />
+    <Compile Include="Migrations\201506212144140_sdf.Designer.cs">
+      <DependentUpon>201506212144140_sdf.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201506210304471_initss.cs" />
-    <Compile Include="Migrations\201506210304471_initss.Designer.cs">
-      <DependentUpon>201506210304471_initss.cs</DependentUpon>
+    <Compile Include="Migrations\201506212205410_REal.cs" />
+    <Compile Include="Migrations\201506212205410_REal.Designer.cs">
+      <DependentUpon>201506212205410_REal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201506210306403_initss.cs" />
-    <Compile Include="Migrations\201506210306403_initss.Designer.cs">
-      <DependentUpon>201506210306403_initss.cs</DependentUpon>
+    <Compile Include="Migrations\201506212209410_REalsadf.cs" />
+    <Compile Include="Migrations\201506212209410_REalsadf.Designer.cs">
+      <DependentUpon>201506212209410_REalsadf.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201506210308027_sam.cs" />
-    <Compile Include="Migrations\201506210308027_sam.Designer.cs">
-      <DependentUpon>201506210308027_sam.cs</DependentUpon>
+    <Compile Include="Migrations\201506212212382_main.cs" />
+    <Compile Include="Migrations\201506212212382_main.Designer.cs">
+      <DependentUpon>201506212212382_main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201506210309071_contactinfoupdated.cs" />
-    <Compile Include="Migrations\201506210309071_contactinfoupdated.Designer.cs">
-      <DependentUpon>201506210309071_contactinfoupdated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506210316088_conta.cs" />
-    <Compile Include="Migrations\201506210316088_conta.Designer.cs">
-      <DependentUpon>201506210316088_conta.cs</DependentUpon>
+    <Compile Include="Migrations\201506212214563_maind.cs" />
+    <Compile Include="Migrations\201506212214563_maind.Designer.cs">
+      <DependentUpon>201506212214563_maind.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -124,23 +120,20 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201506210300432_init.resx">
-      <DependentUpon>201506210300432_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506212144140_sdf.resx">
+      <DependentUpon>201506212144140_sdf.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506210304471_initss.resx">
-      <DependentUpon>201506210304471_initss.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506212205410_REal.resx">
+      <DependentUpon>201506212205410_REal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506210306403_initss.resx">
-      <DependentUpon>201506210306403_initss.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506212209410_REalsadf.resx">
+      <DependentUpon>201506212209410_REalsadf.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506210308027_sam.resx">
-      <DependentUpon>201506210308027_sam.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506212212382_main.resx">
+      <DependentUpon>201506212212382_main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506210309071_contactinfoupdated.resx">
-      <DependentUpon>201506210309071_contactinfoupdated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506210316088_conta.resx">
-      <DependentUpon>201506210316088_conta.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506212214563_maind.resx">
+      <DependentUpon>201506212214563_maind.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -3,7 +3,7 @@ namespace ProfilePort.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class conta : DbMigration
+    public partial class main : DbMigration
     {
         public override void Up()
         {

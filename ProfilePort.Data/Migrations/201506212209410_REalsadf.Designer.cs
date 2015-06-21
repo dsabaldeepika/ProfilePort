@@ -7,13 +7,13 @@ namespace ProfilePort.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.1-30610")]
-    public sealed partial class conta : IMigrationMetadata
+    public sealed partial class REalsadf : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(conta));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(REalsadf));
         
         string IMigrationMetadata.Id
         {
-            get { return "201506210316088_conta"; }
+            get { return "201506212209410_REalsadf"; }
         }
         
         string IMigrationMetadata.Source

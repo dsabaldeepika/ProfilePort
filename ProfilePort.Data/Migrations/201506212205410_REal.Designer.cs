@@ -7,13 +7,13 @@ namespace ProfilePort.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.1-30610")]
-    public sealed partial class sam : IMigrationMetadata
+    public sealed partial class REal : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(sam));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(REal));
         
         string IMigrationMetadata.Id
         {
-            get { return "201506210308027_sam"; }
+            get { return "201506212205410_REal"; }
         }
         
         string IMigrationMetadata.Source
