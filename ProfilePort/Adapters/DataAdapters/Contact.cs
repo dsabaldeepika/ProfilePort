@@ -11,7 +11,7 @@ namespace ProfilePort.Adapters.DataAdapters
     public class Contact :IContact
        
     {
-        ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
       
         DataModel.ContactInfo IContact.GetContactInfo(int id)
         {

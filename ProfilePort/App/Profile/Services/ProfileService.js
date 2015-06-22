@@ -4,14 +4,15 @@
         function ($http, toastr, $log) {
             factory = {};
 
+            //var urlBase = '/api/profile';
+            var urlBase= 'https://cashcall.firebaseio.com';
             // This pulls in the content for the loan queue.    
             factory.getprofile = function (userId) {
 
-                return $http.get('/profile/' + userId)
+                return $http.get(urlBase +'/'+ userId )
                     .success(function (data, status, headers, config) {
 
                         return data;
-
 
                     })
                     .error(function (data, status, headers, config) {
@@ -23,12 +24,16 @@
             };
 
             // save the profile record
-            factory.saveprofile = function (userId, Profile) {
-                
-                return $http.post('/profile/upsert', request)
+            factory.postprofile = function (Userid, profile) {
+                var prof = {
+                   Userid: Userid ,
+                   profile :profile 
+                }
+
+                return $http.post(urlBase,JSON.stringify(prof ))
 
                     .success(function (data, status, headers, config) {
-                   
+
                         return data;
                     })
                     .error(function (data, status, headers, config) {
@@ -37,9 +42,38 @@
                     });
             }
 
-            // return the factory.
-            return factory;
-        }]);
+    // update the profile record
+    factory.putprofile = function (userId, Profile) {
 
+        return $http.put(urlBase + '/PostProfile/' + userId, Profile)
+
+            .success(function (data, status, headers, config) {
+
+                return data;
+            })
+            .error(function (data, status, headers, config) {
+
+                return data;
+            });
+    }
+
+            // update the profile record
+    factory.deleteprofile = function (Id) {
+
+        return $http.post(urlBase +'/DeleteProfile/'+Id)
+
+            .success(function (data, status, headers, config) {
+
+                return data;
+            })
+            .error(function (data, status, headers, config) {
+
+                return data;
+            });
+    }
+
+    // return the factory.
+    return factory;
+}]);
 
 }());

@@ -10,7 +10,7 @@ namespace ProfilePort.Adapters.DataAdapters
 {
     public class Skills :ISkills
     {
-        ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         List<DataModel.Skill> ISkills.GetAllSkills()
         {

@@ -2,13 +2,14 @@
 
     // construct the application.
     var app = angular.module('app', ['ngRoute', 'ngAnimate', 'toastr', 'ngCookies', 'ui.bootstrap', 'ui.mask','xtForm']);
-   
-    app.run(['$rootScope', '$location', 'toastr', 'menuService',
-    function ($rootScope, $location, toastr, menuService) {
 
-        //Client-side security
+    app.run(['$rootScope', '$location','toastr', 
+    function ($rootScope, $location, toastr) {
+
+        //Client-side security. Server-side framework MUST add it's
+        //own security as well since client-based security is easily hacked
         $rootScope.$on("$routeChangeStart", function () {
-            menuService.clearSecondarMenu();
+            
         });
 
         $rootScope.$on("httpResponseError", function (event, args) {
@@ -26,4 +27,3 @@
         });
     }]);
 }());
-

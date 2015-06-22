@@ -1,24 +1,28 @@
 ﻿
 (function () {
+
     // configure the routing for the site.
     angular.module('app').config(['$routeProvider', '$locationProvider', '$httpProvider', '$logProvider',
         function ($routeProvider, $locationProvider, $httpProvider, $logProvider) {
 
             $logProvider.debugEnabled(true);
+
             $locationProvider.html5Mode(false);
 
-            // Routing structure
+
+            // Routing structure.
             $routeProvider
-                .when('/404', { templateUrl: 'App/Common/Partials/404.html', controller: '404Ctrl' })
-                 .when('/app/', { templateUrl: 'index', controller: 'app' })
-                .when('/dashboard', { templateUrl: 'App/Dashboard/Partials/dashboard.html', controller: 'DashboardCtrl' })
-                .when('/profile/:id?', { templateUrl: 'App/Profile/Partials/Profile.html', controller: 'ProfileCtrl'})
-                 .when('/message/:id?', { templateUrl: 'App/Message/Partials/Message.html', controller: 'ProfileCtrl' })
+                // configure the base level site pages.
+               
+                .when('/profile/:id?', { templateUrl: 'app/profile/partials/profile.html', controller: 'profileCtrl' })
+                .when('/404', { templateUrl: 'app/common/partials/404.html', controller: 'co404Ctrl' })
+                .when('/note', { templateUrl: 'app/note/partials/note.html', controller: 'coDeniedCtrl' })
+                .when('/message/:id?', { templateUrl: 'app/message/partials/message.html', controller: 'messageCtrl' })
+                .when('/', { redirectTo: 'profile' })
 
+                // otherwise redirect to the 404 error page
+                .otherwise({ redirectTo: 'profile' });
 
-                // reports
-                .when('/', { redirectTo: 'app' })
-                .otherwise({ redirectTo: '404' });
 
             // Http Settings
             $httpProvider.defaults.withCredentials = true;
@@ -43,8 +47,7 @@
                             }
                             else {
                                 var expectedUrl = encodeURIComponent(window.location.hash.replace("#", ""));
-                                $location.path('/login/' + expectedUrl);
-                            }
+                          }
                             return $q.reject(response);
                         }
                         $rootScope.$broadcast('httpResponseError', { response: response });

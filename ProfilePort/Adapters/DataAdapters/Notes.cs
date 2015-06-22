@@ -10,7 +10,7 @@ namespace ProfilePort.Adapters.DataAdapters
 {
     public class Notes :INotes
     {
-        ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         List<DataModel.Note> INotes.GetNote(String UserId)
         {

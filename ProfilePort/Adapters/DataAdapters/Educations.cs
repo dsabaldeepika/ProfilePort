@@ -12,7 +12,7 @@ namespace ProfilePort.Adapters.DataAdapters
 {
     public class Educations : IEducations
     {
-        ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         List<DataModel.Education> IEducations.GetEducation(string UserId)
         {

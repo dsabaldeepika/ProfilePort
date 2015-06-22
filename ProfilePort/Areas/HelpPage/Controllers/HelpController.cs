@@ -25,11 +25,11 @@ namespace ProfilePort.Areas.HelpPage.Controllers
 
         public HttpConfiguration Configuration { get; private set; }
 
-        //public ActionResult Index()
-        //{
-        //    ViewBag.DocumentationProvider = Configuration.Services.GetDocumentationProvider();
-        //    return View(Configuration.Services.GetApiExplorer().ApiDescriptions);
-        //}
+        public ActionResult Index()
+        {
+            ViewBag.DocumentationProvider = Configuration.Services.GetDocumentationProvider();
+            return View(Configuration.Services.GetApiExplorer().ApiDescriptions);
+        }
 
         public ActionResult Api(string apiId)
         {

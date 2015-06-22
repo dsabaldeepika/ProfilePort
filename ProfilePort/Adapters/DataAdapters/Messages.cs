@@ -10,7 +10,7 @@ namespace ProfilePort.Adapters.DataAdapters
 {
     public class Messages:IMessages
     {
-        ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         List<MessageVM> IMessages.GetMessages(string userID)
         {

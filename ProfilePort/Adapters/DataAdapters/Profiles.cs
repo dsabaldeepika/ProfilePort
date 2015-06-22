@@ -10,7 +10,7 @@ namespace ProfilePort.Adapters.DataAdapters
 {
     public class Profiles:IProfiles
     {
-        ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
         public ProfileVM GetProfile(int id)
         {
             Profile MyProfile = new Profile();
@@ -32,7 +32,7 @@ namespace ProfilePort.Adapters.DataAdapters
             MyProfile.UserId = userID;
             MyProfile.ProfileId = newProfile.ProfileId;
             MyProfile.Sex = newProfile.Sex;
-            MyProfile.PicFile = newProfile.PicFile; //Added by George W. 5/6/14
+            MyProfile.PicFile = newProfile.PicFile; 
             MyProfile.DateOfBirth = newProfile.DateOfBirth;
             MyProfile.IsLookingForJob = newProfile.IsLookingForJob;
             db.Profiles.Add(MyProfile);
@@ -41,7 +41,7 @@ namespace ProfilePort.Adapters.DataAdapters
             return MyProfile; 
         }
 
-        public Profile UpdateTalentVM(int ProfileID, ProfileVM newProfile)
+        public Profile UpdateProfile(int ProfileID, ProfileVM newProfile)
         {
             Profile MyProfile = new Profile();
 
@@ -49,7 +49,7 @@ namespace ProfilePort.Adapters.DataAdapters
             MyProfile.ProfileId = ProfileID;
             MyProfile.ProfileId = newProfile.ProfileId;
             MyProfile.Sex = newProfile.Sex;
-            MyProfile.PicFile = newProfile.PicFile; //Added by George W. 5/6/14
+            MyProfile.PicFile = newProfile.PicFile; 
             MyProfile.DateOfBirth = newProfile.DateOfBirth;
             MyProfile.IsLookingForJob = newProfile.IsLookingForJob;
             db.Profiles.Add(MyProfile);

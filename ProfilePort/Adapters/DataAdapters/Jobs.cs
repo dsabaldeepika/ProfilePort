@@ -10,7 +10,7 @@ namespace ProfilePort.Adapters.DataAdapters
 {
     public class Jobs : IJobs
     {
-        ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         List<JobVM> IJobs.GetJobs(string userID)
         {

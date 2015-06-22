@@ -11,7 +11,7 @@ namespace ProfilePort.Adapters.Interfaces
     {
         ProfileVM GetProfile(int id);
         Profile AddProfile(string userID, ProfileVM newTalent);
-        Profile UpdateTalentVM(int ProfileID, ProfileVM newTalentVM);
+        Profile UpdateProfile(int ProfileID, ProfileVM newTalentVM);
         Profile DeleteProfile(int ProfileID);
     }
 }

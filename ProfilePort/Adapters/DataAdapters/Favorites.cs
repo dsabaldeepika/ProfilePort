@@ -11,7 +11,7 @@ namespace ProfilePort.Adapters.DataAdapters
     public class Favorites:IFavorite
     {
 
-        ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         List<DataModel.Favorite> IFavorite.GetFavorite(string UserId)
         {

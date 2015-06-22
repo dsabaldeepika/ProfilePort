@@ -12,7 +12,7 @@ namespace ProfilePort.Adapters.DataAdapters
     public class Interests : IInterests
     {
 
-        ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         List<DataModel.Interest> IInterests.GetInterest(string UserId)
         {

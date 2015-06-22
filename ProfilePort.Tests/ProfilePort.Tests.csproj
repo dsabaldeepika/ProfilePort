@@ -142,6 +142,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
+    <Content Include="Content\angular-toastr.css" />
+    <Content Include="Content\angular-toastr.min.css" />
+    <Content Include="Scripts\angular-toastr.js" />
+    <Content Include="Scripts\angular-toastr.min.js" />
+    <Content Include="Scripts\angular-toastr.tpls.js" />
+    <Content Include="Scripts\angular-toastr.tpls.min.js" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -154,10 +160,6 @@
     <ProjectReference Include="..\ProfilePort.Data\ProfilePort.Data.csproj">
       <Project>{332f0660-f6ca-4726-9c6d-9ef16809e19b}</Project>
       <Name>ProfilePort.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ProfilePort\ProfilePort.csproj">
-      <Project>{b1727668-0ce7-4a1a-9a68-785a94e4b09a}</Project>
-      <Name>ProfilePort</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
