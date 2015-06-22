@@ -13,9 +13,9 @@
             "name": "Extras",
             "url": "",
             "submenu": [
-                { "name": "Connections ", "url": "#/connections/all" }
-              
-             
+                { "name": "Connections ", "url": "#/connections/all" },
+                   { "name": "Notes", "url": "#/notes/all" }
+
             ]
         }
     ]

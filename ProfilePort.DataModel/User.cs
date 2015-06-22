@@ -19,11 +19,11 @@ namespace ProfilePort.DataModel
         //    // Add custom ApplicationUser claims here
         //    return ApplicationUserIdentity;
         //}
-        public string FirstName { get; set; }
+        public string FirstName { get; set;}
         public string LastName { get; set; }
-        
+        public string MiddleName{ get; set;}
         public DateTime Created { get; set; }
-        public DateTime LastLogin { get; set; }
+        public DateTime LastLogin { get; set;}
         public bool IsDeleted { get; set; }
 
         [InverseProperty("User")]
@@ -47,7 +47,7 @@ namespace ProfilePort.DataModel
         [InverseProperty("User")]
         public virtual List<Job> Jobs { get; set; }
 
-        
+
 
 
     }

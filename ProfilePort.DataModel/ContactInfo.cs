@@ -22,7 +22,6 @@ namespace ProfilePort.DataModel
         public string  WorkCity { get; set; }
         public string  WorkState { get; set; }
         public string  WorkZipCode { get; set; }
-                  
         public string MainUrl { get; set; }
         public string FacebookUrl { get; set; }
         public string LinkedinUrl { get; set; }

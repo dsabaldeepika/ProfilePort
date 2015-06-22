@@ -1,65 +1,42 @@
 ﻿
-
-
-
-<div class="row" ng-hide="showDisclosures" style="margin-top: -5px; margin-bottom: 5px;">
+<div class="row" style="margin-top: -5px; margin-bottom: 5px;">
     <div class="col-xs-12">
         <div class="btn-group">
-            <a ng-click="saveLead(false)" class="btn btn-success" ng-disabled="model.submitted"><i class="fa fa-save"></i> Save</a>
-            <a ng-click="saveLead(true)" class="btn btn-success" ng-disabled="model.submitted"><i class="fa fa-save"></i> Save &amp; Close</a>
-            <a href="#/lead/pipeline/{{searchedItem}}" class="btn btn-danger"><i class="fa fa-close"></i> Close</a>
+            <a ng-click="saveprofile(false)" class="btn btn-success"><i class="fa fa-save"></i> Save</a>
+            <a ng-click="saveprofile(true)" class="btn btn-success"><i class="fa fa-save"></i> Save &amp; Close</a>
+            <a href="#/dashboard/" class="btn btn-danger"><i class="fa fa-close"></i> Close</a>
         </div>
-        <div class="btn-group">
-            <button id="submitapp" type="submit" class="btn btn-success" ng-click="submitApplication()" ng-disabled=" model.submitted || model.leadId == ''"><i class="fa fa-save"></i> Submit Application</button>
-        </div>
-        <div class="btn-group" ng-show="model.retreadLoan">
-            <button type="button" class="btn btn-default" ng-click="viewRetreads()">View Loans</button>
-        </div>
-
-        <div class="btn-group pull-right">
-            <button id="toggledisclosures" type="button" class="btn btn-default" ng-click="toggleDisclosures()" ng-disabled="model.addresses.home.state == null"><i class="fa fa-check-circle-o" ng-show="model.borrower.agreedToDisclosures"></i><i class="fa fa-circle-o" ng-hide="model.borrower.agreedToDisclosures"></i> Disclosures</button>
-
-            <button id="openleadhistory" type="button" class="btn btn-default" ng-click="openLeadHistory()" ng-disabled="model.leadId == ''"><i class="fa fa-history"></i> Lead History</button>
-        </div>
-        <div class="pull-right"><h4 style="padding: 1px 10px 1px 0; margin: 0"><span class="label label-info">Assigned Agent: {{model.agentName}}</span></h4></div>
-        <div class="pull-right" ng-show="model.canRetread"><h4 style="padding: 1px 10px 1px 0; margin: 0"><span class="label label-danger">Retread!</span></h4></div>
+     
     </div>
 </div>
 
 <form class="form-horizontal form-compressed-sm" novalidate xt-form="form" name="form" role="form">
-    <input type="hidden" xt-validate required name="aFundableState" ng-model="aFundableState" />
-    <div class="row" ng-hide="showDisclosures">
+    <div class="row">
         <div class="col-md-5">
-            <!-- Borrower -->
+
             <div class="bc-widget">
-                <div class="title">Borrower Information</div>
+                <div class="title">Profile Info</div>
                 <div class="content">
                     <div class="col-xs-6">
                         <div class="form-group">
                             <label for="firstName" class="col-md-6 control-label">First Name</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" id="firstName" ng-model="model.borrower.firstName" placeholder="john" name="firstName" xt-validate required>
+                                <input type="text" class="form-control" id="firstName" ng-model="modal.user.firstName" placeholder="john" name="firstName" xt-validate required>
                             </div>
-                            <div class="hidden">
-                                <input type="text" id="phoneInApp" ng-model="model.phoneInApp" placeholder="phoneInApp" name="phoneInApp">
-                            </div>
+
                         </div>
                         <div class="form-group">
                             <label for="lastName" class="col-md-6 control-label">Last Name</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" id="lastName" ng-model="model.borrower.lastName"
-                                       placeholder="smith" name="lastName" xt-validate required ng-blur="performDuplicateCheck()">
+                                <input type="text" class="form-control" id="lastName" ng-model="model.user.lastName"
+                                       placeholder="smith" name="lastName" xt-validate required>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label for="socialSecurityNumber" class="col-md-6 control-label">Social Security #</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" id="socialSecurityNumber" placeholder="xxx-xx-xxxx" ng-hide="maskSsn" ui-mask="999-99-9999"
-                                       ng-model="model.borrower.socialSecurityNumber" name="socialSecurityNumber" xt-validate required ng-blur="validateSsn()" no-copy-and-paste>
-
-                                <input type="text" class="form-control" id="socialSecurityNumberMask" ng-disabled="validatingSsn || model.retreadLoan"
-                                       ng-model="model.borrower.socialSecurityNumber" ng-show="maskSsn" le-mask-social-security-number le-last-four-digits />
+                                <input type="text" class="form-control" id="socialSecurityNumber" placeholder="xxx-xx-xxxx" ui-mask="999-99-9999"
+                                       ng-model="model.profile.socialSecurityNumber" name="socialSecurityNumber" xt-validate required>
                             </div>
                         </div>
                     </div>
@@ -68,33 +45,20 @@
                             <label for="middleInitial" class="col-md-6 control-label">Middle</label>
 
                             <div class="col-md-4">
-                                <input type="text" class="form-control" id="middleInitial" maxlength="1" ng-model="model.borrower.middleInitial" placeholder="m" name="middleInitial"
+                                <input type="text" class="form-control" id="middlename" maxlength="1" ng-model="model.user.middle" placeholder="middle name(optional)" name="middlename"
                                        xt-validate ng-maxlength="1" ng-pattern="/^[a-zA-Z]*$/">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="suffix" class="col-md-6 control-label">Suffix</label>
-                            <div class="col-md-4">
-                                <select id="suffix" class="form-control" ng-model="model.borrower.suffix">
-                                    <option id="jr" value="JR">Jr</option>
-                                    <option id="sr" value="SR">Sr</option>
-                                    <option id="i" value="II">I</option>
-                                    <option id="ii" value="II">II</option>
-                                    <option id="iii" value="III">III</option>
-                                    <option id="vi" value="VI">VI</option>
-                                </select>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="dateOfbirth" class="col-md-6 control-label">Date of Birth</label>
                             <div class="col-md-6">
-                                <input type="number" name="age" ng-min="model.loanMinimumAge" ng-model="model.borrower.age" xt-validate class="hidden" />
+                                
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="dateOfbirth" ng-model="model.borrower.dateOfBirth" name="dateOfBirth"
-                                           xt-validate datepicker-options="dateOptions" datepicker-popup="M/d/yyyy" placeholder="m/d/yyyy" ng-blur="validateDateOfBirth()"
-                                           is-open="datePickers.dateOfBirthPicker" close-text="Close" ng-disabled="model.canRetread" required />
+                                    <input type="text" class="form-control" id="dateOfbirth" ng-model="model.profile.dateOfBirth" name="dateOfBirth"
+                                           xt-validate datepicker-options="dateOptions" datepicker-popup="M/d/yyyy" placeholder="m/d/yyyy" 
+                                           is-open="datePickers.dateOfBirthPicker" close-text="Close"  required />
                                     <span class="input-group-btn">
-                                        <button id="datepicker" type="button" ng-click="openDatePicker($event, 'dateOfBirthPicker')" class="btn btn-default btn-reduce" ng-disabled="model.canRetread"><i class="fa fa-calendar"></i> </button">
+                                        <button id="datepicker" type="button" ng-click="openDatePicker($event, 'dateOfBirthPicker')" class="btn btn-default btn-reduce" ><i class="fa fa-calendar"></i> </button">
                                     </span>
                                 </div>
                             </div>
@@ -110,33 +74,33 @@
                 <div class="content">
                     <div class="col-xs-6">
                         <div class="form-group">
-                            <label for="homePhone" class="col-md-4 control-label">Home</label>
+                            <label for="PhoneNumber" class="col-md-4 control-label">Phone(Home)</label>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" id="homePhone" ng-model="model.contacts.homePhone" placeholder="xxx-xxx-xxxx"
-                                       ui-mask="999-999-9999" ng-model-options="{ updateOn: 'blur' }" name="homePhone" model-view-value="true" xt-validate required>
+                                <input type="text" class="form-control" id="PhoneNumber" ng-model="model.ContactInfo.PhoneNumber" placeholder="xxx-xxx-xxxx"
+                                       ui-mask="999-999-9999" ng-model-options="{ updateOn: 'blur' }" name="PhoneNumber" model-view-value="true" xt-validate required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="workPhone" class="col-md-4 control-label">Work</label>
+                            <label for="PhoneNumber2" class="col-md-4 control-label">Phone(Work)</label>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" id="workPhone" ng-model="model.contacts.workPhone" placeholder="xxx-xxx-xxxx"
-                                       ui-mask="999-999-9999" ng-model-options="{ updateOn: 'blur' }" name="workPhone" model-view-value="true" required>
+                                <input type="text" class="form-control" id="PhoneNumber2" ng-model="model.ContactInfo.PhoneNumber2" placeholder="xxx-xxx-xxxx"
+                                       ui-mask="999-999-9999" ng-model-options="{ updateOn: 'blur' }" name="PhoneNumber2" model-view-value="true" required>
                             </div>
                         </div>
                     </div>
                     <div class="col-xs-6">
                         <div class="form-group">
-                            <label for="mobilePhone" class="col-md-4 control-label">Mobile</label>
+                            <label for="emailAddress" class="col-md-4 control-label">EmailAddress</label>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" id="mobilePhone" ng-model="model.contacts.mobilePhone" placeholder="xxx-xxx-xxxx"
-                                       ui-mask="999-999-9999" ng-model-options="{ updateOn: 'blur' }" name="mobilePhone" model-view-value="true">
+                                <input type="email" class="form-control" id="emailAddress" ng-model="model.ContactInfo.EmailAddress" placeholder="xxx-xxx-xxxx"
+                                       ng-model-options="{ updateOn: 'blur' }" name="emailAddress" model-view-value="true" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="emailAddress" class="col-md-4 control-label">Email</label>
+                            <label for="emailAddress2" class="col-md-4 control-label">EmailAddress(Optional)</label>
                             <div class="col-md-8">
-                                <input type="email" class="form-control" id="emailAddress" ng-model="model.contacts.emailAddress" placeholder="example@me.com"
-                                       ng-model-options="{ updateOn: 'blur' }" xt-validate name="emailAddress" required>
+                                <input type="email" class="form-control" id="emailAddress2" ng-model="model.contacts.emailAddress2" placeholder="example@me.com"
+                                       ng-model-options="{ updateOn: 'blur' }" xt-validate name="emailAddress2" >
                             </div>
                         </div>
                     </div>
@@ -150,588 +114,124 @@
                 <div class="content">
 
                     <tabset vertical="false">
-                        <tab heading="Home Address" ng-click="changeAddressTab('home')" active="activeAddressTab.home">
+                        <tab heading="Home Address">
 
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <label for="homeAddress1" class="col-md-2 control-label">Address</label>
+                                        <label for="HomeStreetAddress" class="col-md-2 control-label">Address</label>
                                         <div class="col-md-10">
-                                            <input type="text" class="form-control" id="homeAddress1" name="homeAddress1" ng-model="model.addresses.home.address1"
+                                            <input type="text" class="form-control" id="HomeStreetAddress" name="HomeStreetAddress" ng-model="model.ContactInfo.HomeStreetAddress"
                                                    placeholder="123 street name" ng-pattern="/^[a-zA-Z0-9., _ \n-]*$/" xt-validate required>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <label for="homeAddress2" class="col-md-2 control-label"></label>
+                                        <label for="HomeStreetAddress2" class="col-md-2 control-label"></label>
                                         <div class="col-md-10">
-                                            <input type="text" class="form-control" id="homeAddress2" ng-model="model.addresses.home.address2"
+                                            <input type="text" class="form-control" id="HomeStreetAddress2" ng-model="model.ContactInfo.HomeStreetAddress2"
                                                    placeholder="unit/suite/building">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <label for="homeZipCode" class="col-md-2 control-label">Zip Code</label>
+                                        <label for="HomeZipCode" class="col-md-2 control-label">Zip Code</label>
                                         <div class="col-md-3">
-                                            <input type="text" class="form-control" id="homeZipCode" ng-model="model.addresses.home.zipCode" name="homeZipCode"
-                                                   ng-blur="checkZipCode('home', model.addresses.home.zipCode);reApproveDisclosureConsumerLoan(model.addresses.home.state)" placeholder="99999" ng-pattern="/^[0-9\.]/" maxlength="5" xt-validate required>
+                                            <input type="text" class="form-control" id="HomeZipCode" ng-model="model.ContactInfo.HomeZipCode" name="HomeZipCode"
+                                                   placeholder="99999" ng-pattern="/^[0-9\.]/" maxlength="5" xt-validate required>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="homeCity" class="col-md-4 control-label">City</label>
+                                        <label for="HomeCity" class="col-md-4 control-label">HomeCity</label>
                                         <div class="col-md-8">
-                                            <input type="text" class="form-control" id="homeCity" name="homeCity" ng-model="model.addresses.home.city"
-                                                   placeholder="city" xt-validate required ng-disabled="disableState">
+                                            <input type="text" class="form-control" id="HomeCity" name="HomeCity" ng-model="model.ContactInfo.HomeCity"
+                                                   placeholder="HomeCity" xt-validate required >
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="homeState" class="col-md-3 control-label">State</label>
+                                        <label for="HomeState" class="col-md-3 control-label">HomeState</label>
                                         <div class="col-md-9">
-                                            <select id="homeState" class="form-control" ng-model="model.addresses.home.state" name="homeState" ng-change="isStateFundable(model.addresses.home.state);reApproveDisclosureConsumerLoan(model.addresses.home.state)"
-                                                    ng-options="key as value for (key , value) in model.lists.states" xt-validate required></select>
+                                            <input id="HomeState" name="HomeState" class="form-control" ng-model="model.ContactInfo.HomeState" xt-validate required>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-3 col-sm-offset-3">
                                     <div class="form-group">
-                                        <label class="checkbox-inline">
-                                            <input id="ishomeowner" type="checkbox" ng-model="model.addresses.isHomeOwner" ng-click="changeAddressTab('property')"> Home Owner
-                                        </label>
+                                      
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label class="checkbox-inline">
-                                            <input type="checkbox" id="hasPriorAddress" ng-model="model.addresses.hasPriorAddress" ng-click="changeAddressTab('prior')"> Has moved in last 6 months
-                                        </label>
+                                     
                                     </div>
                                 </div>
                             </div>
                         </tab>
-                        <tab ng-show="model.addresses.isHomeOwner" ng-click="changeAddressTab('property')" active="activeAddressTab.property" heading="Property Address">
+                        <tab heading="Work Address">
 
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <label for="propertyAddress1" class="col-md-2 control-label">Address</label>
+                                        <label for="WorkStreetAddress" class="col-md-2 control-label">Address</label>
                                         <div class="col-md-10">
-                                            <input type="text" class="form-control" id="propertyAddress1" name="propertyAddress1" ng-model="model.addresses.property.address1"
-                                                   placeholder="123 street name" xt-validate ng-required="model.addresses.isHomeOwner">
+                                            <input type="text" class="form-control" id="WorkStreetAddress" name="WorkStreetAddress" ng-model="model.ContactInfo.WorkStreetAddress"
+                                                   placeholder="123 street name" xt-validate >
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <label for="propertyAddress2" class="col-md-2 control-label"></label>
+                                        <label for="WorkStreetAddress2" class="col-md-2 control-label"></label>
                                         <div class="col-md-10">
-                                            <input type="text" class="form-control" id="propertyAddress2" ng-model="model.addresses.property.address2" placeholder="unit/suite/building">
+                                            <input type="text" class="form-control" id="WorkStreetAddress2" ng-model="model.ContactInfo.WorkStreetAddress2" placeholder="unit/suite/building">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <label for="propertyZipCode" class="col-md-2 control-label">Zip Code</label>
+                                        <label for="WorkZipCode" class="col-md-2 control-label">Zip Code</label>
                                         <div class="col-md-3">
-                                            <input type="text" class="form-control" id="propertyZipCode" ng-model="model.addresses.property.zipCode" name="propertyZipCode"
-                                                   ng-blur="checkZipCode('property', model.addresses.property.zipCode)" placeholder="99999" xt-validate ng-required="model.addresses.isHomeOwner" maxlength="5">
+                                            <input type="text" class="form-control" id="WorkZipCode" ng-model="model.ContactInfo.WorkZipCode" name="WorkZipCode" placeholder="99999" xt-validate maxlength="5">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="propertyCity" class="col-md-4 control-label">City</label>
+                                        <label for="WorkCity" class="col-md-4 control-label">WorkCity</label>
                                         <div class="col-md-8">
-                                            <input type="text" class="form-control" id="propertyCity" name="propertyCity" ng-model="model.addresses.property.city"
-                                                   placeholder="city" xt-validate ng-required="model.addresses.isHomeOwner">
+                                            <input type="text" class="form-control" id="WorkCity" name="WorkCity" ng-model="model.ContactInfo.WorkCity"
+                                                   placeholder="city" xt-validate>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="propertyState" class="col-md-3 control-label">State</label>
+                                        <label for="WorkState" class="col-md-3 control-label">State</label>
                                         <div class="col-md-9">
-                                            <select id="propertyState" class="form-control" ng-model="model.addresses.property.state" name="propertyState"
-                                                    ng-options="key as value for (key , value) in model.lists.states" xt-validate ng-required="model.addresses.isHomeOwner"></select>
+                                            <input id="WorkState" class="form-control" ng-model="model.ContactInfo.WorkState" name="WorkState"
+                                                  xt-validate>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <div class="col-md-3 col-md-offset-2">
-                                            <button id="userhomeaddress" type="button" class="btn btn-info btn-xs" ng-click="useHomeAddress('property')">Use Home Address</button">
-                                        </div>
-                                    </div>
-                                </div>
+                               
                             </div>
                         </tab>
-                        <tab ng-show="model.addresses.hasPriorAddress" heading="Prior Address" ng-click="changeAddressTab('prior')" active="activeAddressTab.prior">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label for="priorAddress1" class="col-md-2 control-label">Address</label>
-                                        <div class="col-md-10">
-                                            <input type="text" class="form-control" id="priorAddress1" name="priorAddress1" ng-model="model.addresses.prior.address1"
-                                                   placeholder="123 street name" xt-validate ng-required="model.addresses.hasRecentlyMoved">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label for="priorAddress2" class="col-md-2 control-label"></label>
-                                        <div class="col-md-10">
-                                            <input type="text" class="form-control" id="priorAddress2" ng-model="model.addresses.prior.address2" placeholder="unit/suite/building">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label for="priorZipCode" class="col-md-2 control-label">Zip Code</label>
-                                        <div class="col-md-3">
-                                            <input type="text" class="form-control" id="priorZipCode" ng-model="model.addresses.prior.zipCode" name="priorZipCode"
-                                                   ng-blur="checkZipCode('prior', model.addresses.prior.zipCode)" placeholder="99999" xt-validate ng-required="model.addresses.hasRecentlyMoved">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="priorCity" class="col-md-4 control-label">City</label>
-                                        <div class="col-md-8">
-                                            <input type="text" class="form-control" id="priorCity" name="priorCity" ng-model="model.addresses.prior.city"
-                                                   placeholder="city" xt-validate ng-required="model.addresses.hasRecentlyMoved">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="priorState" class="col-md-3 control-label">State</label>
-                                        <div class="col-md-9">
-                                            <select id="priorState" class="form-control" ng-model="model.addresses.prior.state" name="priorState"
-                                                    ng-options="key as value for (key , value) in model.lists.states"
-                                                    xt-validate ng-required="model.addresses.hasRecentlyMoved"></select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label for="priorMoveDate" class="col-md-2 control-label">Moved On</label>
-                                        <div class="col-md-3">
-                                            <div class="input-group">
-
-                                                <input type="text" class="form-control" id="priorMoveDate" ng-model="model.addresses.prior.moveDate" name="movedOn" datepicker-options="dateOptions"
-                                                       datepicker-popup="M/d/yyyy" placeholder="m/d/yyyy" is-open="datePickers.priorMoveDate" ng-required="model.addresses.hasRecentlyMoved" close-text="Close" />
-                                                <span class="input-group-btn">
-                                                    <button type="button" ng-click="openDatePicker($event, 'priorMoveDate')" class="btn btn-default btn-reduce"><i class="fa fa-calendar"></i></button>
-
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </tab>
+                       
                     </tabset>
                 </div>
             </div>
 
-            <!-- Personal -->
-            <div class="bc-widget">
-                <div class="title">Personal Information</div>
-                <div class="content">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <label for="primaryIncome" class="col-md-4 control-label">Primary Income</label>
-                                <div class="col-md-5">
-                                    <input type="text" class="form-control" id="primaryIncome" ng-model="model.borrower.primaryIncome"
-                                           name="primaryIncome" currency no-decimal="true" maxvalue="100000" minvalue="0" placeholder="$0,000" xt-validate required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <label for="supplementalIncome" class="col-md-4 control-label">Supplemental Income</label>
-                                <div class="col-md-5">
-                                    <input type="text" class="form-control" id="supplementalIncome" ng-model="model.borrower.supplementalIncome"
-                                           name="supplimentalIncome" currency no-decimal="true" maxvalue="100000" minvalue="0" placeholder="$0,000" xt-validate>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-offset-4 col-sm-6">
-                            <div class="form-group">
-                                <label class="checkbox-inline">
-                                    <input id="hasCreditCounseling" type="checkbox" ng-model="model.borrower.hasCreditCounseling"> Has Credit Counseling
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-7">
-            <div class="bc-widget">
-                <div class="title">Application Information</div>
-                <div class="content">
-                    <label for="leadStatus" class="col-md-2 control-label">Lead Status</label>
-                    <div class="col-md-2">
-                        <select id="leadStatus" class="form-control" ng-model="model.leadStatus" name="leadStatus"
-                                ng-options="value as value for value in model.lists.leadStatuses" ng-disabled="!model.canRetread && model.retreadLoan || model.leadStatus === 'Cannot Retread'" ng-change="setStatus(model.leadStatus)"></select>
-
-                    </div>
-                    <div user-permissions and-up="manager">
-                        <label class="col-md-2 control-label">Campaign</label>
-                        <div class="col-md-2">
-                            <p class="form-control-static">{{model.campaignName}} <span style="color:red; font-weight: bold" ng-show="model.isFirmOffer">(Firm Offer)</span></p>
-                        </div>
-                    </div>
-                    <label class="col-md-2 control-label">Lead Type</label>
-                    <div class="col-md-2">
-                        <p class="form-control-static" ng-bind="model.leadTypeName"></p>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-
-            <!-- Business -->
-            <div class="bc-widget">
-                <div class="title">Business Information</div>
-                <div class="content">
-
-                    <div class="form-group">
-                        <div class="col-md-12">
-                            <p class="form-control-static">
-                                <label class="checkbox-inline">
-                                    <input id="loanTypeId" type="checkbox" ng-model="model.loanTypeId" le-autopay ng-click=" validateAutopay();" ng-true-value="3" ng-false-value="0">
-
-                                    Do you own a business that meets the following conditions?
-                                </label>
-                            </p>
-                            <ol>
-                                <li>Has a company name (i.e. John Doe's Construction)</li>
-                                <li>Has a business bank account opened for more than 2 months</li>
-
-                            </ol>
-                        </div>
-                    </div>
-                    <div ng-show="model.loanTypeId === 3">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="businessName" class="col-md-6 control-label">Business Name</label>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" id="businessName" ng-model="model.business.name" name="businessName" placeholder="business name"
-                                           xt-validate ng-required="model.loanTypeId === 3">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="businessEntityType" class="col-md-6 control-label">Form of Business Entity</label>
-                                <div class="col-md-6">
-                                    <select id="businessEntityType" class="form-control" ng-model="model.business.entityType" name="businessEntityType" ng-change="isStateFundable(model.business.entityType)"
-                                            ng-options="key as value for (key , value) in model.lists.businessEntities" xt-validate ng-required="model.loanTypeId === 3"></select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="businessEin" class="col-md-6 control-label">EIN</label>
-                                <div class="col-md-6">
-
-                                    <input type="text" class="form-control" id="businessEin" ng-model="model.business.ein"
-                                           name="businessEin" ui-mask="99-9999999" maxlength="12" placeholder="xx-xxxxxxx" ng-pattern="/^[0-9-]*$/" model-view-value="true">
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="businessDba" class="col-md-6 control-label">Doing Business As</label>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" id="businessDba" ng-model="model.business.doingBusinessAs" name="doingBusinessAs" placeholder="dba name">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="businessOwnershipPercentage" class="col-md-6 control-label">Ownership Percent</label>
-                                <div class="col-md-6">
-                                    <input type="number" class="form-control" id="businessOwnershipPercentage" ng-model="model.business.ownershipPercentage"
-                                           name="businessOwnershipPercentage" placeholder="0%" ng-pattern="/^[0-9-]*$/" xt-validate
-                                           ng-required="model.loanTypeId === 3" ng-min="model.business.entityType == '10' ? 100 : 25" ng-max="100">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="businessDunsNumber" class="col-md-6 control-label">DUNS Number</label>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" id="businessDunsNumber" ng-model="model.business.dunsNumber"
-                                           name="businessDunsNumber" ui-mask="99-999-9999" maxlength="12" placeholder="xx-xxx-xxxx" ng-pattern="/^[0-9-]*$/" model-view-value="true">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="businessDescription" class="col-md-3 control-label">Business Description</label>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control" id="businessDescription" ng-model="model.business.description" name="businessDescription"
-                                           placeholder="about the business..." xt-validate ng-required="model.loanTypeId === 3">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="businessCategory" class="col-md-3 control-label">Business Category</label>
-                                <div class="col-md-9">
-                                    <input type="text" style="width:100%;text-indent: 6px;" id="businessCategory" ng-model="model.business.category" name="businessCategory"
-                                           placeholder="'category'" kendo-auto-complete k-options="businessCategoriesAutoComplete" xt-validate ng-required="model.loanTypeId === 3" ng-blur="checkCategory(model.business.category)">
-
-
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="businessCategoryDesc" class="col-md-3 control-label">Category Desc</label>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control" id="businessCategoryDesc" ng-model="model.business.categoryDescription" placeholder="describe...">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="businessAddress1" class="col-md-6 control-label">
-                                    <a href="" ng-click="useHomeAddress('business')">(Use Home Address)</a> Address
-                                </label>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" id="businessAddress1" ng-model="model.business.address1" name="businessAddress1"
-                                           placeholder="123 street name" xt-validate ng-required="model.loanTypeId === 3">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="businessAddress2" class="col-md-6 control-label">Address 2</label>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" id="businessAddress2" ng-model="model.business.address2" placeholder="unit/suite/building">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="businessZipCode" class="col-md-6 control-label">Zip Code</label>
-                                <div class="col-md-3">
-                                    <input type="text" class="form-control" id="businessZipCode" ng-model="model.business.zipCode" name="businessZipCode" ng-blur="checkZipCode('business', model.business.zipCode);reapproveDisclosureBusinessLoan(model.business.state)"
-                                           placeholder="99999" xt-validate ng-required="model.loanTypeId === 3" maxlength="5">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="businessCity" class="col-md-2 control-label">City</label>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" id="businessCity" ng-model="model.business.city" name="businessCity" placeholder="city" xt-validate ng-required="model.loanTypeId === 3">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="businessState" class="col-md-2 control-label">State</label>
-                                <div class="col-md-10">
-                                    <select id="businessState" class="form-control" ng-model="model.business.state" ng-change="isStateFundable(model.business.state);reapproveDisclosureBusinessLoan(model.business.state)"
-                                            name="businessState" ng-options="key as value for (key , value) in model.lists.states"
-                                            xt-validate ng-required="model.loanTypeId === 3"></select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="businessPhone" class="col-md-6 control-label">Phone</label>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" id="businessPhone" ng-model="model.business.phone" name="businessPhone" placeholder="xxx-xxx-xxxx"
-                                           ui-mask="999-999-9999" ng-model-options="{ updateOn: 'blur' }" model-view-value="true" xt-validate ng-required="model.loanTypeId === 3">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="businessStartDate" class="col-md-6 control-label">Start Date</label>
-                                <div class="col-md-6">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="businessStartDate" ng-model="model.business.startDate" name="businessStartDate" datepicker-options="dateOptions"
-                                               datepicker-popup="M/d/yyyy" placeholder="m/d/yyyy" is-open="datePickers.businessStartDate" close-text="Close" xt-validate ng-required="model.loanTypeId === 3" />
-                                        <span class="input-group-btn">
-                                            <button type="button" ng-click="openDatePicker($event, 'businessStartDate')" class="btn btn-default btn-reduce"><i class="fa fa-calendar"></i></button>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="businessStartDate" class="col-md-6 control-label">Bank Account Open Date</label>
-                                <div class="col-md-6">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="businessBankAccountOpenDate" ng-model="model.business.bankAccountOpenDate"
-                                               name="businessBankAccountOpenDate" xt-validate datepicker-options="dateOptions" datepicker-popup="M/d/yyyy" placeholder="m/d/yyyy"
-                                               is-open="datePickers.businessBankAccountOpenDate" close-text="Close" ng-required="model.loanTypeId === 3" />
-                                        <span class="input-group-btn">
-                                            <button type="button" ng-click="openDatePicker($event, 'businessBankAccountOpenDate')" class="btn btn-default btn-reduce"><i class="fa fa-calendar"></i></button>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="businessEmailAddress" class="col-md-6 control-label">E-mail Address</label>
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control" id="businessEmailAddress" ng-model="model.business.emailAddress" name="businessEmailAddress" placeholder="example@website.com">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="businessMonthlyInflowAmount" class="col-md-6 control-label">Business Inflow Amount</label>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" id="businessMonthlyInflowAmount" ng-model="model.business.inflowAmount" name="businessInflowAmount"
-                                           currency no-decimal="true" maxvalue="100000" minvalue="0" xt-validate placeholder="$0,000" ng-required="model.loanTypeId === 3">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="businessLoanPurpose" class="col-md-6 control-label">Loan Purpose</label>
-                                <div class="col-md-6">
-                                    <select id="businessLoanPurpose" class="form-control" name="businessLoanPurpose" ng-model="model.business.loanPurpose"
-                                            ng-options="key as value for (key , value) in model.lists.loanPurpose" xt-validate ng-required="model.loanTypeId === 3"></select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Employee -->
-            <div class="bc-widget" ng-hide="model.loanTypeId === 3">
-                <div class="title">Employee Information</div>
-                <div class="content">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <p class="form-control-static">
-                                <label class="checkbox-inline">
-                                    <input id="isselfemployed" type="checkbox" ng-model="model.employer.isSelfEmployed"> Applicant is self employed
-                                </label>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="employerName" class="col-md-6 control-label">Employer Name</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" id="employerName" ng-model="model.employer.employerName" name="employerName"
-                                       placeholder="employer name" xt-validate ng-required="model.loanTypeId != 3">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="jobTitle" class="col-md-6 control-label">Job Title</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" id="jobTitle" ng-model="model.employer.jobTitle" name="jobTitle"
-                                       placeholder="job title" xt-validate ng-required="model.loanTypeId != 3">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="employerPhone" class="col-md-4 control-label">Employer Phone</label>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" id="employerPhone" ng-model="model.employer.employerPhone" name="employerPhone"
-                                       placeholder="xxx-xxx-xxxx" ui-mask="999-999-9999" ng-model-options="{ updateOn: 'blur' }" model-view-value="true" xt-validate ng-required="model.loanTypeId != 3">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="employmentType" class="col-md-4 control-label">Employment Type</label>
-                            <div class="col-md-8">
-                                <select id="employmentType" class="form-control" ng-model="model.employer.employmentType" name="employmentType"
-                                        xt-validate ng-required="model.loanTypeId != 3"
-                                        ng-options="key as value for (key , value) in model.lists.employmentTypes">
-                                    <option value="0"></option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-
-            <!-- Payments -->
-            <div class="bc-widget">
-                <div class="title">Automatic Payments</div>
-                <div class="content">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <p class="form-control-static">
-                                        If your loan application is approved, you agree to make your monthly payments
-                                        via electronic funds transfer ("EFT") from the bank account identified on your applications.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <label class="col-md-2 control-label">Auto Pay</label>
-                                <div class="col-md-10">
-                                    <label class="radio-inline">
-                                        <input name="autoPay" id="acceptsautopay" type="radio" ng-model="model.borrower.acceptsAutoPay" ng-value="true"
-                                               xt-validate le-autopay ng-click="validateAutopay()" /> Yes
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input name="autoPay" id="acceptsautopay" type="radio" ng-model="model.borrower.acceptsAutoPay" ng-value="false" le-autopay ng-click="validateAutopay()"> No
-                                    </label>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Username -->
-            <div class="bc-widget">
-                <div class="title">Create a Username for the Borrower</div>
-                <div class="content">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <p class="form-control-static">
-                                        Please inform the borrower that this password will expire in 30 days and that we recommend updating the Temp Password by using the "Change Password" feature after logging in.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group" ng-class="{'has-error': form.username.$dirty && form.username.$error.pattern}">
-                                <label class="col-sm-4 control-label">Username</label>
-
-                                <div class="col-sm-6">
-                                    <input type="text" ng-model-options="{ updateOn: 'blur' }" xt-validate validate-username class="form-control"
-                                           ng-model="model.borrower.username" name="userName" ng-minlength="6" placeholder="username" maxlength="20"
-                                           ng-disabled="model.borrower.dateOfBirth == null || model.canRetread || model.retreadLoan" required>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label">Temp Password</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" ng-model="model.borrower.password" name="password" id="password" placeholder="password" disabled="disabled" ng-hide="model.canRetread" xt-validate ng-required="!model.canRetread">
-                                    <p class="form-control-static" ng-show="model.canRetread">Removed on Retread</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
         </div>
+       
     </div>
 
-    <!-- disclosures -->
-    <lead-disclosures ng-show="showDisclosures" />
+   
 </form>
 
