@@ -1,0 +1,18 @@
+﻿<div class="super-menu">
+    <div class="brand-logo pull-left"></div>
+    <div ng-hide="hideMenu">
+
+        <ul class="nav nav-pills" style="display: inline-block;">
+            <li class="dropdown" ng-repeat="item in menu">
+                <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" ng-href="{{item.url}}">
+                    {{item.name}} <span ng-show="item.submenu" class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" ng-show="item.submenu" role="menu">
+                    <li ng-repeat="sub in item.submenu"><a href="{{sub.url}}">{{sub.name}}</a></li>
+                </ul>
+            </li>
+        </ul>
+        <profile-menu></profile-menu>
+    </div>
+    <div class="clearfix"></div>
+</div>

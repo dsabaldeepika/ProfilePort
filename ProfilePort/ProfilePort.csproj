@@ -242,7 +242,16 @@
   <ItemGroup>
     <Content Include="App\app.js" />
     <Content Include="App\Common\Controllers\404Ctrl.js" />
+    <Content Include="App\Common\Controllers\errorModalCtrl.js" />
+    <Content Include="App\Common\Controllers\messageModalCtrl.js" />
+    <Content Include="App\Common\Controllers\primaryMenuCtrl.js" />
+    <Content Include="App\Common\Controllers\secondaryMenu.js" />
     <Content Include="App\Common\Partials\404.html" />
+    <Content Include="App\Common\Partials\messageModal.html" />
+    <Content Include="App\Common\Partials\primaryMenu.html" />
+    <Content Include="App\Common\Partials\secondaryMenu.html" />
+    <Content Include="App\Common\Services\menuService.js" />
+    <Content Include="App\Common\Services\stateService.js" />
     <Content Include="App\Dashboard\Controllers\DashboardCtrl.js" />
     <Content Include="App\Dashboard\Partials\Dashboard.html" />
     <Content Include="App\Dashboard\Services\DashboardService.js" />
@@ -251,7 +260,12 @@
     <Content Include="App\Message\Partials\Message.html" />
     <Content Include="App\config.js" />
     <Content Include="App\Message\Services\MessageService.js" />
+    <Content Include="App\Notes\Controller\notesCtrl.js" />
+    <Content Include="App\Notes\Directive\notesErrorCheck.js" />
+    <Content Include="App\Notes\Partials\Partials.html" />
+    <Content Include="App\Notes\Service\notesService.js" />
     <Content Include="App\Profile\Controllers\ProfileCtrl.js" />
+    <Content Include="App\Profile\Partials\errorModal.html" />
     <Content Include="App\Profile\Partials\Profile.html" />
     <Content Include="App\Profile\Services\ProfileService.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -369,6 +383,7 @@
     <Content Include="bower_components\angular-aria.min.js.map" />
     <Content Include="bower_components\angular-animate.min.js.map" />
     <Content Include="bower_components\angular-file-upload.min.map" />
+    <Content Include="App\Resources\menu\administrator.json" />
     <None Include="bower_components\jquery-1.10.2.intellisense.js" />
     <Content Include="bower_components\i18n\angular-locale_aa-dj.js" />
     <Content Include="bower_components\i18n\angular-locale_aa-er.js" />
@@ -1168,7 +1183,6 @@
   <ItemGroup>
     <Folder Include="Adapters\MockDataAdapters\" />
     <Folder Include="App\Common\Directives\" />
-    <Folder Include="App\Common\Services\" />
     <Folder Include="App\Dashboard\Directives\" />
     <Folder Include="App\Helper\Controllers\" />
     <Folder Include="App\Helper\Directives\" />

@@ -1,0 +1,22 @@
+﻿{
+    "menu": [
+        {
+            "name": "Main",
+            "url": "",
+            "submenu": [
+                { "name": "Profile", "url": "#//profile/all" },
+                { "name": "Loan Pipeline", "url": "#/message/my" }
+                
+            ]
+        },
+        {
+            "name": "Extras",
+            "url": "",
+            "submenu": [
+                { "name": "Connections ", "url": "#/connections/all" }
+              
+             
+            ]
+        }
+    ]
+}
