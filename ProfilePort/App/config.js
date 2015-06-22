@@ -9,13 +9,15 @@
 
             // Routing structure
             $routeProvider
-                .when('/404', { templateUrl: 'App/Common/Partials/404.html', controller: '404Ctrl'})
+                .when('/404', { templateUrl: 'App/Common/Partials/404.html', controller: '404Ctrl' })
+                 .when('/app/', { templateUrl: 'index', controller: 'app' })
                 .when('/dashboard', { templateUrl: 'App/Dashboard/Partials/dashboard.html', controller: 'DashboardCtrl' })
                 .when('/profile/:id?', { templateUrl: 'App/Profile/Partials/Profile.html', controller: 'ProfileCtrl'})
-                 .when('/message/:id?', { templateUrl: 'App/Message/Partials/Message.html', controller: 'ProfileCtrl'})
+                 .when('/message/:id?', { templateUrl: 'App/Message/Partials/Message.html', controller: 'ProfileCtrl' })
+
 
                 // reports
-                .when('/', { redirectTo: 'login' })
+                .when('/', { redirectTo: 'app' })
                 .otherwise({ redirectTo: '404' });
 
             // Http Settings

@@ -4,12 +4,11 @@
 (function () {
 
 
-    angular.module('app').controller('coErrorModalCtrl', ['$scope', '$modalInstance', 'config',
+    angular.module('app').controller('errorModalCtrl', ['$scope', '$modalInstance', 'config',
         function ($scope, $modalInstance, config) {
 
             $scope.readableString = function (str) {
-                // and this was a mistake about javascript/actionscript being able to capitalize
-                // by adding 32
+               
                 var returnString = str[0].toUpperCase();
 
                 for (var i = 1; i < str.length; i++) {

@@ -215,7 +215,6 @@
     <Compile Include="ViewModels\MessageVM.cs" />
     <Compile Include="ViewModels\ProfileVM.cs" />
     <Compile Include="ViewModels\JobVM.cs" />
-    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -227,17 +226,13 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\appCtrl.js" />
     <Content Include="App\app.js" />
     <Content Include="App\Common\Controllers\404Ctrl.js" />
     <Content Include="App\Common\Controllers\errorModalCtrl.js" />
     <Content Include="App\Common\Controllers\messageModalCtrl.js" />
-    <Content Include="App\Common\Controllers\primaryMenuCtrl.js" />
-    <Content Include="App\Common\Controllers\secondaryMenu.js" />
     <Content Include="App\Common\Partials\404.html" />
     <Content Include="App\Common\Partials\messageModal.html" />
-    <Content Include="App\Common\Partials\primaryMenu.html" />
-    <Content Include="App\Common\Partials\secondaryMenu.html" />
-    <Content Include="App\Common\Services\menuService.js" />
     <Content Include="App\Common\Services\stateService.js" />
     <Content Include="App\Dashboard\Controllers\DashboardCtrl.js" />
     <Content Include="App\Dashboard\Partials\Dashboard.html" />
@@ -360,7 +355,6 @@
     <Content Include="bower_components\angular-aria.min.js.map" />
     <Content Include="bower_components\angular-animate.min.js.map" />
     <Content Include="bower_components\angular-file-upload.min.map" />
-    <Content Include="App\Resources\menu\administrator.json" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
     <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
