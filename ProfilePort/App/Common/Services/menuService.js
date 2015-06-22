@@ -1,8 +1,8 @@
 ﻿
 (function () {
 
-    angular.module('app').factory('menuService', ['$http', 'sessionService',
-        function ($http, sessionService) {
+    angular.module('app').factory('menuService', ['$http',
+        function ($http) {
 
             var factory = {
                 secondaryMenuScope: null,
@@ -10,9 +10,6 @@
             };
 
             factory.getPrimaryMenu = function () {
-
-                var role = sessionService.getPrimaryRole();
-                if (role == "" || role == null) return null;
 
                 return $http.get('/app/resources/menu/' + role + '.json')
                     .success(function (result) {

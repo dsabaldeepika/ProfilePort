@@ -1,8 +1,8 @@
 ﻿
 (function () {
     // configure the routing for the site.
-    angular.module('app').config(['$routeProvider', '$locationProvider', '$httpProvider', '$logProvider', 'siteConfig',
-        function ($routeProvider, $locationProvider, $httpProvider, $logProvider, siteConfig) {
+    angular.module('app').config(['$routeProvider', '$locationProvider', '$httpProvider', '$logProvider',
+        function ($routeProvider, $locationProvider, $httpProvider, $logProvider) {
 
             $logProvider.debugEnabled(true);
 

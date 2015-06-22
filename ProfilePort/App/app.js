@@ -1,7 +1,7 @@
 ﻿(function () {
 
     // construct the application.
-    var app = angular.module('app', ['ngRoute', 'ngAnimate', 'toastr', 'ngCookies', 'ui.bootstrap', 'ui.mask', 'kendo.directives', 'chieffancypants.loadingBar', 'xtForm']);
+    var app = angular.module('app', ['ngRoute', 'ngAnimate', 'toastr', 'ngCookies', 'ui.bootstrap', 'ui.mask',   'xtForm']);
    
     app.run(['$rootScope', '$location', 'toastr', 'menuService',
     function ($rootScope, $location, toastr, menuService) {
