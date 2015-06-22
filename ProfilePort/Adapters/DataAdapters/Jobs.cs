@@ -53,7 +53,6 @@ namespace ProfilePort.Adapters.DataAdapters
 
         }
 
-
         DataModel.Job IJobs.PostNewJob(string userid, JobVM newjob)
         {
             Job job = new Job();
