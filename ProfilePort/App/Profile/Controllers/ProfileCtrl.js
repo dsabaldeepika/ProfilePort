@@ -1,6 +1,6 @@
 ﻿(function () {
-    angular.module('app').controller('ProfileCtrl', ['$scope', '$routeParams', '$modal', 'profileService', 'menuService', '$location', 'loanService', 'toastr', 'addressService', '$log',
-    function ($scope, $routeParams, $modal, profileService, menuService, $location, loanService, toastr, addressService, $log) {
+    angular.module('app').controller('ProfileCtrl', ['$scope', '$routeParams', '$modal', 'profileService', 'menuService', '$location', 'loanService', 'toastr', '$log',
+    function ($scope, $routeParams, $modal, profileService, menuService, $location, loanService, toastr, $log) {
 
         $scope.form = {};
     
@@ -12,9 +12,6 @@
             showWeeks: false
         };
 
-        $scope.profileId = "";
-        $scope.maskSsn = false;
-      
         // open date picker
         $scope.openDatePicker = function ($event, pickerName) {
             $event.preventDefault();
@@ -26,7 +23,6 @@
             $log.debug($routeParams.id);
             $log.debug($scope.profileId);
         }
-
 
         profileService.getprofileApplication($scope.profileId).then(function (result) {
 

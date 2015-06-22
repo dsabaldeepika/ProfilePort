@@ -11,7 +11,7 @@
 
             factory.getPrimaryMenu = function () {
 
-                return $http.get('/app/resources/menu/' + role + '.json')
+                return $http.get('/App/Resources/menu/'+ administrator + '.json')
                     .success(function (result) {
                         return result.data;
                     })
@@ -33,7 +33,6 @@
 
                 factory.secondaryMenuScope.secondaryMenu.menu = [];
             };
-
 
             return factory;
         }]);

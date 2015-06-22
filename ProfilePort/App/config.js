@@ -5,37 +5,14 @@
         function ($routeProvider, $locationProvider, $httpProvider, $logProvider) {
 
             $logProvider.debugEnabled(true);
-
             $locationProvider.html5Mode(false);
-
-            var authResolver = function (fn) {
-                return {
-                    load: ['$q', '$http', function ($q, $http) {
-                        var deferred = $q.defer();
-                        $http.get('/auth/session')
-                            .success(function (results) {
-                                if (fn == null) {
-                                    deferred.resolve(results);
-                                } else {
-                                    deferred.resolve(fn(results));
-                                }
-                            })
-                            .error(function () {
-
-                                deferred.reject(false);
-                            });
-                        return deferred.promise;
-                    }]
-                }
-            };
 
             // Routing structure
             $routeProvider
-              
-                .when('/404', { templateUrl: 'App/Common/Partials/404.html', controller: '404Ctrl', resolve: authResolver() })
-                .when('/dashboard', { templateUrl: 'App/Dashboard/Partials/dashboard.html', controller: 'DashboardCtrl', resolve: authResolver() })
-                .when('/profile/:id?', { templateUrl: 'App/Profile/Partials/Profile.html', controller: 'ProfileCtrl', resolve: authResolver() })
-                 .when('/message/:id?', { templateUrl: 'App/Message/Partials/Message.html', controller: 'ProfileCtrl', resolve: authResolver() })
+                .when('/404', { templateUrl: 'App/Common/Partials/404.html', controller: '404Ctrl'})
+                .when('/dashboard', { templateUrl: 'App/Dashboard/Partials/dashboard.html', controller: 'DashboardCtrl' })
+                .when('/profile/:id?', { templateUrl: 'App/Profile/Partials/Profile.html', controller: 'ProfileCtrl'})
+                 .when('/message/:id?', { templateUrl: 'App/Message/Partials/Message.html', controller: 'ProfileCtrl'})
 
                 // reports
                 .when('/', { redirectTo: 'login' })
