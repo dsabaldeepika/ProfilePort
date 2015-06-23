@@ -9,7 +9,7 @@ namespace ProfilePort.Adapters.Interfaces
 {
     public interface IEducations
     {
-        List<Education> GetEducation(String UserId);
+        List<Education> GetEducation(string DashboardId);
         Education GetEducation(int id);
         Education PostNewEducation(Education newEducation);
         Education PutEducation(int id, Education newEducation);

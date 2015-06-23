@@ -5,21 +5,6 @@
     angular.module('app').controller('notesCtrl', ['$scope', '$routeParams','$controller', 'notesService', 'toastr', , '$modal', '$location', function ($scope, $routeParams, $controller, notesService, toastr, $modal, $location) {
         $scope.model = {};
 
-        if ($routeParams.id !== "new") {
-            $scope.model.leadId = $routeParams.leadId;
-            $scope.redirectPath = 'lead/application/' + $scope.model.leadId;
-        }
-
-        notesService.getLeadApplication($scope.model.leadId).then(function (result) {
-            $scope.model.firstName = result.data.borrower.firstName;
-            $scope.model.lastName = result.data.borrower.lastName;
-            $scope.page.title = 'Notes –  Loan Application : ' + $scope.model.firstName + "  " + $scope.model.lastName;
-            $scope.originalModel = _.cloneDeep($scope.model);
-
-        });
-
-        \
-
         $scope.model.getNotes = function () {
 
             notesService.getNotes($scope.model.leadId).then(function (result) {
@@ -27,8 +12,6 @@
                 $scope.originalModel = _.cloneDeep($scope.model);
             })
         };
-
-        $scope.model.getNotes();
 
         $scope.model.saveNotes = function () {
 

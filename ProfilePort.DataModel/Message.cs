@@ -12,19 +12,20 @@ namespace ProfilePort.DataModel
     {
         public int MessageId { get; set; }
         public string To { get; set; }
-        public string ToId { get; set; }
+        public int ToId { get; set; }
         public string From { get; set; }
-        public string FromId { get; set; }
+        public int FromId { get; set; }
         public string Subject { get; set; }
         public string Content { get; set; }
         public DateTime DateCreated { get; set; }
         public DateTime? DateRead { get; set; }
 
-   
+
         [Required]
-        public string UserId { get; set; }
-        [ForeignKey("UserId")]
-        public virtual User User { get; set; }
+        public string DashboardId { get; set; }
+        [ForeignKey("DashboardId")]
+        public virtual Dashboard Dashboard { get; set; }
+
 
     }
 }

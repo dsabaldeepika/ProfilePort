@@ -1,354 +1,66 @@
 ﻿
-<div class="row" style="margin-top: -5px; margin-bottom: 5px;">
-    <div class="col-xs-12">
-        <div class="btn-group">
-            <a ng-click="saveprofile(false)" class="btn btn-success"><i class="fa fa-save"></i> Save</a>
-            <a ng-click="saveprofile(true)" class="btn btn-success"><i class="fa fa-save"></i> Save &amp; Close</a>
-            <a href="#/dashboard/" class="btn btn-danger"><i class="fa fa-close"></i> Close</a>
+<div style="padding-bottom:30px">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="well" style="min-height: 300px">
+                <div class="well" style="min-height: 300px">
+                    <div class="bc-widget">
+                        <div class="title">Sabal Prasain</div>
+                        <div class="content">
+
+                            <a class="btn btn-lg btn-default" ng-href="#/connnections/{{$scope.DashboardId}}"><i class="fa fa-file-picture-o"></i>&nbsp;Photo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="col-md-9">
+            <div class="well" style="min-height: 300px">
+                <div class="well" style="min-height: 300px">
+                    <div class="bc-widget">
+                        <div class="title">My Cnnections</div>
+                        <div class="content">
+
+                            <a class="btn btn-lg btn-primary" ng-href="#/connnections/{{$scope.DashboardId}}"><i class="fa fa-archive fa-arrows-h"></i>&nbsp; My Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well" style="min-height: 300px">
+               
+                    <div class="bc-widget">
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default">
+                                 <div id="collapseOne" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <p>Notes <a ng-href="#/note/{{$scope.DashboardId}}" target=" _blank">Click Here</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Favorites</a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p>Messages <a ng-href="#/message/{{$scope.DashboardId}}" >Click Here</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
 
     </div>
 </div>
-
-<form class="form-horizontal form-compressed-sm" novalidate xt-form="form" name="form" role="form">
-    <div class="row">
-        <div class="col-md-5">
-            <div class="bc-widget">
-                <div class="title">Profile Info</div>
-                <div class="content">
-                    <div class="col-xs-6">
-                        <div class="form-group">
-                            <label for="firstName" class="col-md-6 control-label">First Name</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" id="firstName" ng-model="modal.user.firstName" placeholder="john" name="firstName" xt-validate required>
-                            </div>
-
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName" class="col-md-6 control-label">Last Name</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" id="lastName" ng-model="model.user.lastName"
-                                       placeholder="smith" name="lastName" xt-validate required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="socialSecurityNumber" class="col-md-6 control-label">Social Security #</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" id="socialSecurityNumber" placeholder="xxx-xx-xxxx" ui-mask="999-99-9999"
-                                       ng-model="model.profile.socialSecurityNumber" name="socialSecurityNumber" xt-validate required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-6">
-                        <div class="form-group">
-                            <label for="middleInitial" class="col-md-6 control-label">Middle</label>
-
-                            <div class="col-md-4">
-                                <input type="text" class="form-control" id="middlename" maxlength="1" ng-model="model.user.middle" placeholder="middle name(optional)" name="middlename"
-                                       xt-validate ng-maxlength="1" ng-pattern="/^[a-zA-Z]*$/">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="dateOfbirth" class="col-md-6 control-label">Date of Birth</label>
-                            <div class="col-md-6">
-
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="dateOfbirth" ng-model="model.profile.dateOfBirth" name="dateOfBirth"
-                                           xt-validate datepicker-options="dateOptions" datepicker-popup="M/d/yyyy" placeholder="m/d/yyyy"
-                                           is-open="datePickers.dateOfBirthPicker" close-text="Close" required />
-                                    <span class="input-group-btn">
-                                        <button id="datepicker" type="button" ng-click="openDatePicker($event, 'dateOfBirthPicker')" class="btn btn-default btn-reduce"><i class="fa fa-calendar"></i> </button">
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-
-            <!-- Contact -->
-            <div class="bc-widget">
-                <div class="title">Contact Information</div>
-                <div class="content">
-                    <div class="col-xs-6">
-                        <div class="form-group">
-                            <label for="PhoneNumber" class="col-md-4 control-label">Phone(Home)</label>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" id="PhoneNumber" ng-model="model.ContactInfo.PhoneNumber" placeholder="xxx-xxx-xxxx"
-                                       ui-mask="999-999-9999" ng-model-options="{ updateOn: 'blur' }" name="PhoneNumber" model-view-value="true" xt-validate required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="PhoneNumber2" class="col-md-4 control-label">Phone(Work)</label>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" id="PhoneNumber2" ng-model="model.ContactInfo.PhoneNumber2" placeholder="xxx-xxx-xxxx"
-                                       ui-mask="999-999-9999" ng-model-options="{ updateOn: 'blur' }" name="PhoneNumber2" model-view-value="true" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-6">
-                        <div class="form-group">
-                            <label for="emailAddress" class="col-md-4 control-label">EmailAddress</label>
-                            <div class="col-md-8">
-                                <input type="email" class="form-control" id="emailAddress" ng-model="model.ContactInfo.EmailAddress" placeholder="xxx-xxx-xxxx"
-                                       ng-model-options="{ updateOn: 'blur' }" name="emailAddress" model-view-value="true" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="emailAddress2" class="col-md-4 control-label">EmailAddress(Optional)</label>
-                            <div class="col-md-8">
-                                <input type="email" class="form-control" id="emailAddress2" ng-model="model.contacts.emailAddress2" placeholder="example@me.com"
-                                       ng-model-options="{ updateOn: 'blur' }" xt-validate name="emailAddress2">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-
-            <!-- Addresses -->
-            <div class="bc-widget">
-                <div class="title">Addresses</div>
-                <div class="content">
-
-                    <tabset vertical="false">
-                        <tab heading="Home Address">
-
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label for="HomeStreetAddress" class="col-md-2 control-label">Address</label>
-                                        <div class="col-md-10">
-                                            <input type="text" class="form-control" id="HomeStreetAddress" name="HomeStreetAddress" ng-model="model.ContactInfo.HomeStreetAddress"
-                                                   placeholder="123 street name" ng-pattern="/^[a-zA-Z0-9., _ \n-]*$/" xt-validate required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label for="HomeStreetAddress2" class="col-md-2 control-label"></label>
-                                        <div class="col-md-10">
-                                            <input type="text" class="form-control" id="HomeStreetAddress2" ng-model="model.ContactInfo.HomeStreetAddress2"
-                                                   placeholder="unit/suite/building">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label for="HomeZipCode" class="col-md-2 control-label">Zip Code</label>
-                                        <div class="col-md-3">
-                                            <input type="text" class="form-control" id="HomeZipCode" ng-model="model.ContactInfo.HomeZipCode" name="HomeZipCode"
-                                                   placeholder="99999" ng-pattern="/^[0-9\.]/" maxlength="5" xt-validate required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="HomeCity" class="col-md-4 control-label">HomeCity</label>
-                                        <div class="col-md-8">
-                                            <input type="text" class="form-control" id="HomeCity" name="HomeCity" ng-model="model.ContactInfo.HomeCity"
-                                                   placeholder="HomeCity" xt-validate required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="HomeState" class="col-md-3 control-label">HomeState</label>
-                                        <div class="col-md-9">
-                                            <input id="HomeState" name="HomeState" class="form-control" ng-model="model.ContactInfo.HomeState" xt-validate required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3 col-sm-offset-3">
-                                    <div class="form-group">
-
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </tab>
-                        <tab heading="Work Address">
-
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label for="WorkStreetAddress" class="col-md-2 control-label">Address</label>
-                                        <div class="col-md-10">
-                                            <input type="text" class="form-control" id="WorkStreetAddress" name="WorkStreetAddress" ng-model="model.ContactInfo.WorkStreetAddress"
-                                                   placeholder="123 street name" xt-validate>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label for="WorkStreetAddress2" class="col-md-2 control-label"></label>
-                                        <div class="col-md-10">
-                                            <input type="text" class="form-control" id="WorkStreetAddress2" ng-model="model.ContactInfo.WorkStreetAddress2" placeholder="unit/suite/building">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label for="WorkZipCode" class="col-md-2 control-label">Zip Code</label>
-                                        <div class="col-md-3">
-                                            <input type="text" class="form-control" id="WorkZipCode" ng-model="model.ContactInfo.WorkZipCode" name="WorkZipCode" placeholder="99999" xt-validate maxlength="5">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="WorkCity" class="col-md-4 control-label">WorkCity</label>
-                                        <div class="col-md-8">
-                                            <input type="text" class="form-control" id="WorkCity" name="WorkCity" ng-model="model.ContactInfo.WorkCity"
-                                                   placeholder="city" xt-validate>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="WorkState" class="col-md-3 control-label">State</label>
-                                        <div class="col-md-9">
-                                            <input id="WorkState" class="form-control" ng-model="model.ContactInfo.WorkState" name="WorkState"
-                                                   xt-validate>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </tab>
-
-                    </tabset>
-                </div>
-            </div>
-
-
-        </div>
-        <div class="col-md-7">
-       
-            <!-- Addresses -->
-            <div class="bc-widget">
-                <div class="title">Job</div>
-                <div class="content">
-
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label for="Jobtitle" class="col-md-2 control-label">Address</label>
-                                        <div class="col-md-10">
-                                            <input type="text" class="form-control" id="Jobtitle" name="Jobtitle" ng-model="model.Job.Jobtitle"
-                                                   placeholder="123 street name" ng-pattern="/^[a-zA-Z0-9., _ \n-]*$/" xt-validate required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label for="HomeStreetAddress2" class="col-md-2 control-label"></label>
-                                        <div class="col-md-10">
-                                            <input type="text" class="form-control" id="HomeStreetAddress2" ng-model="model.ContactInfo.HomeStreetAddress2"
-                                                   placeholder="unit/suite/building">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label for="HomeZipCode" class="col-md-2 control-label">Zip Code</label>
-                                        <div class="col-md-3">
-                                            <input type="text" class="form-control" id="HomeZipCode" ng-model="model.ContactInfo.HomeZipCode" name="HomeZipCode"
-                                                   placeholder="99999" ng-pattern="/^[0-9\.]/" maxlength="5" xt-validate required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="HomeCity" class="col-md-4 control-label">HomeCity</label>
-                                        <div class="col-md-8">
-                                            <input type="text" class="form-control" id="HomeCity" name="HomeCity" ng-model="model.ContactInfo.HomeCity"
-                                                   placeholder="HomeCity" xt-validate required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="HomeState" class="col-md-3 control-label">HomeState</label>
-                                        <div class="col-md-9">
-                                            <input id="HomeState" name="HomeState" class="form-control" ng-model="model.ContactInfo.HomeState" xt-validate required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3 col-sm-offset-3">
-                                    <div class="form-group">
-
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </tab>
-                        <tab heading="Work Address">
-
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label for="WorkStreetAddress" class="col-md-2 control-label">Address</label>
-                                        <div class="col-md-10">
-                                            <input type="text" class="form-control" id="WorkStreetAddress" name="WorkStreetAddress" ng-model="model.ContactInfo.WorkStreetAddress"
-                                                   placeholder="123 street name" xt-validate>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label for="WorkStreetAddress2" class="col-md-2 control-label"></label>
-                                        <div class="col-md-10">
-                                            <input type="text" class="form-control" id="WorkStreetAddress2" ng-model="model.ContactInfo.WorkStreetAddress2" placeholder="unit/suite/building">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label for="WorkZipCode" class="col-md-2 control-label">Zip Code</label>
-                                        <div class="col-md-3">
-                                            <input type="text" class="form-control" id="WorkZipCode" ng-model="model.ContactInfo.WorkZipCode" name="WorkZipCode" placeholder="99999" xt-validate maxlength="5">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="WorkCity" class="col-md-4 control-label">WorkCity</label>
-                                        <div class="col-md-8">
-                                            <input type="text" class="form-control" id="WorkCity" name="WorkCity" ng-model="model.ContactInfo.WorkCity"
-                                                   placeholder="city" xt-validate>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="WorkState" class="col-md-3 control-label">State</label>
-                                        <div class="col-md-9">
-                                            <input id="WorkState" class="form-control" ng-model="model.ContactInfo.WorkState" name="WorkState"
-                                                   xt-validate>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </tab>
-
-                    </tabset>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-   
-</form>
 

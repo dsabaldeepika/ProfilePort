@@ -9,9 +9,9 @@ namespace ProfilePort.Adapters.Interfaces
    {
        public int MessageId { get; set; }
        public string To { get; set; }
-       public string ToId { get; set; }
+       public int ToId { get; set; }
        public string From { get; set; }
-       public string FromId { get; set; }
+       public int FromId { get; set; }
        public string Subject { get; set; }
        public string Content { get; set; }
        public DateTime DateCreated { get; set; }

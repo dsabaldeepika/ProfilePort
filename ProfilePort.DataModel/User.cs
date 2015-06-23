@@ -26,27 +26,6 @@ namespace ProfilePort.DataModel
         public DateTime LastLogin { get; set;}
         public bool IsDeleted { get; set; }
 
-        [InverseProperty("User")]
-        public virtual List<Note> Notes { get; set; }
-
-        [InverseProperty("User")]
-        public virtual List<Skill> Skills { get; set; }
-
-        [InverseProperty("User")]
-        public virtual List<Message> Messages { get; set; }
-
-        [InverseProperty("User")]
-        public virtual List<Favorite> Favorites { get; set; }
-
-        [InverseProperty("User")]
-        public virtual List<Interest> Interests { get; set; }
-
-        [InverseProperty("User")]
-        public virtual List<Education> Educations { get; set; }
-
-        [InverseProperty("User")]
-        public virtual List<Job> Jobs { get; set; }
-
 
 
 

@@ -10,7 +10,7 @@ namespace ProfilePort.Adapters.Interfaces
     public interface IContact
     {
         ContactInfo GetContactInfo(int id);
-        ContactInfo PostNewContactInfo(string UserId, ContactInfo newContactInfo);
+        ContactInfo PostNewContactInfo(string DashboardId, ContactInfo newContactInfo);
         ContactInfo PutContactInfo(int id, ContactInfo newContactInfo);
         ContactInfo DeleteContactInfo(int id);
 

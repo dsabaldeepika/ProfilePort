@@ -12,9 +12,9 @@ namespace ProfilePort.Adapters.DataAdapters
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        List<MessageVM> IMessages.GetMessages(string userID)
+        List<MessageVM> IMessages.GetMessages(string DashboardId)
         {
-            var q = db.Messages.Where(m =>m.UserId==userID )
+            var q = db.Messages.Where(m =>m.DashboardId==DashboardId )
                     .Select(m => new MessageVM
                     {
                         MessageId = m.MessageId,
@@ -51,12 +51,12 @@ namespace ProfilePort.Adapters.DataAdapters
             return q.FirstOrDefault();
         }
 
-        DataModel.Message IMessages.PostNewMessage(MessageVM m, string userID)
+        DataModel.Message IMessages.PostNewMessage(MessageVM m, string DashboardId)
         {
             Message message = new Message();
-            //User user = db.Users.Where(u => u.Id == userID).FirstOrDefault();
+            //User user = db.Users.Where(u => u.Id == DashboardId).FirstOrDefault();
                 
-                 message.UserId = userID;
+                 message.DashboardId = DashboardId;
                  message.FromId = m.FromId;
                  message.ToId = m.ToId;
                  message.Subject = m.Subject;

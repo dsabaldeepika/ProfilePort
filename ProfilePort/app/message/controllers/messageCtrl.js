@@ -1,141 +1,32 @@
-﻿/**
- * Created by Sabal on 12/20/2014
- */
-
+﻿
 (function () {
 
-    angular.module('app').controller('notesCtrl', ['$scope', '$routeParams', 'menuService', '$controller', 'notesService', 'toastr', 'leadService', '$modal', '$location', function ($scope, $routeParams, menuService, $controller, notesService, toastr, leadService, $modal, $location) {
+    angular.module('app').controller('messageCtrl', ['$scope', '$routeParams', '$controller', 'messageService', 'toastr', 'leadService', '$modal', '$location', function ($scope, $routeParams, menuService, $controller, messagesService, toastr, leadService, $modal, $location) {
         $scope.model = {};
 
-        if ($routeParams.id !== "new") {
-            $scope.model.leadId = $routeParams.leadId;
-            $scope.redirectPath = 'lead/application/' + $scope.model.leadId;
-        }
+       
+        $scope.dashboardId = "2";
+        $scope.model.getmessages = function () {
 
-        notesService.getLeadApplication($scope.model.leadId).then(function (result) {
-            $scope.model.firstName = result.data.borrower.firstName;
-            $scope.model.lastName = result.data.borrower.lastName;
-            $scope.page.title = 'Notes –  Loan Application : ' + $scope.model.firstName + "  " + $scope.model.lastName;
-            $scope.originalModel = _.cloneDeep($scope.model);
-
-        });
-
-        menuService.setSecondaryMenu([
-          {
-              title: 'Dashboard',
-              icon: 'fa-dashboard',
-              url: '#dashboard'
-          },
-
-          {
-              title: 'Notes',
-              icon: 'fa-file-text-o',
-              url: '#lead/notes/' + $scope.model.leadId
-
-          },
-           {
-               title: 'Broker documents',
-               icon: 'fa-newspaper-o',
-               url: '#lead/broker/' + $scope.model.leadId
-
-           }
-
-        ]);
-
-
-        $scope.model.getNotes = function () {
-
-            notesService.getNotes($scope.model.leadId).then(function (result) {
-                $scope.notes = result.data.notes;
+            messagesService.getmessages().then(function (result) {
+                $scope.model.messages = result.data.messages;
                 $scope.originalModel = _.cloneDeep($scope.model);
             })
         };
 
-        $scope.model.getNotes();
+        $scope.model.getmessages();
 
-        $scope.model.saveNotes = function () {
+        $scope.model.postMessages = function () {
 
-            notesService.saveNotes($scope.model).then(function (response) {
+            messagesService.essages($scope.model).then(function (response) {
 
-                if (response.data.resultCode === 0 && response.statusText === "OK") {
-                    toastr.success("The Note has been saved.");
-                    $scope.model.getNotes();
-                    $scope.model.note = "";
-                    $scope.originalModel = _.cloneDeep($scope.model);
-                }
-
-                else {
-                    var modal = $modal.open({
-                        templateUrl: '/app/common/partials/messageModal.html',
-                        controller: 'messageModalCtrl',
-                        backdrop: 'static',
-                        size: 'sm',
-                        resolve: {
-                            $modalInstance: function () { return function () { return modal; } },
-                            config: function () {
-                                return {
-
-                                    title: "Lead Notes Save Error",
-                                    message: response.data.description,
-                                    buttons: [
-               { text: "Ok", style: "btn-primary", result: true }
-
-                                    ]
-                                }
-                            }
-                        }
-                    });
-
-                }
+                $scope.model.messages = "";
+                $scope.originalModel = _.cloneDeep($scope.model);
+          
             });
 
         };
         $scope.originalModel = _.cloneDeep($scope.model);
-
-        $scope.model.confirm = function () {
-
-            if (!_.isEqual($scope.model, $scope.originalModel)) {
-
-                var modal = $modal.open({
-                    templateUrl: '/app/common/partials/messageModal.html',
-                    controller: 'messageModalCtrl',
-                    backdrop: 'static',
-                    size: 'sm',
-                    resolve: {
-                        $modalInstance: function () { return function () { return modal; } },
-                        config: function () {
-                            return {
-
-                                title: "Save Changes",
-                                message: "Do you want to save your changes before you leave?",
-                                buttons: [
-                                    { text: "Yes", style: "btn-primary", result: true },
-                                    { text: "No", style: "btn-danger", result: false },
-                                    { text: "Cancel", style: "btn-warning", result: "" }
-                                ]
-                            }
-                        }
-                    }
-                });
-
-                modal.result.then(function (result) {
-                    // if they want to save before leaving...
-                    if (result === true) {
-                        // save the changes and close form.
-                        $scope.model.saveNotes();
-                        $location.path($scope.redirectPath);
-                    }
-                    else if (result === false) {
-                        // close form by directing away away.
-                        $location.path($scope.redirectPath);
-                    }
-                });
-            }
-            else {
-                // close the form by directing away.
-                $location.path($scope.redirectPath);
-            }
-        };
 
 
     }]);

@@ -14,9 +14,9 @@ namespace ProfilePort.Adapters.DataAdapters
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        List<DataModel.Education> IEducations.GetEducation(string UserId)
+        List<DataModel.Education> IEducations.GetEducation(string DashboardId)
         {
-            return db.Educations.Where(m => m.UserId == UserId).ToList();
+            return db.Educations.Where(m => m.DashboardId == DashboardId).ToList();
 
         }
 

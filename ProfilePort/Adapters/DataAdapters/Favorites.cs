@@ -13,9 +13,9 @@ namespace ProfilePort.Adapters.DataAdapters
 
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        List<DataModel.Favorite> IFavorite.GetFavorite(string UserId)
+        List<DataModel.Favorite> IFavorite.GetFavorite(string DashboardId)
         {
-            return db.Favorites.Where(m => m.UserId == UserId).ToList();
+            return db.Favorites.Where(m => m.DashboardId == DashboardId).ToList();
         }
 
         DataModel.Favorite IFavorite.GetFavorite(int id)
@@ -23,12 +23,12 @@ namespace ProfilePort.Adapters.DataAdapters
             return db.Favorites.Where(m => m.FavoriteId == id).FirstOrDefault();
         }
 
-        DataModel.Favorite IFavorite.PostNewFavorite(string UserID, DataModel.Favorite newFavorite)
+        DataModel.Favorite IFavorite.PostNewFavorite(string DashboardId, DataModel.Favorite newFavorite)
         {
             Favorite Favorite = new Favorite();
             Favorite.Name = newFavorite.Name;
             Favorite.Description = newFavorite.Description;
-            Favorite.UserId = UserID;
+            Favorite.DashboardId = DashboardId;
             db.Favorites.Add(Favorite);
             db.SaveChanges();
             return newFavorite;

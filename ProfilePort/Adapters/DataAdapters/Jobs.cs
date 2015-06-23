@@ -12,12 +12,12 @@ namespace ProfilePort.Adapters.DataAdapters
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        List<JobVM> IJobs.GetJobs(string userID)
+        List<JobVM> IJobs.GetJobs(string DashboardId)
         {
             List<JobVM> model = new List<JobVM>();
-            User user = db.Users.Where(u => u.Id == userID).FirstOrDefault();
+            User user = db.Users.Where(u => u.Id == DashboardId).FirstOrDefault();
 
-            if (userID != null) 
+            if (DashboardId != null) 
             {
                 List<Job> jobs = db.Jobs.ToList();
                 foreach (Job job in jobs)
@@ -53,7 +53,7 @@ namespace ProfilePort.Adapters.DataAdapters
 
         }
 
-        DataModel.Job IJobs.PostNewJob(string userid, JobVM newjob)
+        DataModel.Job IJobs.PostNewJob(string DashboardId, JobVM newjob)
         {
             Job job = new Job();
             job.JobTitle = newjob.JobTitle;
@@ -62,7 +62,7 @@ namespace ProfilePort.Adapters.DataAdapters
          
             job.StartDate = DateTime.Now;
             job.EndDate = DateTime.Now;
-            job.UserId = userid;
+            job.DashboardId = DashboardId;
             db.Jobs.Add(job);
             db.SaveChanges();
 
@@ -79,7 +79,7 @@ namespace ProfilePort.Adapters.DataAdapters
             job.YearsExperience = newjob.YearsExperience;
             job.StartDate = DateTime.Now;
             job.EndDate = DateTime.Now;
-            job.UserId = newjob.UserId;
+            job.DashboardId = newjob.DashboardId;
             db.SaveChanges();
             return newjob;
         }

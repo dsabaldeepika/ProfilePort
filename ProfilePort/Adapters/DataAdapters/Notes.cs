@@ -12,9 +12,9 @@ namespace ProfilePort.Adapters.DataAdapters
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        List<DataModel.Note> INotes.GetNote(String UserId)
+        List<DataModel.Note> INotes.GetNote(String DashboardId)
         {
-            return db.Notes.Where(m => m.UserId == UserId).ToList();
+            return db.Notes.Where(m => m.DashboardId == DashboardId).ToList();
         }
 
         DataModel.Note INotes.GetNote(int id)
@@ -22,12 +22,12 @@ namespace ProfilePort.Adapters.DataAdapters
             return db.Notes.Where(m => m.Id == id).FirstOrDefault();
         }
 
-        DataModel.Note INotes.PostNewNote(string UserId, DataModel.Note newNote)
+        DataModel.Note INotes.PostNewNote(string DashboardId, DataModel.Note newNote)
         {
             Note Note = new Note();
             Note.NoteContent = newNote.NoteContent;
             Note.Title = newNote.Title;
-            Note.UserId = UserId;
+            Note.DashboardId = DashboardId;
 
             db.Notes.Add(Note);
             db.SaveChanges();

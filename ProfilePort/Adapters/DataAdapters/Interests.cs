@@ -14,9 +14,9 @@ namespace ProfilePort.Adapters.DataAdapters
 
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        List<DataModel.Interest> IInterests.GetInterest(string UserId)
+        List<DataModel.Interest> IInterests.GetInterest(string DashboardId)
         {
-            return db.Interests.Where(m => m.UserId == UserId).ToList();
+            return db.Interests.Where(m => m.DashboardId == DashboardId).ToList();
         }
 
         DataModel.Interest IInterests.GetInterest(int id)
@@ -24,12 +24,12 @@ namespace ProfilePort.Adapters.DataAdapters
             return db.Interests.Where(m => m.InterestId == id).FirstOrDefault();
         }
 
-        DataModel.Interest IInterests.PostNewInterest(string UserID, DataModel.Interest newInterest)
+        DataModel.Interest IInterests.PostNewInterest(string DashboardId, DataModel.Interest newInterest)
         {
             Interest Interest = new Interest();
             Interest.Name = newInterest.Name;
             Interest.Description = newInterest.Description;
-            Interest.UserId = UserID;
+            Interest.DashboardId = DashboardId;
             db.Interests.Add(Interest);
             db.SaveChanges();
             return newInterest;

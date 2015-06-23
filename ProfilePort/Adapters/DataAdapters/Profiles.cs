@@ -26,10 +26,10 @@ namespace ProfilePort.Adapters.DataAdapters
             return VM;
         }
 
-        public Profile AddProfile(string userID, ProfileVM newProfile)
+        public Profile AddProfile(string DashboardId, ProfileVM newProfile)
         {
             Profile MyProfile = new Profile();
-            MyProfile.UserId = userID;
+            MyProfile.DashboardId = DashboardId;
             MyProfile.ProfileId = newProfile.ProfileId;
             MyProfile.Sex = newProfile.Sex;
             MyProfile.PicFile = newProfile.PicFile; 

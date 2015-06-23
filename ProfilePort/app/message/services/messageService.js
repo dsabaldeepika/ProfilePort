@@ -1,42 +1,31 @@
-﻿/**
- * Created by sabal.prasain on 12/20/2014
- */
+﻿
 
 (function () {
 
-    angular.module('app').factory('notesService', ['$http', 'siteConfig', 'toastr',
+    angular.module('app').factory('messageService', ['$http', 'siteConfig', 'toastr',
         function ($http, siteConfig, toastr) {
             var serviceBase = siteConfig.apiHosts.lead,
                 factory = {};
+            var URL = 'https://cashcall.firebaseio.com/';
+            //var URL = 'api/message/';
 
-            //Save notes for a lead 
-            factory.saveNotes = function (model) {
+            //Save message for a lead 
+            factory.postMessage = function (model) {
 
-                return $http.post('/lead/agentnote', model)
+                return $http.post(URL + ".json", model)
                     .success(function (data, status, headers, config) {
-
-                   
                         return true;
                     })
                     .error(function (data, status, headers, config) {
-                       
-
                         return false;
                     });
             }
 
+            factory.getMessage = function (leadId) {
 
-            // nnew service has to be implemented later and new endpoints has to be created 
-
-            factory.getLeadApplication = function (leadId) {
-
-                return $http.get('/lead/details/' + leadId)
+                return $http.get(URL + ".json", model)
                     .success(function (data, status, headers, config) {
-                        // this callback will be called asynchronously
-                        // when the response is available
 
-                        //factory.firstName = data.borrower.firstName;
-                        //factory.lastName = data.borrower.lastName;
 
                         return data;
                     })
@@ -47,13 +36,26 @@
                     });
             };
 
-            factory.getNotes = function (leadId) {
+            factory.putMessage = function (leadId) {
 
-                return $http.get('/lead/agentnote/' + leadId)
+                return $http.put(URL + ".json", model)
                     .success(function (data, status, headers, config) {
-                       
-                        return data.notes;
-                       
+
+
+                        return data;
+                    })
+                    .error(function (data, status, headers, config) {
+                        return null;
+                    });
+            };
+
+            factory.deleteMessage = function (messageId) {
+
+                return $http.post(URL + ".json", messageId)
+                    .success(function (data, status, headers, config) {
+
+
+                        return data;
                     })
                     .error(function (data, status, headers, config) {
                         // called asynchronously if an error occurs
@@ -61,7 +63,6 @@
                         return null;
                     });
             };
-
 
             // return the factory.
             return factory;

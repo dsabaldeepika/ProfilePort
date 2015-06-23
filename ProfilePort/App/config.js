@@ -9,14 +9,15 @@
 
             $locationProvider.html5Mode(false);
 
-
             // Routing structure.
             $routeProvider
-                .when('/home/:id', { templateUrl: 'app/home/partials/home.html', controller: 'home' })
+                .when('/home/:id?', { templateUrl: 'app/home/partials/home.html', controller: 'home' })
                 .when('/profile/:id?', { templateUrl: 'app/profile/partials/profile.html', controller: 'profileCtrl' })
-                .when('/404', { templateUrl: 'app/common/partials/404.html', controller: 'co404Ctrl' })
-                .when('/note', { templateUrl: 'app/note/partials/note.html', controller: 'coDeniedCtrl' })
+                .when('/404', { templateUrl: 'app/common/partials/404.html', controller: '404Ctrl' })
+                .when('/note', { templateUrl: 'app/note/partials/note.html', controller: 'DeniedCtrl' })
                 .when('/message/:id?', { templateUrl: 'app/message/partials/message.html', controller: 'messageCtrl' })
+                .when('/contact', { templateUrl: 'app/contact/partials/contact.html', controller: 'contactCtrl' })
+                .when('/education/:id?', { templateUrl: 'app/education/partials/education.html', controller: 'educationCtrl' })
                 .when('/', { redirectTo: 'home' })
 
                 // otherwise redirect to the 404 error page

@@ -9,9 +9,9 @@ namespace ProfilePort.Adapters.Interfaces
 {
     public interface IMessages
     {
-        List<MessageVM> GetMessages(string userID);
+        List<MessageVM> GetMessages(string DashboardId);
         MessageVM GetMessage(int id);
-        Message PostNewMessage(MessageVM newMessage, string userID);
+        Message PostNewMessage(MessageVM newMessage, string DashboardId);
         Message deleteMessage(int id);
     }
 }

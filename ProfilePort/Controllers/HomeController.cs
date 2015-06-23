@@ -25,12 +25,12 @@ namespace DashboardPort.Controllers
 
         public HomeController()
         {
-            newDashboard = new Dashboard();
+            newDashboard = new ProfilePort.Adapters.DataAdapters.Dashboard();
 
         }
 
         // GET: api/Dashboard/5
-        [ResponseType(typeof(Dashboard))]
+        [ResponseType(typeof(ProfilePort.DataModel.Dashboard))]
         public IHttpActionResult GetDashboard(string id)
         {
             User myDashboard = new User();
@@ -58,7 +58,7 @@ namespace DashboardPort.Controllers
         }
 
         // POST: api/Dashboard
-        [ResponseType(typeof(Dashboard))]
+        [ResponseType(typeof(ProfilePort.DataModel.Dashboard))]
         public IHttpActionResult PostDashboard(string UserId, User Dashboard)
         {
             if (!ModelState.IsValid)
@@ -72,7 +72,7 @@ namespace DashboardPort.Controllers
         }
 
         // DELETE: api/Dashboard/5
-        [ResponseType(typeof(Dashboard))]
+        [ResponseType(typeof(ProfilePort.DataModel.Dashboard))]
         public IHttpActionResult DeleteDashboard(string id)
         {
 
@@ -107,7 +107,7 @@ namespace DashboardPort.Controllers
 
         private bool DashboardExists(string id)
         {
-            return db.Users.Count(e => e.Id == id) > 0;
+            return db.Dashboards.Count(e => e.Id == id) > 0;
         }
     }
 }

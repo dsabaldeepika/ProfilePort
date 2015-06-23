@@ -1,8 +1,6 @@
-﻿''/**
- * Created by devin.delapp on 12/10/2014.
- */
+﻿
 (function () {
-    // this directive is much easier to use than a traditional pattern because you can specify each pattern piece.
+ 
     angular.module('app').directive('validatePassword', function () {
 
         var REQUIRED_PATTERNS = [

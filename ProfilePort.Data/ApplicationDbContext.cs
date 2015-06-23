@@ -28,6 +28,7 @@ namespace ProfilePort.Data
         public DbSet<Favorite> Favorites { get; set; }
         public DbSet<Interest> Interests { get; set; }
         public DbSet<Profile> Profiles { get; set; }
+        public DbSet<Dashboard> Dashboards { get; set; }
     
         
     }

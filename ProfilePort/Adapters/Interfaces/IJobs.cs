@@ -9,9 +9,9 @@ namespace ProfilePort.Adapters.Interfaces
 {
   public  interface IJobs
     {
-        List<JobVM> GetJobs(string userID);
+        List<JobVM> GetJobs(string DashboardId);
         JobVM GetJob(int id); 
-        Job PostNewJob(string userid, JobVM newJob);
+        Job PostNewJob(string DashboardId, JobVM newJob);
         Job PutNewJob(int id, Job newJob);
         Job DeleteJob(int id);
     }

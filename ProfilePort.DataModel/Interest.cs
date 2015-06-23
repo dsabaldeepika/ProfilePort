@@ -13,12 +13,10 @@ namespace ProfilePort.DataModel
        public int InterestId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-     
-       
-       [Required]
-        public string UserId { get; set; }
-        [ForeignKey("UserId")]
-       public virtual User User { get; set; }
 
+        [Required]
+        public string DashboardId { get; set; }
+        [ForeignKey("DashboardId")]
+        public virtual Dashboard Dashboard { get; set; }
     }
 }

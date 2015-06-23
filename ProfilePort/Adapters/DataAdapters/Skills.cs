@@ -28,10 +28,10 @@ namespace ProfilePort.Adapters.DataAdapters
             return model;
         }
 
-        DataModel.Skill ISkills.PostNewSkill(string UserId, DataModel.Skill newSkill)
+        DataModel.Skill ISkills.PostNewSkill(string DashboardId, DataModel.Skill newSkill)
         {
             Skill MySkill = new Skill();
-            MySkill.UserId = UserId;
+            MySkill.DashboardId = DashboardId;
             MySkill.Description = newSkill.Description;
             MySkill.Name = newSkill.Name;
             db.Skills.Add(MySkill);

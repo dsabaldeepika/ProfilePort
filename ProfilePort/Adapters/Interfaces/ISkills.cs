@@ -11,7 +11,7 @@ namespace ProfilePort.Adapters.Interfaces
     {
         List<Skill> GetAllSkills();
         Skill GetSkill(int id);
-        Skill PostNewSkill( string UserId, Skill newSkill);
+        Skill PostNewSkill( string DashboardId, Skill newSkill);
         Skill PutSkill(int id, Skill newSkill);
         Skill DeleteSkill(int id);
     

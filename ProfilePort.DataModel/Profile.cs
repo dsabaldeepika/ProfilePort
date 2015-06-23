@@ -16,11 +16,12 @@ namespace ProfilePort.DataModel
         public string SocialSecurity { get; set; }
         public string PicFile { get; set; }
         public bool IsLookingForJob { get; set; }
-        
+
+
         [Required]
-        public string UserId { get; set; }
-        [ForeignKey("UserId")]
-        public virtual User User { get; set; }
+        public string DashboardId { get; set; }
+        [ForeignKey("DashboardId")]
+        public virtual Dashboard Dashboard { get; set; }
 
     }
 }

@@ -33,9 +33,8 @@ namespace ProfilePort.DataModel
         public string PhoneNumber2 { get; set; }
 
         [Required]
-        public string UserId { get; set; }
-        [ForeignKey("UserId")]
-        public virtual User User { get; set; }
-
+        public string DashboardId { get; set; }
+        [ForeignKey("DashboardId")]
+        public virtual Dashboard Dashboard { get; set; }
     }
 }
