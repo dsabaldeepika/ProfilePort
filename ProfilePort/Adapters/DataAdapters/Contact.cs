@@ -15,7 +15,7 @@ namespace ProfilePort.Adapters.DataAdapters
       
         DataModel.ContactInfo IContact.GetContactInfo(int id)
         {
-            return db.ContactInfoes.Where(m => m.Id == id).FirstOrDefault();
+            return db.ContactInfos.Where(m => m.Id == id).FirstOrDefault();
         }
 
         DataModel.ContactInfo IContact.PostNewContactInfo(string UserId, DataModel.ContactInfo newContactInfo)
@@ -37,7 +37,7 @@ namespace ProfilePort.Adapters.DataAdapters
             ContactInfo.PhoneNumber2 = newContactInfo.PhoneNumber2;
             ContactInfo.PhoneNumber = newContactInfo.PhoneNumber;
             ContactInfo.MainUrl = newContactInfo.MainUrl;
-            db.ContactInfoes.Add(ContactInfo);
+            db.ContactInfos.Add(ContactInfo);
             db.SaveChanges();
             return newContactInfo;
         }
@@ -46,7 +46,7 @@ namespace ProfilePort.Adapters.DataAdapters
         {
             ContactInfo ContactInfo = new ContactInfo();
 
-            ContactInfo = db.ContactInfoes.Where(p => p.Id == id)
+            ContactInfo = db.ContactInfos.Where(p => p.Id == id)
             .FirstOrDefault();
             ContactInfo.EmailAddress = newContactInfo.EmailAddress;
             ContactInfo.EmailAddress2 = newContactInfo.EmailAddress2;
@@ -72,9 +72,9 @@ namespace ProfilePort.Adapters.DataAdapters
         DataModel.ContactInfo IContact.DeleteContactInfo(int id)
         { ContactInfo ContactInfos = new ContactInfo();
 
-            ContactInfos = db.ContactInfoes.Where(p => p.Id == id)
+            ContactInfos = db.ContactInfos.Where(p => p.Id == id)
           .FirstOrDefault();
-            db.ContactInfoes.Remove(ContactInfos);
+            db.ContactInfos.Remove(ContactInfos);
             db.SaveChanges();
             return ContactInfos;
         }

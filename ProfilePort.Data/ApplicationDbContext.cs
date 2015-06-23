@@ -22,12 +22,14 @@ namespace ProfilePort.Data
         public DbSet<Job> Jobs { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Skill> Skills { get; set; }
-        public DbSet<ContactInfo> ContactInfoes { get; set; }
+        public DbSet<ContactInfo> ContactInfos { get; set; }
         public DbSet<Education> Educations { get; set; }
         public DbSet<Note> Notes { get; set; }
         public DbSet<Favorite> Favorites { get; set; }
         public DbSet<Interest> Interests { get; set; }
         public DbSet<Profile> Profiles { get; set; }
+    
+        
     }
 }
         

@@ -132,18 +132,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="Migrations\201506212209410_REalsadf.cs" />
-    <Compile Include="Migrations\201506220146071_init.cs" />
-    <Compile Include="Migrations\201506220146071_init.Designer.cs">
-      <DependentUpon>201506220146071_init.cs</DependentUpon>
+    <Compile Include="Migrations\201506231558046_asoftoday1.cs" />
+    <Compile Include="Migrations\201506231558046_asoftoday1.Designer.cs">
+      <DependentUpon>201506231558046_asoftoday1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201506220150241_inits.cs" />
-    <Compile Include="Migrations\201506220150241_inits.Designer.cs">
-      <DependentUpon>201506220150241_inits.cs</DependentUpon>
+    <Compile Include="Migrations\201506231558520_asoftoday2.cs" />
+    <Compile Include="Migrations\201506231558520_asoftoday2.Designer.cs">
+      <DependentUpon>201506231558520_asoftoday2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201506220153254_updatemopdal.cs" />
-    <Compile Include="Migrations\201506220153254_updatemopdal.Designer.cs">
-      <DependentUpon>201506220153254_updatemopdal.cs</DependentUpon>
+    <Compile Include="Migrations\201506231602188_asoftoday5.cs" />
+    <Compile Include="Migrations\201506231602188_asoftoday5.Designer.cs">
+      <DependentUpon>201506231602188_asoftoday5.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -159,23 +158,23 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201506220146071_init.resx">
-      <DependentUpon>201506220146071_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506220150241_inits.resx">
-      <DependentUpon>201506220150241_inits.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506220153254_updatemopdal.resx">
-      <DependentUpon>201506220153254_updatemopdal.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Content\angular-toastr.css" />
     <Content Include="Content\angular-toastr.min.css" />
     <Content Include="Scripts\angular-toastr.js" />
     <Content Include="Scripts\angular-toastr.min.js" />
     <Content Include="Scripts\angular-toastr.tpls.js" />
     <Content Include="Scripts\angular-toastr.tpls.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201506231558046_asoftoday1.resx">
+      <DependentUpon>201506231558046_asoftoday1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506231558520_asoftoday2.resx">
+      <DependentUpon>201506231558520_asoftoday2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506231602188_asoftoday5.resx">
+      <DependentUpon>201506231602188_asoftoday5.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

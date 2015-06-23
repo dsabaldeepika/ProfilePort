@@ -15,7 +15,7 @@ using ProfilePort.Adapters.DataAdapters;
 
 namespace ProfilePort.Controllers
 {
-    [AllowAnonymous]
+
     public class ProfileController : ApiController
     {IProfiles profileAdapter;
         ApplicationDbContext db = new ApplicationDbContext();

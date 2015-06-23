@@ -6,14 +6,14 @@ namespace ProfilePort.Data.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    [GeneratedCode("EntityFramework.Migrations", "6.1.1-30610")]
-    public sealed partial class init : IMigrationMetadata
+    [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
+    public sealed partial class asoftoday1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(init));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(asoftoday1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201506220146071_init"; }
+            get { return "201506231558046_asoftoday1"; }
         }
         
         string IMigrationMetadata.Source

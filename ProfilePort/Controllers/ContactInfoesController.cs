@@ -13,21 +13,21 @@ using ProfilePort.DataModel;
 
 namespace ProfilePort.Controllers
 {
-    public class ContactInfoesController : ApiController
+    public class ContactInfosController : ApiController
     {
         private  ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/ContactInfoes
-        public IQueryable<ContactInfo> GetContactInfoes()
+        // GET: api/ContactInfos
+        public IQueryable<ContactInfo> GetContactInfos()
         {
-            return db.ContactInfoes;
+            return db.ContactInfos;
         }
 
-        // GET: api/ContactInfoes/5
+        // GET: api/ContactInfos/5
         [ResponseType(typeof(ContactInfo))]
         public IHttpActionResult GetContactInfo(int id)
         {
-            ContactInfo contactInfo = db.ContactInfoes.Find(id);
+            ContactInfo contactInfo = db.ContactInfos.Find(id);
             if (contactInfo == null)
             {
                 return NotFound();
@@ -36,7 +36,7 @@ namespace ProfilePort.Controllers
             return Ok(contactInfo);
         }
 
-        // PUT: api/ContactInfoes/5
+        // PUT: api/ContactInfos/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutContactInfo(int id, ContactInfo contactInfo)
         {
@@ -71,7 +71,7 @@ namespace ProfilePort.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/ContactInfoes
+        // POST: api/ContactInfos
         [ResponseType(typeof(ContactInfo))]
         public IHttpActionResult PostContactInfo(ContactInfo contactInfo)
         {
@@ -80,23 +80,23 @@ namespace ProfilePort.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.ContactInfoes.Add(contactInfo);
+            db.ContactInfos.Add(contactInfo);
             db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = contactInfo.Id }, contactInfo);
         }
 
-        // DELETE: api/ContactInfoes/5
+        // DELETE: api/ContactInfos/5
         [ResponseType(typeof(ContactInfo))]
         public IHttpActionResult DeleteContactInfo(int id)
         {
-            ContactInfo contactInfo = db.ContactInfoes.Find(id);
+            ContactInfo contactInfo = db.ContactInfos.Find(id);
             if (contactInfo == null)
             {
                 return NotFound();
             }
 
-            db.ContactInfoes.Remove(contactInfo);
+            db.ContactInfos.Remove(contactInfo);
             db.SaveChanges();
 
             return Ok(contactInfo);
@@ -113,7 +113,7 @@ namespace ProfilePort.Controllers
 
         private bool ContactInfoExists(int id)
         {
-            return db.ContactInfoes.Count(e => e.Id == id) > 0;
+            return db.ContactInfos.Count(e => e.Id == id) > 0;
         }
     }
 }

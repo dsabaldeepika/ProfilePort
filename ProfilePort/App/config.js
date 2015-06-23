@@ -12,22 +12,20 @@
 
             // Routing structure.
             $routeProvider
-                // configure the base level site pages.
-               
+                .when('/home/:id', { templateUrl: 'app/home/partials/home.html', controller: 'home' })
                 .when('/profile/:id?', { templateUrl: 'app/profile/partials/profile.html', controller: 'profileCtrl' })
                 .when('/404', { templateUrl: 'app/common/partials/404.html', controller: 'co404Ctrl' })
                 .when('/note', { templateUrl: 'app/note/partials/note.html', controller: 'coDeniedCtrl' })
                 .when('/message/:id?', { templateUrl: 'app/message/partials/message.html', controller: 'messageCtrl' })
-                .when('/', { redirectTo: 'profile' })
+                .when('/', { redirectTo: 'home' })
 
                 // otherwise redirect to the 404 error page
                 .otherwise({ redirectTo: 'profile' });
 
-
             // Http Settings
             $httpProvider.defaults.withCredentials = true;
 
-            // alternatively, register the interceptor via an anonymous factory
+            // alternatively, register the interceptor via an anonymous factoryjust for future use
             $httpProvider.interceptors.push(['$location', '$q', '$rootScope', function ($location, $q, $rootScope) {
                 return {
                     'request': function (config) {
