@@ -1,11 +1,12 @@
-﻿using System;
+﻿using ProfilePort.DataModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace ProfilePort.Adapters.Interfaces
 {
-      public class ProfileVM
+        public class ProfileVM:User
     {
         public int ProfileId { get; set; }
         public string Sex { get; set; }
@@ -13,5 +14,6 @@ namespace ProfilePort.Adapters.Interfaces
         public string PicFile { get; set; }
         public bool IsLookingForJob { get; set; }
        // public decimal NoOfVisitors { get; set; }
+        public string UserID { get; set; }
     }
 }

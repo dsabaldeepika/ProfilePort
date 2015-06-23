@@ -229,114 +229,18 @@
 
         </div>
         <div class="col-md-7">
-            <div class="bc-widget">
-                <div class="title">Profile Info</div>
-                <div class="content">
-                    <div class="col-xs-6">
-                        <div class="form-group">
-                            <label for="firstName" class="col-md-6 control-label">First Name</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" id="firstName" ng-model="modal.user.firstName" placeholder="john" name="firstName" xt-validate required>
-                            </div>
-
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName" class="col-md-6 control-label">Last Name</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" id="lastName" ng-model="model.user.lastName"
-                                       placeholder="smith" name="lastName" xt-validate required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="socialSecurityNumber" class="col-md-6 control-label">Social Security #</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" id="socialSecurityNumber" placeholder="xxx-xx-xxxx" ui-mask="999-99-9999"
-                                       ng-model="model.profile.socialSecurityNumber" name="socialSecurityNumber" xt-validate required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-6">
-                        <div class="form-group">
-                            <label for="middleInitial" class="col-md-6 control-label">Middle</label>
-
-                            <div class="col-md-4">
-                                <input type="text" class="form-control" id="middlename" maxlength="1" ng-model="model.user.middle" placeholder="middle name(optional)" name="middlename"
-                                       xt-validate ng-maxlength="1" ng-pattern="/^[a-zA-Z]*$/">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="dateOfbirth" class="col-md-6 control-label">Date of Birth</label>
-                            <div class="col-md-6">
-
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="dateOfbirth" ng-model="model.profile.dateOfBirth" name="dateOfBirth"
-                                           xt-validate datepicker-options="dateOptions" datepicker-popup="M/d/yyyy" placeholder="m/d/yyyy"
-                                           is-open="datePickers.dateOfBirthPicker" close-text="Close" required />
-                                    <span class="input-group-btn">
-                                        <button id="datepicker" type="button" ng-click="openDatePicker($event, 'dateOfBirthPicker')" class="btn btn-default btn-reduce"><i class="fa fa-calendar"></i> </button">
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-
-            <!-- Contact -->
-            <div class="bc-widget">
-                <div class="title">Contact Information</div>
-                <div class="content">
-                    <div class="col-xs-6">
-                        <div class="form-group">
-                            <label for="PhoneNumber" class="col-md-4 control-label">Phone(Home)</label>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" id="PhoneNumber" ng-model="model.ContactInfo.PhoneNumber" placeholder="xxx-xxx-xxxx"
-                                       ui-mask="999-999-9999" ng-model-options="{ updateOn: 'blur' }" name="PhoneNumber" model-view-value="true" xt-validate required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="PhoneNumber2" class="col-md-4 control-label">Phone(Work)</label>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" id="PhoneNumber2" ng-model="model.ContactInfo.PhoneNumber2" placeholder="xxx-xxx-xxxx"
-                                       ui-mask="999-999-9999" ng-model-options="{ updateOn: 'blur' }" name="PhoneNumber2" model-view-value="true" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-6">
-                        <div class="form-group">
-                            <label for="emailAddress" class="col-md-4 control-label">EmailAddress</label>
-                            <div class="col-md-8">
-                                <input type="email" class="form-control" id="emailAddress" ng-model="model.ContactInfo.EmailAddress" placeholder="xxx-xxx-xxxx"
-                                       ng-model-options="{ updateOn: 'blur' }" name="emailAddress" model-view-value="true" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="emailAddress2" class="col-md-4 control-label">EmailAddress(Optional)</label>
-                            <div class="col-md-8">
-                                <input type="email" class="form-control" id="emailAddress2" ng-model="model.contacts.emailAddress2" placeholder="example@me.com"
-                                       ng-model-options="{ updateOn: 'blur' }" xt-validate name="emailAddress2">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-
+       
             <!-- Addresses -->
             <div class="bc-widget">
-                <div class="title">Addresses</div>
+                <div class="title">Job</div>
                 <div class="content">
-
-                    <tabset vertical="false">
-                        <tab heading="Home Address">
 
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <label for="HomeStreetAddress" class="col-md-2 control-label">Address</label>
+                                        <label for="Jobtitle" class="col-md-2 control-label">Address</label>
                                         <div class="col-md-10">
-                                            <input type="text" class="form-control" id="HomeStreetAddress" name="HomeStreetAddress" ng-model="model.ContactInfo.HomeStreetAddress"
+                                            <input type="text" class="form-control" id="Jobtitle" name="Jobtitle" ng-model="model.Job.Jobtitle"
                                                    placeholder="123 street name" ng-pattern="/^[a-zA-Z0-9., _ \n-]*$/" xt-validate required>
                                         </div>
                                     </div>

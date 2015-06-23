@@ -245,8 +245,27 @@
     <Content Include="app\app.js" />
     <Content Include="app\appCtrl.js" />
     <Content Include="app\common\controllers\coErrorModalCtrl.js" />
+    <Content Include="app\common\controllers\messageModal.js" />
+    <Content Include="app\common\controllers\uploadFileModalCtrl.js" />
+    <Content Include="app\common\directives\characterOnly.js" />
+    <Content Include="app\common\directives\datePickerPattern.js" />
+    <Content Include="app\common\directives\discardChangesConfirmation.js" />
+    <Content Include="app\common\directives\ngEnter.js" />
+    <Content Include="app\common\directives\noCopyPaste.js" />
+    <Content Include="app\common\directives\notesErrorCheck.js" />
+    <Content Include="app\common\directives\numbersOnly.js" />
+    <Content Include="app\common\directives\setFocus.js" />
+    <Content Include="app\common\directives\validatePassword.js" />
+    <Content Include="app\common\directives\validateUsername.js" />
     <Content Include="app\common\partials\errorModal.html" />
+    <Content Include="app\common\partials\messageModal.html" />
     <Content Include="app\config.js" />
+    <Content Include="app\message\controllers\messageCtrl.js" />
+    <Content Include="app\message\partials\message.html" />
+    <Content Include="app\message\services\messageService.js" />
+    <Content Include="app\notes\controllers\notesCtrl.js" />
+    <Content Include="app\notes\partials\notes.html" />
+    <Content Include="app\notes\services\notesService.js" />
     <Content Include="app\profile\controllers\profileCtrl.js" />
     <Content Include="app\profile\partials\profile.html" />
     <Content Include="app\profile\services\profileService.js" />
@@ -1138,8 +1157,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Adapters\MockDataAdapters\" />
-    <Folder Include="app\common\directives\" />
     <Folder Include="app\common\services\" />
+    <Folder Include="app\message\directive\" />
+    <Folder Include="app\notes\directive\" />
     <Folder Include="app\profile\directives\" />
     <Folder Include="App_Data\" />
   </ItemGroup>

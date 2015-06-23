@@ -70,14 +70,14 @@ namespace ProfilePort.Controllers
 
         // POST: api/Profile
         [ResponseType(typeof(Profile))]
-        public IHttpActionResult PostProfile(string Userid, ProfileVM profile)
+        public IHttpActionResult PostProfile(ProfileVM profile)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return BadRequest(ModelState);
+            //}
             Profile myProfile = new Profile();
-            myProfile = profileAdapter.AddProfile(Userid, profile);
+            myProfile = profileAdapter.AddProfile("Zango",profile);
 
             return CreatedAtRoute("DefaultApi", new { id = profile.ProfileId }, profile);
         }

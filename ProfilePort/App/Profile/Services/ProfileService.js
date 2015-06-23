@@ -4,8 +4,8 @@
         function ($http, toastr, $log) {
             factory = {};
 
-            //var urlBase = '/api/profile';
-            var urlBase= 'https://cashcall.firebaseio.com';
+            var urlBase = '/api/profile';
+            //var urlBase= 'https://cashcall.firebaseio.com';
             // This pulls in the content for the loan queue.    
             factory.getprofile = function (userId) {
 
@@ -24,26 +24,23 @@
             };
 
             // save the profile record
-            factory.postprofile = function (Userid, profile) {
-                var prof = {
-                   Userid: Userid ,
-                   profile :profile 
-                }
+factory.postprofile = function (Userid, profile) {
+    var data ={ Userid:Userid,profile:profile};
 
-                return $http.post(urlBase,JSON.stringify(prof ))
+    return $http.post(urlBase, data)
 
                     .success(function (data, status, headers, config) {
-
+                       
                         return data;
                     })
                     .error(function (data, status, headers, config) {
 
                         return data;
-                    });
+                    })
             }
 
     // update the profile record
-    factory.putprofile = function (userId, Profile) {
+factory.putprofile = function (userId, Profile) {
 
         return $http.put(urlBase + '/PostProfile/' + userId, Profile)
 

@@ -1,0 +1,83 @@
+﻿
+<div class="row" style="margin-top: -5px; margin-bottom: 5px;">
+    <div class="col-xs-12">
+        <div class="btn-group pull-left">
+            <button type="button" class="btn btn-primary" ng-click="model.saveNotes()"><i class="fa fa-save"></i> Save</button>
+            <button type="button"class="btn btn-success" ng-click="model.confirm()"><i class="fa fa-backward"></i> Back</button>
+
+        </div>
+    </div>
+</div>
+
+<div class="bc-widget">
+    <div class="title"> New Note</div>
+    <div class="content">
+        <div class="row">
+            
+            <form class="form" role="form" xt-form="form">
+                <div class="col-sm-offset-2">
+
+                    <div class="form-group">
+                     
+                        <div class="col-sm-7 ">
+                            <textarea style="white-space:pre" class="form-control" id="leadnote" rows="7" ng-model="model.note" ng-pattern="/^[a-zA-Z0-9., _ \n$@-]*$/" notes-error-check="notes-error-check"></textarea>
+                        </div>
+
+                </div>
+</div>
+            </form>
+
+            <form class="form-horizontal" role="form">
+                <div class="col-sm-offset-5">
+                    <div class="form-group">
+                        
+                    </div>
+                </div>
+            </form>
+
+</div>
+    </div>
+
+</div>
+
+<div class="bc-widget">
+    <form class="form-inline" role="group">
+
+        <div class="form-group col-sm-12">
+            <div class="btn-group pull-right" role="group">
+                <button id="getnotesbutton" type="button" class="btn btn-info" ng-click="model.getNotes()"><i class="fa fa-refresh"></i> Refresh</button>
+            </div>
+        </div>
+    </form>
+   
+    <div class="content" >
+        <div class="row" style="padding:20px; ">
+            <form class=" form-compressed" role="form">
+                <table  id="leadnotestable" class="table table-responsive table-bordered table-striped">
+                    <tr class="title">
+                        <th style="width:150px">Created Date</th>
+                        <th>Agent </th>
+                        <th>Notes</th>
+
+                    </tr>
+                    <tr ng-repeat="row in notes | orderBy : 'createdDate': true">
+                        <td style="width:100px">{{row.createdDate | date:"MM/dd/yyyy h:mma"}} </td>
+                        <td>{{row.userName}}</td>
+                        <td style="white-space:pre">{{row.note }}</td>
+
+                        <!--<td><pre>{{row.note}}</pre></td>-->
+                    </tr>
+                </table>
+
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
