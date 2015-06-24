@@ -13,25 +13,25 @@ namespace ProfilePort.DataModel
 
         public string Id { get; set; }
 
-        [InverseProperty("User")]
+        [InverseProperty("Dashboard")]
         public virtual List<Note> Notes { get; set; }
 
-        [InverseProperty("User")]
+        [InverseProperty("Dashboard")]
         public virtual List<Skill> Skills { get; set; }
 
-        [InverseProperty("User")]
+        [InverseProperty("Dashboard")]
         public virtual List<Message> Messages { get; set; }
 
-        [InverseProperty("User")]
+        [InverseProperty("Dashboard")]
         public virtual List<Favorite> Favorites { get; set; }
 
-        [InverseProperty("User")]
+        [InverseProperty("Dashboard")]
         public virtual List<Interest> Interests { get; set; }
 
-        [InverseProperty("User")]
+        [InverseProperty("Dashboard")]
         public virtual List<Education> Educations { get; set; }
 
-        [InverseProperty("User")]
+        [InverseProperty("Dashboard")]
         public virtual List<Job> Jobs { get; set; }
 
         [Required]
