@@ -1,7 +1,4 @@
-﻿/**
- * Created by sabal.prasain on 12/20/2014
- */
-
+﻿
 (function () {
 
     angular.module('app').factory('notesService', ['$http', 'siteConfig', 'toastr',
@@ -15,12 +12,10 @@
                 return $http.post('/lead/agentnote', model)
                     .success(function (data, status, headers, config) {
 
-                   
                         return true;
                     })
                     .error(function (data, status, headers, config) {
                        
-
                         return false;
                     });
             }

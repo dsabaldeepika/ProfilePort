@@ -16,7 +16,7 @@ namespace ProfilePort
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Profile", action = "GetProfile", id = UrlParameter.Optional }
+                defaults: new { controller = "Notes", action = "GetNotes", id = UrlParameter.Optional }
             );
         }
     }

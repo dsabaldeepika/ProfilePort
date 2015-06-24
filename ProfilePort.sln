@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C1356E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfilePort", "ProfilePort\ProfilePort.csproj", "{07646B0C-9210-474B-9170-9B20F47B2525}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientPort", "ClientPort\ClientPort.csproj", "{3DE50F60-883A-4651-B069-0DC5911E29E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,10 @@ Global
 		{07646B0C-9210-474B-9170-9B20F47B2525}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07646B0C-9210-474B-9170-9B20F47B2525}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07646B0C-9210-474B-9170-9B20F47B2525}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DE50F60-883A-4651-B069-0DC5911E29E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DE50F60-883A-4651-B069-0DC5911E29E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DE50F60-883A-4651-B069-0DC5911E29E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DE50F60-883A-4651-B069-0DC5911E29E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
