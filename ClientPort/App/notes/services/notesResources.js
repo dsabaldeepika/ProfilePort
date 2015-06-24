@@ -6,9 +6,14 @@
 
 
             var serviceBase = constantsService.serverPath;
-            return $resource(serviceBase + "api/Notes/:id" ,
+            return $resource(serviceBase + "api/Notes/:id",
+
                 {
-                    dashboardId: '@_dashboardId'
+                    id:'@id'
+
+                },
+                {
+                    dashboardId: '@dashboardId'
                 },
 
 

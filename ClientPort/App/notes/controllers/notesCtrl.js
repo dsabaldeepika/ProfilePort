@@ -10,7 +10,7 @@
 
 
         $scope.model = {};
-
+        $scope.originalModel = _.cloneDeep($scope.model);
         $scope.dashboardId = "2";
         //$scope.getnotes = function () {
 
@@ -22,20 +22,22 @@
         
             var dashboardId = 2;    
 
-            notesResources.query({ dashboardId: '@dashboardId' }, function (response) {
+            notesResources.query(function (response) {
 
                 $scope.notes = response;
             })
 
                 $scope.originalModel = _.cloneDeep($scope.model);
 
-                $scope.saveNotes = function () {
 
-                    notesResources.save(function (data) {
-                        $scope.notes = data;
+                $scope.getNote = function (id) {
+
+                    notesResources.get({ id:id }, function (response) {
+
+                        $scope.notes = response;
                     })
 
-                    $scope.originalModel = _.cloneDeep($scope.model);
+                   
 
                 }
 
