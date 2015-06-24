@@ -1,0 +1,66 @@
+﻿
+<div style="padding-bottom:30px">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="well" style="min-height: 300px">
+                <div class="well" style="min-height: 300px">
+                    <div class="bc-widget">
+                        <div class="title">Sabal Prasain</div>
+                        <div class="content">
+
+                            <a class="btn btn-lg btn-default" ng-href="#/connnections/{{$scope.DashboardId}}"><i class="fa fa-file-picture-o"></i>&nbsp;Photo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="well" style="min-height: 300px">
+                <div class="well" style="min-height: 300px">
+                    <div class="bc-widget">
+                        <div class="title">My Cnnections</div>
+                        <div class="content">
+
+                            <a class="btn btn-lg btn-primary" ng-href="#/connnections/{{$scope.DashboardId}}"><i class="fa fa-archive fa-arrows-h"></i>&nbsp; My Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well" style="min-height: 300px">
+               
+                    <div class="bc-widget">
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default">
+                                 <div id="collapseOne" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <p>Notes <a ng-href="#/note/{{$scope.DashboardId}}" target=" _blank">Click Here</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Favorites</a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p>Messages <a ng-href="#/message/{{$scope.DashboardId}}" >Click Here</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+
+    </div>
+</div>
+

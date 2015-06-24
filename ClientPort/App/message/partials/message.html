@@ -1,0 +1,48 @@
+﻿
+<div class="row" style="margin-top: -5px; margin-bottom: 5px;">
+    <div class="col-xs-12">
+        <div class="btn-group pull-left">
+            <button type="button" class="btn btn-primary" ng-click="model.postMessages()"><i class="fa fa-save"></i> Save</button>
+            <!--<button type="button"class="btn btn-success" ng-click="model.confirm()"><i class="fa fa-backward"></i> Back</button>-->
+        </div>
+    </div>
+</div>
+
+<div class="bc-widget">
+    <div class="title"> Message</div>
+    <div class="content">
+        <div class="row">
+            
+            <form class="form" role="form" xt-form="form">
+                <div class="col-sm-offset-2">
+
+                    <div class="form-group">
+                     
+                        <div class="col-sm-7 ">
+                            <textarea style="white-space:pre" class="form-control" id="leadnote" rows="7" ng-model="model.note" ng-pattern="/^[a-zA-Z0-9., _ \n$@-]*$/" notes-error-check="notes-error-check"></textarea>
+                        </div>
+
+                </div>
+</div>
+            </form>
+
+            <form class="form-horizontal" role="form">
+                <div class="col-sm-offset-5">
+                    <div class="form-group">
+                        
+                    </div>
+                </div>
+            </form>
+
+</div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+

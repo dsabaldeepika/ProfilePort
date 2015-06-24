@@ -1,0 +1,71 @@
+﻿
+
+
+<div class="bc-widget">
+    <div class="title"> Existing Notes</div>
+    <div class="content">
+        <div class="row">
+            
+            <form class="form" role="form" xt-form="form">
+                <div class="col-sm-offset-2">
+
+                    <div class="form-group">
+                     
+                        <div class="col-sm-7" >
+                            <table style="width:300px" ng-repeat="note in notes">
+                                <thead>
+                                    <tr>
+                                        <th>{{note.Title}}</th>
+                                                                            </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{note.NoteContent}}</td>
+                                       
+                                    </tr>
+                                    
+                                <tbody>
+
+
+</table>
+       
+                        </div>
+
+                </div>
+</div>
+            </form>
+            <div class="row">
+                <form class="form-group" role="form" xt-form="form">
+
+                    <div class="col-sm-offset-4">
+                        <div class="btn-group ">
+                            <button type="button" class="btn btn-primary" ng-click="saveNotes()"><i class="fa fa-save"></i> Save</button>
+                            <button type="button" class="btn btn-success"><i class="fa fa-backward"></i> Back</button>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-offset-2">
+                        <div class="form-group">
+                            <textarea style="white-space:pre" class="form-control" id="note" rows="7" ng-model="note.NoteContent" ng-pattern="/^[a-zA-Z0-9., _ \n$@-]*$/" notes-error-check="notes-error-check"></textarea>
+
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+          
+
+
+          
+</div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
