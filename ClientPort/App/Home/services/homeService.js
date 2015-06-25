@@ -10,9 +10,8 @@
             //Save User for a lead 
             factory.saveUser = function (model) {
 
-                return $http.post('/lead/agentnote', model)
+                return $http.post('/home', model)
                     .success(function (data, status, headers, config) {
-
 
                         return true;
                     })
@@ -23,10 +22,10 @@
                     });
             }
 
+           
+            factory.getUser = function (userId) {
 
-            factory.getUser = function (leadId) {
-
-                return $http.get('/lead/agentnote/' + leadId)
+                return $http.get('http://localhost:58719/api/home/'+userId )
                     .success(function (data, status, headers, config) {
 
                         return data.User;

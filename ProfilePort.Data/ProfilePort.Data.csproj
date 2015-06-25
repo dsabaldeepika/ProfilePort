@@ -132,9 +132,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="Migrations\201506240620286_init.cs" />
-    <Compile Include="Migrations\201506240620286_init.Designer.cs">
-      <DependentUpon>201506240620286_init.cs</DependentUpon>
+    <Compile Include="Migrations\201506250636452_sasddsf.cs" />
+    <Compile Include="Migrations\201506250636452_sasddsf.Designer.cs">
+      <DependentUpon>201506250636452_sasddsf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506250637461_init.cs" />
+    <Compile Include="Migrations\201506250637461_init.Designer.cs">
+      <DependentUpon>201506250637461_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506250639451_inits.cs" />
+    <Compile Include="Migrations\201506250639451_inits.Designer.cs">
+      <DependentUpon>201506250639451_inits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506250640472_initsd.cs" />
+    <Compile Include="Migrations\201506250640472_initsd.Designer.cs">
+      <DependentUpon>201506250640472_initsd.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -158,8 +170,17 @@
     <Content Include="Scripts\angular-toastr.tpls.min.js" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201506240620286_init.resx">
-      <DependentUpon>201506240620286_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506250636452_sasddsf.resx">
+      <DependentUpon>201506250636452_sasddsf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506250637461_init.resx">
+      <DependentUpon>201506250637461_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506250639451_inits.resx">
+      <DependentUpon>201506250639451_inits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506250640472_initsd.resx">
+      <DependentUpon>201506250640472_initsd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

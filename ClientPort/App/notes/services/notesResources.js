@@ -6,24 +6,13 @@
 
 
             var serviceBase = constantsService.serverPath;
-            return $resource(serviceBase + "api/Notes/:id",
-
+            return $resource(serviceBase + "api/Notes/:id /:dashboardId",
                 {
                     id:'@id'
 
                 },
                 {
                     dashboardId: '@dashboardId'
-                },
-
-
-                {
-                    update:
-                        {
-
-                            method: 'PUT'
-
-                        }
                 });
 
         }]);

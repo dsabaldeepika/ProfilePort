@@ -12,8 +12,9 @@ namespace ProfilePort.DataModel
     {
 
         public string Id { get; set; }
-
-        [InverseProperty("Dashboard")]
+        public string DashboardName { get; set; }
+    
+       [InverseProperty("Dashboard")]
         public virtual List<Note> Notes { get; set; }
 
         [InverseProperty("Dashboard")]
@@ -34,9 +35,7 @@ namespace ProfilePort.DataModel
         [InverseProperty("Dashboard")]
         public virtual List<Job> Jobs { get; set; }
 
-        [Required]
-        public string UserId { get; set; }
-        [ForeignKey("UserId")]
+  
         public virtual User User { get; set; }
 
     }

@@ -3,7 +3,7 @@ namespace ProfilePort.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class init : DbMigration
+    public partial class sasddsf : DbMigration
     {
         public override void Up()
         {
@@ -42,6 +42,7 @@ namespace ProfilePort.Data.Migrations
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
+                        DashboardName = c.String(),
                         UserId = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)

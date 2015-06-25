@@ -177,7 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapters\DataAdapters\Contact.cs" />
-    <Compile Include="Adapters\DataAdapters\Dashboard.cs" />
+    <Compile Include="Adapters\DataAdapters\Dashboards.cs" />
     <Compile Include="Adapters\DataAdapters\Educations.cs" />
     <Compile Include="Adapters\DataAdapters\Favorites.cs" />
     <Compile Include="Adapters\DataAdapters\Interests.cs" />
@@ -251,6 +251,7 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\DashboardVM.cs" />
     <Compile Include="ViewModels\JobVM.cs" />
     <Compile Include="ViewModels\MessageVM.cs" />
     <Compile Include="ViewModels\ProfileVM.cs" />

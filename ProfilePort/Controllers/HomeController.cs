@@ -14,10 +14,12 @@ using ProfilePort.DataModel;
 using ProfilePort.Adapters.Interfaces;
 using ProfilePort.Adapters.DataAdapters;
 using DashboardPort.Adapters.Interfaces;
+using ProfilePort.ViewModels;
 
 namespace DashboardPort.Controllers
 {
-   
+
+  
     public class HomeController : ApiController
     {
         IDashboard newDashboard;
@@ -25,55 +27,34 @@ namespace DashboardPort.Controllers
 
         public HomeController()
         {
-            newDashboard = new ProfilePort.Adapters.DataAdapters.Dashboard();
+            newDashboard = new ProfilePort.Adapters.DataAdapters.Dashboards();
 
+        }
+          // GET: api/ContactInfos
+        public IQueryable<Dashboard> Get()
+        {
+            return db.Dashboards;
         }
 
         // GET: api/Dashboard/5
         [ResponseType(typeof(ProfilePort.DataModel.Dashboard))]
-        public IHttpActionResult GetDashboard(string id)
+        public IHttpActionResult Get(string UserId)
         {
-            User myDashboard = new User();
-            myDashboard = newDashboard.GetDashboard(id);
+            DashboardVM _myDashboardVM = new DashboardVM();
+            _myDashboardVM = newDashboard.GetDashboard(UserId);
          
-            if (myDashboard == null)
+            if (_myDashboardVM == null)
             {
                 return NotFound();
             }
 
-            return Ok(myDashboard);
+            return Ok(_myDashboardVM);
         }
 
-
-        public IHttpActionResult PutDashboard(string id, User user)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-                var myDashboard = newDashboard.UpdateDashboard(id, user);
-            
-            return StatusCode(HttpStatusCode.NoContent);
-        }
-
-        // POST: api/Dashboard
-        [ResponseType(typeof(ProfilePort.DataModel.Dashboard))]
-        public IHttpActionResult PostDashboard(string UserId, User Dashboard)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-           User myDashboard = new User();
-           myDashboard = newDashboard.AddDashboard(UserId, Dashboard);
-
-           return Ok(Dashboard);
-        }
 
         // DELETE: api/Dashboard/5
         [ResponseType(typeof(ProfilePort.DataModel.Dashboard))]
-        public IHttpActionResult DeleteDashboard(string id)
+        public IHttpActionResult Delete(string id)
         {
 
             try

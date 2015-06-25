@@ -22,10 +22,10 @@
         
             var dashboardId = 2;    
 
-            notesResources.query(function (response) {
+            //notesResources.query(function (response) {
 
-                $scope.notes = response;
-            })
+            //    $scope.notes = response;
+            //})
 
                 $scope.originalModel = _.cloneDeep($scope.model);
 
