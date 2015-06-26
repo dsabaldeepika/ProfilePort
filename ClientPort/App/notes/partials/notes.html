@@ -23,14 +23,14 @@
 
                     <div class="col-sm-offset-4">
                         <div class="btn-group ">
-                            <button type="button" class="btn btn-primary" ng-click="saveNotes()"><i class="fa fa-save"></i> Save</button>
+                            <button type="button" class="btn btn-primary" ng-click="postNotes()"><i class="fa fa-save"></i> Save</button>
                             <button type="button" class="btn btn-success"><i class="fa fa-backward"></i> Back</button>
 
                         </div>
                     </div>
                     <div class="col-sm-offset-2">
                         <div class="form-group">
-                            <textarea style="white-space:pre" class="form-control" id="note" rows="7" ng-model="note.NoteContent" ng-pattern="/^[a-zA-Z0-9., _ \n$@-]*$/" notes-error-check="notes-error-check"></textarea>
+                            <textarea style="white-space:pre" class="form-control" id="note" rows="7" ng-model="note" ng-pattern="/^[a-zA-Z0-9., _ \n$@-]*$/" notes-error-check="notes-error-check"></textarea>
 
 
                         </div>
