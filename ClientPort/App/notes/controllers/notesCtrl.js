@@ -27,7 +27,7 @@
             //    $scope.notes = response;
             //})
 
-                $scope.originalModel = _.cloneDeep($scope.model);
+                $scope.originalModel = _.cloneDeep($scope.note);
 
 
                 $scope.getNote = function (id) {
@@ -42,12 +42,9 @@
                 }
 
 
-
-      
-
         $scope.postNotes = function () {
 
-            notessService.postnotess($scope.model).then(function (response) {
+            notessService.postNotes($scope.note).then(function (response) {
 
                 $scope.model.notess = "";
                 $scope.originalModel = _.cloneDeep($scope.model);
