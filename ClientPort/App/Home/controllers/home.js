@@ -4,7 +4,7 @@
 
         //hardcoded for now- Todo: to be changed 
         
-        $scope.userId = 'sdf';
+        $scope.userId = '1';
 
         $scope.status =
             {
@@ -26,18 +26,21 @@
        //        //$scope.dashboard = homeResources.query({ userId: userId });
        //    });
        //};
+        $scope.newValue = function (value) {
+            toastr.info(value);
+        }
+       
+        
 
-        $scope.getuser = function () {
 
-            homeService.getUser($scope.userId).then(function (result) {
+        homeService.getUser().then(function (result) {
                 $scope.dashboard = result;
                 console.log($scope.dashboard);
                 console.log(result);
                 $scope.originalModel = _.cloneDeep($scope.model);
             })
-        };
-
-        $scope.getuser();
+      
+     
 
 
 

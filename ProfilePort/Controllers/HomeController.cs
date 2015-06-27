@@ -15,11 +15,12 @@ using ProfilePort.Adapters.Interfaces;
 using ProfilePort.Adapters.DataAdapters;
 using DashboardPort.Adapters.Interfaces;
 using ProfilePort.ViewModels;
+using System.Web.Http.Cors;
 
 namespace DashboardPort.Controllers
 {
 
-  
+  [EnableCorsAttribute("*", "*", "*")]
     public class HomeController : ApiController
     {
         IDashboard newDashboard;
@@ -31,13 +32,14 @@ namespace DashboardPort.Controllers
 
         }
           // GET: api/ContactInfos
-        public IQueryable<Dashboard> Get()
-        {
-            return db.Dashboards;
-        }
+        //public IQueryable<Dashboard> Get()
+        //{
+        //    return db.Dashboards;
+        //}
 
         // GET: api/Dashboard/5
-        [ResponseType(typeof(ProfilePort.DataModel.Dashboard))]
+        
+      [HttpGet]
         public IHttpActionResult Get(string UserId)
         {
             DashboardVM _myDashboardVM = new DashboardVM();

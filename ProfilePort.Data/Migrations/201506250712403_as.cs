@@ -3,7 +3,7 @@ namespace ProfilePort.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class sasddsf : DbMigration
+    public partial class _as : DbMigration
     {
         public override void Up()
         {
@@ -43,11 +43,11 @@ namespace ProfilePort.Data.Migrations
                     {
                         Id = c.String(nullable: false, maxLength: 128),
                         DashboardName = c.String(),
-                        UserId = c.String(nullable: false, maxLength: 128),
+                        User_Id = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
-                .Index(t => t.UserId);
+                .ForeignKey("dbo.AspNetUsers", t => t.User_Id)
+                .Index(t => t.User_Id);
             
             CreateTable(
                 "dbo.Educations",
@@ -250,7 +250,7 @@ namespace ProfilePort.Data.Migrations
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
             DropForeignKey("dbo.Profiles", "DashboardId", "dbo.Dashboards");
             DropForeignKey("dbo.ContactInfoes", "DashboardId", "dbo.Dashboards");
-            DropForeignKey("dbo.Dashboards", "UserId", "dbo.AspNetUsers");
+            DropForeignKey("dbo.Dashboards", "User_Id", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
@@ -275,7 +275,7 @@ namespace ProfilePort.Data.Migrations
             DropIndex("dbo.Interests", new[] { "DashboardId" });
             DropIndex("dbo.Favorites", new[] { "DashboardId" });
             DropIndex("dbo.Educations", new[] { "DashboardId" });
-            DropIndex("dbo.Dashboards", new[] { "UserId" });
+            DropIndex("dbo.Dashboards", new[] { "User_Id" });
             DropIndex("dbo.ContactInfoes", new[] { "DashboardId" });
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.Profiles");

@@ -22,10 +22,9 @@
                     });
             }
 
-           
-            factory.getUser = function (userId) {
+            factory.getUser = function () {
 
-                return $http.get('http://localhost:58719/api/home/'+userId )
+                return $http.get("http://localhost:53977/api/home/"+'8')
                     .success(function (data, status, headers, config) {
 
                         return data.User;

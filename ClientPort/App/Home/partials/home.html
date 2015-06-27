@@ -104,6 +104,9 @@
             <div class="bc-widget">
                 <div class="title">Click here to open the notes</div>
                 <div class="content">
+                    <input type="radio" ng-model="value" value="firstValue" ng-change='newValue(value)'>
+                    <input type="radio" ng-model="value" value="secondValue" ng-change='newValue(value)'>
+                    
 
                     <a class="btn btn-lg btn-primary" ng-href="#/note/{{$scope.DashboardId}}"><i class="fa fa-newspaper-o"></i>&nbsp; Notes</a>
                 </div>
