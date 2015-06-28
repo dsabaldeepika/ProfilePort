@@ -1,66 +1,210 @@
-﻿
-<nav class="navbar navbar-inverse" role="navigation">
-    <div class="navbar-header">
-        <a class="navbar-brand alert-link">Profile</a>
-    </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+﻿<!--todo : use seperate css file -->
 
-        <ul class="nav navbar-nav">
-            <li class="alert-link"><a ng-href="#/favorite/{{$scope.DashboardId}}">Favorite</a></li>
-            <li><a ng-href="#/message/{{$scope.DashboardId}}">Message</a></li>
+<div class="container-fluid" style="background-color:ButtonFace">
 
-            <li dropdown>
-                <a href="#" dropdown-toggle>Your Profile Schemes <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Profile1</a></li>
-                    <li><a href="#">Profile2</a></li>
-                    <li><a href="#">Profile3</a></li>
-                    <li><a href="#">Profile4</a></li>
-                    <li><a href="#">Profile5</a></li>
-                </ul>
-            </li>
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand alert-link">Profile</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
 
-        </ul>
-        <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-info">Submit</button>
-        </form>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a ng-href="#/note/{{$scope.DashboardId}}">Note</a></li>
-            <li dropdown>
-                <a href="#" dropdown-toggle>Assets <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Asset1</a></li>
-                    <li><a href="#">Asset2 </a></li>
-                    <li><a href="#">Asset3</a></li>
-                    <li><a href="#">Asset4 </a></li>
-                    <li><a href="#">Asset5</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div><!-- /.navbar-collapse -->
-</nav>
+            <ul class="nav navbar-nav">
+                <li class="alert-link"><a ng-href="#/favorite/{{$scope.DashboardId}}">Favorite</a></li>
+                <li><a ng-href="#/message/{{$scope.DashboardId}}">Message</a></li>
 
+                <li dropdown>
+                    <a href="#" dropdown-toggle>Your Profile Schemes <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Profile1</a></li>
+                        <li><a href="#">Profile2</a></li>
+                        <li><a href="#">Profile3</a></li>
+                        <li><a href="#">Profile4</a></li>
+                        <li><a href="#">Profile5</a></li>
+                    </ul>
+                </li>
 
-<div class="form-horizontal" novalidate name="form" role="form">
-    <div class="bc-widget">
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class=" btn btn btn-info">Submit</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a ng-href="#/note/{{$scope.DashboardId}}">Note</a></li>
+                <li dropdown>
+                    <a href="#" dropdown-toggle>Assets <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Asset1</a></li>
+                        <li><a href="#">Asset2 </a></li>
+                        <li><a href="#">Asset3</a></li>
+                        <li><a href="#">Asset4 </a></li>
+                        <li><a href="#">Asset5</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+
+    <div class="form-horizontal" novalidate name="form" role="form">
         <div class="row">
-            <div class="col-md-3">
-                <div class="well" style="min-height: 250px">
-                    <!--<div class="well" style="min-height: 300px">-->
-                    <div class="bc-widget">
-                        <div class="title">My Connections</div>
-                        <div class="content">
+            <div class="col-md-5">
+                <div class="well">
+                    <nav class="navbar navbar-default" role="navigation">
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse">
+
+                            <ul class="nav navbar-nav nav-tabs">
+                                <li dropdown>
+                                    <a href="#" dropdown-toggle>Local <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">News1</a></li>
+                                        <li><a href="#">News2</a></li>
+                                        <li><a href="#">News3</a></li>
+                                        <li><a href="#">News4</a></li>
+                                        <li><a href="#">News5</a></li>
+                                    </ul>
+                                </li>
+
+                                <li dropdown>
+                                    <a href="#" dropdown-toggle>USA <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">News1</a></li>
+                                        <li><a href="#">News2</a></li>
+                                        <li><a href="#">News3</a></li>
+                                        <li><a href="#">News4</a></li>
+                                        <li><a href="#">News5</a></li>
+                                    </ul>
+                                </li>
+                                <li dropdown>
+                                    <a href="#" dropdown-toggle>World <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">News1</a></li>
+                                        <li><a href="#">News2</a></li>
+                                        <li><a href="#">News3</a></li>
+                                        <li><a href="#">News4</a></li>
+                                        <li><a href="#">News5</a></li>
+                                    </ul>
+                                </li>
+
+                                <li dropdown>
+                                    <a href="#" dropdown-toggle>Technology <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">News1</a></li>
+                                        <li><a href="#">News2</a></li>
+                                        <li><a href="#">News3</a></li>
+                                        <li><a href="#">News4</a></li>
+                                        <li><a href="#">News5</a></li>
+                                    </ul>
+                                </li>
+                                <li dropdown>
+                                    <a href="#" dropdown-toggle>Health <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">News1</a></li>
+                                        <li><a href="#">News2</a></li>
+                                        <li><a href="#">News3</a></li>
+                                        <li><a href="#">News4</a></li>
+                                        <li><a href="#">News5</a></li>
+                                    </ul>
+                                </li>
+                                <li dropdown>
+                                    <a href="#" dropdown-toggle>Glamor <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">News1</a></li>
+                                        <li><a href="#">News2</a></li>
+                                        <li><a href="#">News3</a></li>
+                                        <li><a href="#">News4</a></li>
+                                        <li><a href="#">News5</a></li>
+                                    </ul>
+                                </li>
+                                <li dropdown>
+                                    <a href="#" dropdown-toggle>Sports <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">News1</a></li>
+                                        <li><a href="#">News2</a></li>
+                                        <li><a href="#">News3</a></li>
+                                        <li><a href="#">News4</a></li>
+                                        <li><a href="#">News5</a></li>
+                                    </ul>
+                                </li>
+                                <li dropdown>
+                                    <a href="#" dropdown-toggle>Weather <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">News1</a></li>
+                                        <li><a href="#">News2</a></li>
+                                        <li><a href="#">News3</a></li>
+                                        <li><a href="#">News4</a></li>
+                                        <li><a href="#">News5</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
 
 
                         </div>
 
+                    </nav>
+                    <div class="well ">
+                        <div class="form-horizontal" novalidate name="middleform" role="form">
+
+                            <div class="bc-widget">
+                                <div class="row">
+                                    <div class="col-md-12 ">
+
+                                        <div class="form-inline">
+                                            <div class="col-xs-4">
+
+                                                <div class="form-group-sm">
+
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon fa fa-plus-circle"></span>
+                                                        <a class="form-control btn btn-xs btn-primary" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-smile-o"></i>&nbsp; My Favs</a>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="col-xs-4">
+
+                                                <div class="form-group-sm">
+
+                                                    <div class="input-group">
+
+                                                        <a class="form-control btn btn-xs btn-success" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-angle-double-up fa-spin"></i>&nbsp; Inspire Me Now</a>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="col-xs-4">
+
+                                                <div class="form-group-sm">
+
+                                                    <div class="input-group">
+
+                                                        <a class="form-control btn btn-xs btn-primary" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-newspaper-o fa-file-archive-o"></i>&nbsp; Notes</a>
+                                                        <span class="input-group-addon fa fa-plus-circle"></span>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
+
             <div class="col-md-7">
                 <div class="well" style="min-height: 100px">
                     <div class="form-horizontal">
@@ -71,7 +215,7 @@
                                 <div class="form-group">
 
                                     <div class="col-md-12">
-                                        <textarea class="form-control" type="text" placeholder="Update your voice" />
+                                        <div class="form-control" type="text" placeholder="Update your voice" />
                                     </div>
 
                                 </div>
@@ -81,7 +225,7 @@
                                 <div class="form-group">
 
                                     <div class="col-md-12">
-                                        <textarea class="form-control" type="text" placeholder="Update your voice" />
+                                        <div class="form-control" type="text" placeholder="Update your voice" />
                                     </div>
 
                                 </div>
@@ -109,7 +253,6 @@
                             </div>
 
                             <div class="col-md-8">
-                                <!-- Large button group -->
 
                                 <div class="input-group">
                                     <span class="input-group-btn">
@@ -129,151 +272,468 @@
 
                     </div>
                 </div>
-                <div class="col-md-2">
-                    <div class="well" style="min-height: 250px">
-                        <div class="form-horizontal">
-
-                            <div class="row">
-                                <div class="bc-widget">
-                                    <div class="col-md-8">
-                                        <div class="form-group">
-
-                                            <div class="col-md-12">
-                                                <textarea class="form-control" type="text" placeholder="Update your voice" />
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-
-                                            <div class="col-md-12">
-                                                <textarea class="form-control" type="text" placeholder="Update your voice" />
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="form-horizontal">
-
-                            <div class="row">
-                                <div class="bc-widget">
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-
-                                            <div class="col-md-12">
-                                                <textarea class="form-control" type="text" placeholder="Update your voice" />
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-
-                                            <div class="col-md-12">
-                                                <textarea class="form-control" type="text" placeholder="Update your voice" />
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-
-                                            <div class="col-md-12">
-                                                <textarea class="form-control" type="text" placeholder="Update your voice" />
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
 
             </div>
+
         </div>
-     
-    </div></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="row">
-    <div class="col-md-6">
-        <div class="well" style="min-height: 300px">
-            <div class="bc-widget">
-                <div class="title">Check Your Profile</div>
-                <div class="content">
-
-                    <a class="btn btn-lg btn-primary" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-archive fa-arrows-h"></i>&nbsp; My Profile</a>
-                </div>
-            </div>
-        </div>
-
     </div>
-    <div class="col-md-6">
-        <div class="well" style="min-height: 300px">
-            <div class="bc-widget">
-                <div class="title">Click here to open the notes</div>
-                <div class="content">
-                    <input type="radio" ng-model="value" value="firstValue" ng-change='newValue(value)'>
-                    <input type="radio" ng-model="value" value="secondValue" ng-change='newValue(value)'>
+
+    <div class=" well">
+        <form novalidate name="voicesform" role="form" class="form-horizontal">
+            <div class="bc-widget"></div>
+            <div><div class="title">Recent Voices</div></div>
+
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <div class="well well-sm form-control" id="voiceUpdates"> </div>
+                                    <div class="form" novalidate name="voiceblockform" role="form">
+                                        <div class="bc-widget">
+                                            <div class="row">
+                                                <div class="col-xs-6 ">
+                                                    <div class="form-inline">
+                                                        <div class="col-xs-4">
+                                                            <div class="form-group-sm">
+
+                                                                <div class="input-group">
+
+                                                                    <a class="form-control btn btn-xs btn-primary" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-thumbs-up"></i>&nbsp;</a>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-xs-4">
+
+                                                            <div class="form-group-sm">
+
+                                                                <div class="input-group">
+
+                                                                    <a class="form-control btn btn-xs btn-success" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-thumbs-o-down"></i></a>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-xs-4">
+
+                                                            <div class="form-group-sm">
+
+                                                                <div class="input-group">
+
+                                                                    <a class="form-control btn btn-xs btn-primary" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-volume-up"></i> Ur Voice</a>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <div class="well well-sm form-control" id="voiceUpdates"> </div>
+                                    <div class="form" novalidate name="voiceblockform" role="form">
+                                        <div class="bc-widget">
+                                            <div class="row">
+                                                <div class="col-xs-6 ">
+                                                    <div class="form-inline">
+                                                        <div class="col-xs-4">
+                                                            <div class="form-group-sm">
+
+                                                                <div class="input-group">
+
+                                                                    <a class="form-control btn btn-xs btn-primary" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-thumbs-up"></i>&nbsp;</a>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-xs-4">
+
+                                                            <div class="form-group-sm">
+
+                                                                <div class="input-group">
+
+                                                                    <a class="form-control btn btn-xs btn-danger" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-thumbs-o-down"></i></a>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-xs-4">
+
+                                                            <div class="form-group-sm">
+
+                                                                <div class="input-group">
+
+                                                                    <a class="form-control btn btn-xs btn-primary" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-volume-up"></i> Ur Voice</a>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <div class="well well-sm form-control" id="voiceUpdates"> </div>
+                                    <div class="form" novalidate name="voiceblockform" role="form">
+                                        <div class="bc-widget">
+                                            <div class="row">
+                                                <div class="col-xs-6 ">
+                                                    <div class="form-inline">
+                                                        <div class="col-xs-4">
+                                                            <div class="form-group-sm">
+
+                                                                <div class="input-group">
+
+                                                                    <a class="form-control btn btn-xs btn-primary" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-thumbs-up"></i>&nbsp;</a>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-xs-4">
+
+                                                            <div class="form-group-sm">
+
+                                                                <div class="input-group">
+
+                                                                    <a class="form-control btn btn-xs btn-danger" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-thumbs-o-down"></i></a>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-xs-4">
+
+                                                            <div class="form-group-sm">
+
+                                                                <div class="input-group">
+
+                                                                    <a class="form-control btn btn-xs btn-primary" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-volume-up"></i> Ur Voice</a>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <div class="well well-sm form-control" id="voiceUpdates"> </div>
+                                    <div class="form" novalidate name="voiceblockform" role="form">
+                                        <div class="bc-widget">
+                                            <div class="row">
+                                                <div class="col-xs-6 ">
+                                                    <div class="form-inline">
+                                                        <div class="col-xs-4">
+                                                            <div class="form-group-sm">
+
+                                                                <div class="input-group">
+
+                                                                    <a class="form-control btn btn-xs btn-primary" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-thumbs-up"></i>&nbsp;</a>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-xs-4">
+
+                                                            <div class="form-group-sm">
+
+                                                                <div class="input-group">
+
+                                                                    <a class="form-control btn btn-xs btn-danger" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-thumbs-o-down"></i></a>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-xs-4">
+
+                                                            <div class="form-group-sm">
+
+                                                                <div class="input-group">
+
+                                                                    <a class="form-control btn btn-xs btn-primary" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-volume-up"></i> Ur Voice</a>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="col-sm-3">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <div class="well well-sm form-control" id="voiceUpdates"> </div>
+                                    <div class="form" novalidate name="voiceblockform" role="form">
+                                        <div class="bc-widget">
+                                            <div class="row">
+                                                <div class="col-xs-6 ">
+                                                    <div class="form-inline">
+                                                        <div class="col-xs-4">
+                                                            <div class="form-group-sm">
+
+                                                                <div class="input-group">
+
+                                                                    <a class="form-control btn btn-xs btn-primary" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-thumbs-up"></i>&nbsp;</a>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-xs-4">
+
+                                                            <div class="form-group-sm">
+
+                                                                <div class="input-group">
+
+                                                                    <a class="form-control btn btn-xs btn-danger" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-thumbs-o-down"></i></a>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-xs-4">
+
+                                                            <div class="form-group-sm">
+
+                                                                <div class="input-group">
+
+                                                                    <a class="form-control btn btn-xs btn-primary" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-volume-up"></i> Ur Voice</a>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <div class="well well-sm form-control" id="voiceUpdates"> </div>
+                                    <div class="form" novalidate name="voiceblockform" role="form">
+                                        <div class="bc-widget">
+                                            <div class="row">
+                                                <div class="col-xs-6 ">
+                                                    <div class="form-inline">
+                                                        <div class="col-xs-4">
+                                                            <div class="form-group-sm">
+
+                                                                <div class="input-group">
+
+                                                                    <a class="form-control btn btn-xs btn-primary" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-thumbs-up"></i>&nbsp;</a>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-xs-4">
+
+                                                            <div class="form-group-sm">
+
+                                                                <div class="input-group">
+
+                                                                    <a class="form-control btn btn-xs btn-danger" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-thumbs-o-down"></i></a>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-xs-4">
+
+                                                            <div class="form-group-sm">
+
+                                                                <div class="input-group">
+
+                                                                    <a class="form-control btn btn-xs btn-primary" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-volume-up"></i> Ur Voice</a>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="col-sm-3">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <div class="well well-sm form-control" id="voiceUpdates"> </div>
+                                    <div class="form" novalidate name="voiceblockform" role="form">
+                                        <div class="bc-widget">
+                                            <div class="row">
+                                                <div class="col-xs-6 ">
+                                                    <div class="form-inline">
+                                                        <div class="col-xs-4">
+                                                            <div class="form-group-sm">
+
+                                                                <div class="input-group">
+
+                                                                    <a class="form-control btn btn-xs btn-primary" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-thumbs-up"></i>&nbsp;</a>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-xs-4">
+
+                                                            <div class="form-group-sm">
+
+                                                                <div class="input-group">
+
+                                                                    <a class="form-control btn btn-xs btn-danger" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-thumbs-o-down"></i></a>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-xs-4">
+
+                                                            <div class="form-group-sm">
+
+                                                                <div class="input-group">
+
+                                                                    <a class="form-control btn btn-xs btn-primary" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-volume-up"></i> Ur Voice</a>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
 
-                    <a class="btn btn-lg btn-primary" ng-href="#/note/{{$scope.DashboardId}}"><i class="fa fa-newspaper-o"></i>&nbsp; Notes</a>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <div class="well well-lg form-control" id="voiceUpdates">
+                                        <div title="Michael"></div>
+                                    </div>
+                                    <div class="form" novalidate name="voiceblockform" role="form">
+                                        <div class="bc-widget">
+                                            <div class="row">
+                                                <div class="col-xs-6 ">
+                                                    <div class="form-inline">
+                                                        <div class="col-xs-4">
+                                                            <div class="form-group-sm">
+
+                                                                <div class="input-group">
+
+                                                                    <a class="form-control btn btn-xs btn-primary" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-thumbs-up"></i>&nbsp;</a>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-xs-4">
+
+                                                            <div class="form-group-sm">
+
+                                                                <div class="input-group">
+
+                                                                    <a class="form-control btn btn-xs btn-danger" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-thumbs-o-down"></i></a>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-xs-4">
+
+                                                            <div class="form-group-sm">
+
+                                                                <div class="input-group">
+
+                                                                    <a class="form-control btn btn-xs btn-primary" ng-href="#/profile/{{$scope.DashboardId}}"><i class="fa fa-volume-up"></i> Ur Voice</a>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
 
             </div>
-            <div class="bc-widget">
-                <div class="title">Click here to open the notes</div>
-                <div class="content">
 
-                    <a class="btn btn-lg btn-primary" ng-href="#/education/{{$scope.DashboardId}}"><i class="fa fa-university fa-arrows-h"></i>&nbsp; Education</a>
-                </div>
-
-            </div>
-        </div>
+        </form>
     </div>
 </div>
