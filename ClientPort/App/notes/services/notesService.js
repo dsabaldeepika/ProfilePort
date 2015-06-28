@@ -1,16 +1,15 @@
 ﻿
 (function () {
 
-    angular.module('app').factory('notesService', ['$http',  'toastr',
-        function ($http,  toastr) {
-          
+    angular.module('app').factory('notesService', ['$http', 'constantsService', 'toastr',
+        function ($http,constantsService,  toastr) {
+            var url = constantsService.serverPath
                 factory = {};
 
-                var URL = "https://moviez.firebaseio.com/";
             //Save notes for a notes 
             factory.getNotes = function () {
 
-                return $http.get(URL)
+                return $http.get(url+'/'+id)
                     .success(function (data, status, headers, config) {
 
                    
@@ -26,8 +25,8 @@
 
             //Save notes for a notes 
             factory.postNotes = function (note) {
-
-                return $http.post(URL+note+'.json')
+                notes = { title: "title", noteContent: note,dashboardId :"2"};
+                return $http.post(url+'/notes', notes)
                     .success(function (data, status, headers, config) {
 
 

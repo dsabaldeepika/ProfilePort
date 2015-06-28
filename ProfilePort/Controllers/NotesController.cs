@@ -10,9 +10,11 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using ProfilePort.Data;
 using ProfilePort.DataModel;
+using System.Web.Http.Cors;
 
 namespace ProfilePort.Controllers
 {
+    [EnableCorsAttribute("*", "*", "*")]
     public class NotesController : ApiController
     {
         private  ApplicationDbContext db = new ApplicationDbContext();
@@ -73,7 +75,7 @@ namespace ProfilePort.Controllers
 
         // POST: api/Notes
         [ResponseType(typeof(Note))]
-        public IHttpActionResult PostNote(Note note)
+        public IHttpActionResult PostNote([FromBody]Note note)
         {
             if (!ModelState.IsValid)
             {

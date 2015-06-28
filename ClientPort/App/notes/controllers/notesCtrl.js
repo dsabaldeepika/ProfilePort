@@ -46,7 +46,7 @@
 
             notessService.postNotes($scope.note).then(function (response) {
 
-                $scope.model.notess = "";
+                $scope.model.notes = "";
                 $scope.originalModel = _.cloneDeep($scope.model);
 
             });

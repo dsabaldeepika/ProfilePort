@@ -17,7 +17,6 @@ namespace ProfilePort.DataModel
         public string PicFile { get; set; }
         public bool IsLookingForJob { get; set; }
 
-
         [Required]
         public string DashboardId { get; set; }
         [ForeignKey("DashboardId")]

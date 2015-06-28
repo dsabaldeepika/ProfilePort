@@ -2,29 +2,15 @@
 
 (function () {
 
-    angular.module('app').factory('homeService', ['$http',  'toastr',
-        function ($http, toastr) {
+    angular.module('app').factory('homeService', ['$http', 'constantsService', 'toastr',
+        function ($http,constantsService, toastr) {
            
                 factory = {};
+            var url= constantsService.serverPath
+       
+            factory.getUser = function (userId) {
 
-            //Save User for a lead 
-            factory.saveUser = function (model) {
-
-                return $http.post('/home', model)
-                    .success(function (data, status, headers, config) {
-
-                        return true;
-                    })
-                    .error(function (data, status, headers, config) {
-
-
-                        return false;
-                    });
-            }
-
-            factory.getUser = function () {
-
-                return $http.get("http://localhost:53977/api/home/"+'8')
+                return $http.get(url+'/home/'+ userId)
                     .success(function (data, status, headers, config) {
 
                         return data.User;
@@ -36,7 +22,6 @@
                         return null;
                     });
             };
-
 
             // return the factory.
             return factory;

@@ -132,9 +132,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="Migrations\201506250712403_as.cs" />
-    <Compile Include="Migrations\201506250712403_as.Designer.cs">
-      <DependentUpon>201506250712403_as.cs</DependentUpon>
+    <Compile Include="Migrations\201506272113525_sa.cs" />
+    <Compile Include="Migrations\201506272113525_sa.Designer.cs">
+      <DependentUpon>201506272113525_sa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506272122016_addedlayout.cs" />
+    <Compile Include="Migrations\201506272122016_addedlayout.Designer.cs">
+      <DependentUpon>201506272122016_addedlayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506272125016_sas.cs" />
+    <Compile Include="Migrations\201506272125016_sas.Designer.cs">
+      <DependentUpon>201506272125016_sas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506272132199_updatedtable.cs" />
+    <Compile Include="Migrations\201506272132199_updatedtable.Designer.cs">
+      <DependentUpon>201506272132199_updatedtable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506272134270_upd.cs" />
+    <Compile Include="Migrations\201506272134270_upd.Designer.cs">
+      <DependentUpon>201506272134270_upd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506272156311_updatedtabled.cs" />
+    <Compile Include="Migrations\201506272156311_updatedtabled.Designer.cs">
+      <DependentUpon>201506272156311_updatedtabled.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -158,8 +178,23 @@
     <Content Include="Scripts\angular-toastr.tpls.min.js" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201506250712403_as.resx">
-      <DependentUpon>201506250712403_as.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506272113525_sa.resx">
+      <DependentUpon>201506272113525_sa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506272122016_addedlayout.resx">
+      <DependentUpon>201506272122016_addedlayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506272125016_sas.resx">
+      <DependentUpon>201506272125016_sas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506272132199_updatedtable.resx">
+      <DependentUpon>201506272132199_updatedtable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506272134270_upd.resx">
+      <DependentUpon>201506272134270_upd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506272156311_updatedtabled.resx">
+      <DependentUpon>201506272156311_updatedtabled.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

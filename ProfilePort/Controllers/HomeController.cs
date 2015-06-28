@@ -40,19 +40,17 @@ namespace DashboardPort.Controllers
         // GET: api/Dashboard/5
         
       [HttpGet]
-        public IHttpActionResult Get(string UserId)
+        public IHttpActionResult Get(string id)
         {
-            DashboardVM _myDashboardVM = new DashboardVM();
-            _myDashboardVM = newDashboard.GetDashboard(UserId);
+            getDashboardVM _myDashboardVM = new getDashboardVM();
+            _myDashboardVM = newDashboard.GetDashboard(id);
          
             if (_myDashboardVM == null)
             {
                 return NotFound();
             }
-
             return Ok(_myDashboardVM);
         }
-
 
         // DELETE: api/Dashboard/5
         [ResponseType(typeof(ProfilePort.DataModel.Dashboard))]

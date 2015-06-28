@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace ProfilePort.DataModel
 {
-   public class Dashboard
+   public class Dashboard 
     {
-
         public string Id { get; set; }
+       
         public string DashboardName { get; set; }
     
-       [InverseProperty("Dashboard")]
+        [InverseProperty("Dashboard")]
         public virtual List<Note> Notes { get; set; }
 
         [InverseProperty("Dashboard")]
@@ -35,7 +35,17 @@ namespace ProfilePort.DataModel
         [InverseProperty("Dashboard")]
         public virtual List<Job> Jobs { get; set; }
 
-  
+        [InverseProperty("Dashboard")]
+        public virtual List<Layout> Layout { get; set; }
+
+        [InverseProperty("Dashboard")]
+        public virtual List<Profile> Profile { get; set; }
+        
+       //public virtual Profile Profile { get; set; }
+
+        [Required]
+        public string UserId { get; set; }
+        [ForeignKey("UserId")]
         public virtual User User { get; set; }
 
     }

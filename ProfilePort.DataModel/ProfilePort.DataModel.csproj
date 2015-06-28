@@ -133,6 +133,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comment.cs" />
     <Compile Include="ContactInfo.cs" />
     <Compile Include="Dashboard.cs" />
     <Compile Include="Edit.cs" />
@@ -140,6 +141,7 @@
     <Compile Include="Favorite.cs" />
     <Compile Include="Interest.cs" />
     <Compile Include="Job.cs" />
+    <Compile Include="Layout.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="Note.cs" />
     <Compile Include="Profile.cs" />

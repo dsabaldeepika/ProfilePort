@@ -1,6 +1,8 @@
 namespace ProfilePort.Data.Migrations
 {
+    using ProfilePort.DataModel;
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -14,18 +16,20 @@ namespace ProfilePort.Data.Migrations
 
         protected override void Seed(ProfilePort.Data.ApplicationDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            //context.Dashboards.AddOrUpdate(
+            //  p => p.FullName,
+            //  new Person { FullName = "Andrew Peters" },
+            //  new Person { FullName = "Brice Lambson" },
+            //  new Person { FullName = "Rowan Miller" }
+            //);
+            
+            //var NoteList = new List<Note>() {
+            // new Note  { NoteContent = " THis is a Real Note", Title = "My note", DashboardId = "1", },
+            // new Note { NoteContent = " THis is a your Note", Title = "Your note", DashboardId = "2", },
+            // new Note { NoteContent = " This is a Sample Note", Title = "Sample note", DashboardId = "1"}
+            //}
+        
         }
     }
 }

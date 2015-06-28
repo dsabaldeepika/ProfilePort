@@ -10,7 +10,7 @@ namespace DashboardPort.Adapters.Interfaces
 {
    public interface IDashboard
     {
-       DashboardVM GetDashboard(string UserId);
+       getDashboardVM GetDashboard(string UserId);
         void DeleteDashboard(string DashboardId);
     }
 }

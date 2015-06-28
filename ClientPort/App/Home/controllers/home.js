@@ -26,30 +26,14 @@
        //        //$scope.dashboard = homeResources.query({ userId: userId });
        //    });
        //};
-        $scope.newValue = function (value) {
-            toastr.info(value);
-        }
        
-        
-
-
-        homeService.getUser().then(function (result) {
+        homeService.getUser($scope.userId).then(function (result) {
                 $scope.dashboard = result;
                 console.log($scope.dashboard);
                 console.log(result);
                 $scope.originalModel = _.cloneDeep($scope.model);
             })
       
-     
-
-
-
-
-
-
-
-
-
     
     }]);
 }());
