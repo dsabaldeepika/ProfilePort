@@ -16,6 +16,7 @@ using ProfilePort.Adapters.DataAdapters;
 using DashboardPort.Adapters.Interfaces;
 using ProfilePort.ViewModels;
 using System.Web.Http.Cors;
+using System.Web.OData;
 
 namespace DashboardPort.Controllers
 {
@@ -31,11 +32,12 @@ namespace DashboardPort.Controllers
             newDashboard = new ProfilePort.Adapters.DataAdapters.Dashboards();
 
         }
-          // GET: api/ContactInfos
-        //public IQueryable<Dashboard> Get()
-        //{
-        //    return db.Dashboards;
-        //}
+          
+      [EnableQuery]
+        public IQueryable<Dashboard> Get()
+        {
+            return db.Dashboards.AsQueryable();
+        }
 
         // GET: api/Dashboard/5
         

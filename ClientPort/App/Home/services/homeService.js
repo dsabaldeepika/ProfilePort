@@ -8,20 +8,20 @@
                 factory = {};
             var url= constantsService.serverPath
        
-            factory.getUser = function (userId) {
+            //factory.getUser = function (userId) {
 
-                return $http.get(url+'/home/'+ userId)
-                    .success(function (data, status, headers, config) {
+            //    return $http.get(url+'/home/'+ userId)
+            //        .success(function (data, status, headers, config) {
 
-                        return data.User;
+            //            return data.User;
 
-                    })
-                    .error(function (data, status, headers, config) {
-                        // called asynchronously if an error occurs
-                        // or server returns response with an error status.
-                        return null;
-                    });
-            };
+            //        })
+            //        .error(function (data, status, headers, config) {
+            //            // called asynchronously if an error occurs
+            //            // or server returns response with an error status.
+            //            return null;
+            //        });
+            //};
 
             // return the factory.
             return factory;
