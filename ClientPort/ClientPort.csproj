@@ -42,6 +42,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="11330048_856747387694230_6401298570085048301_n.jpg" />
     <Content Include="App\common\controllers\coTestCtrl.js" />
     <Content Include="App\common\partials\test.html" />
     <Content Include="App\Home\controllers\homeResources.js" />
