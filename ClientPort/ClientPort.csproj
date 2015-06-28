@@ -42,6 +42,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="App\common\controllers\coTestCtrl.js" />
     <Content Include="App\common\partials\test.html" />
     <Content Include="App\Home\controllers\homeResources.js" />
     <Content Include="Scripts\angular.min.js.map" />

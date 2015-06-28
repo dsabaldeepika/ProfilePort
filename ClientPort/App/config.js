@@ -17,6 +17,7 @@
                 .when('/note', { templateUrl: 'app/notes/partials/notes.html', controller: 'notesCtrl' })
                 .when('/message/:id?', { templateUrl: 'app/message/partials/message.html', controller: 'messageCtrl' })
                 .when('/contact', { templateUrl: 'app/contact/partials/contact.html', controller: 'contactCtrl' })
+                 .when('/test', { templateUrl: 'app/common/partials/test.html', controller: 'coTestCtrl' })
                 .when('/education/:id?', { templateUrl: 'app/education/partials/education.html', controller: 'educationCtrl' })
                 .when('/', { redirectTo: 'home' })
 
