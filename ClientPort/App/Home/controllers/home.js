@@ -27,12 +27,12 @@
        //    });
        //};
        
-        homeService.getUser($scope.userId).then(function (result) {
-                $scope.dashboard = result;
-                console.log($scope.dashboard);
-                console.log(result);
-                $scope.originalModel = _.cloneDeep($scope.model);
-            })
+        //homeService.getUser($scope.userId).then(function (result) {
+        //        $scope.dashboard = result;
+        //        console.log($scope.dashboard);
+        //        console.log(result);
+        //        $scope.originalModel = _.cloneDeep($scope.model);
+        //    })
       
     
     }]);

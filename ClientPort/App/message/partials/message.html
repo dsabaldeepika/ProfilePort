@@ -1,48 +1,82 @@
-﻿
-<div class="row" style="margin-top: -5px; margin-bottom: 5px;">
-    <div class="col-xs-12">
-        <div class="btn-group pull-left">
-            <button type="button" class="btn btn-primary" ng-click="model.postMessages()"><i class="fa fa-save"></i> Save</button>
-            <!--<button type="button"class="btn btn-success" ng-click="model.confirm()"><i class="fa fa-backward"></i> Back</button>-->
+﻿<form class="form-horizontal" name="messageform"  novalidate>
+    <fieldset>
+        <legend>Create Message</legend>
+        <div class="form-group"
+             ng-class="{'has-error':messageform.inputMessageName.$invalid &&
+                                    messageform.inputMessageName.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputMessageName">Message Name</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputMessageName"
+                       name="inputMessageName"
+                       type="text"
+                       placeholder="Message Name (required)"
+                       ng-model="Message.MessageName"
+                       required
+                       ng-minlength="4"
+                       ng-maxlength="12" restrict-characters />
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="messageform.inputMessageName.$error.required">
+                    Message name is required.
+                </span>
+                <span ng-show="messageform.inputMessageName.$error.minlength">
+                    Message name must be at least 4 characters in length.
+                </span>
+                <span ng-show="messageform.inputMessageName.$error.maxlength">
+                    Message name cannot exceed 12 characters in length.
+                </span>
+            </span>
         </div>
-    </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label"
+                   for="inputDescription">Description</label>
+
+            <div class="col-md-10">
+                <textarea class="form-control"
+                          id="inputDescription"
+                          name="inputDescription"
+                          placeholder="Description"
+                          rows="3"
+                          ng-model="Message.description"></textarea>
+            </div>
+            <br />
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                <span>
+                    <button class="btn btn-primary"
+                            style="width:80px;margin-right:10px"
+                            ng-click="submit()"
+                            ng-disabled="messageform.$invalid">
+                        Save
+                    </button>
+                </span>
+                <span>
+                    <button class="btn btn-default"
+                            style="width:70px"
+                            ng-click="cancel(messageform)">
+                        Cancel
+                    </button>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group"
+             ng-show="message">
+            <div class="col-md-6">
+                <pre style="font: inherit">{{message }}</pre>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+<div class="well">
+    
+
+
 </div>
-
-<div class="bc-widget">
-    <div class="title"> Message</div>
-    <div class="content">
-        <div class="row">
-            
-            <form class="form" role="form" xt-form="form">
-                <div class="col-sm-offset-2">
-
-                    <div class="form-group">
-                     
-                        <div class="col-sm-7 ">
-                            <textarea style="white-space:pre" class="form-control" id="leadnote" rows="7" ng-model="model.note" ng-pattern="/^[a-zA-Z0-9., _ \n$@-]*$/" notes-error-check="notes-error-check"></textarea>
-                        </div>
-
-                </div>
-</div>
-            </form>
-
-            <form class="form-horizontal" role="form">
-                <div class="col-sm-offset-5">
-                    <div class="form-group">
-                        
-                    </div>
-                </div>
-            </form>
-
-</div>
-    </div>
-
-</div>
-
-
-
-
-
-
-
-

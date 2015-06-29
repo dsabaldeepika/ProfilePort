@@ -5,11 +5,12 @@
       
         $scope.model = {};
         $scope.redirectPath = 'profile/'
+        //$scope.model.UserId = $routeParams.id;
 
         $scope.model.getNotes = function () {
 
-            notesService.getNotes($scope.model.leadId).then(function (result) {
-                $scope.notes = result.data.notes;
+            notesService.getNotes().then(function (result) {
+                $scope.notes = result.data;
                 $scope.originalModel = _.cloneDeep($scope.model);
             })
         };
@@ -18,88 +19,106 @@
 
         $scope.model.saveNotes = function () {
 
-            notesService.saveNotes($scope.model).then(function (response) {
+            if ($scope.model.note) {
 
-                if (response.data.resultCode === 0 && response.statusText === "OK") {
-                    toastr.success("The Note has been saved.");
-                    $scope.model.getNotes();
-                    $scope.model.note = "";
-                    $scope.originalModel = _.cloneDeep($scope.model);
-                }
+                notesService.saveNotes($scope.model).then(function (response) {
 
-                else {
-                    var modal = $modal.open({
-                        templateUrl: '/app/common/partials/messageModal.html',
-                        controller: 'messageModalCtrl',
-                        backdrop: 'static',
-                        size: 'sm',
-                        resolve: {
-                            $modalInstance: function () { return function () { return modal; } },
-                            config: function () {
-                                return {
+                    if (response.status === 200 && response.statusText === "OK") {
+                        $scope.model.getNotes();
+                        toastr.success("The Note has been saved.");
 
-                                    title: "Lead Notes Save Error",
-                                    message: response.data.description,
-                                    buttons: [
-               { text: "Ok", style: "btn-primary", result: true }
-
-                                    ]
-                                }
-                            }
-                        }
-                    });
-
-                }
-            });
-
-        };
-        $scope.originalModel = _.cloneDeep($scope.model);
-
-        $scope.model.confirm = function () {
-
-            if (!_.isEqual($scope.model, $scope.originalModel)) {
-
-                var modal = $modal.open({
-                    templateUrl: '/app/common/partials/messageModal.html',
-                    controller: 'messageModalCtrl',
-                    backdrop: 'static',
-                    size: 'sm',
-                    resolve: {
-                        $modalInstance: function () { return function () { return modal; } },
-                        config: function () {
-                            return {
-
-                                title: "Save Changes",
-                                message: "Do you want to save your changes before you leave?",
-                                buttons: [
-                                    { text: "Yes", style: "btn-primary", result: true },
-                                    { text: "No", style: "btn-danger", result: false },
-                                    { text: "Cancel", style: "btn-warning", result: "" }
-                                ]
-                            }
-                        }
+                        $scope.model.note = "";
+                        $scope.originalModel = _.cloneDeep($scope.model);
                     }
-                });
 
-                modal.result.then(function (result) {
-                    // if they want to save before leaving...
-                    if (result === true) {
-                        // save the changes and close form.
-                        $scope.model.saveNotes();
-                        $location.path($scope.redirectPath);
-                    }
-                    else if (result === false) {
-                        // close form by directing away away.
-                        $location.path($scope.redirectPath);
-                    }
+                    else {
+                        $scope.messagemodal = 'Your note could not be saved';
+                        $('#myModal').modal('show');
+                    };
+
                 });
             }
             else {
-                // close the form by directing away.
-                $location.path($scope.redirectPath);
+                $scope.messagemodal = 'Please enter the note and hit save';
+                $('#myModal').modal('show');
+                return;
             }
+           
+        };
+
+        $scope.model.deleteNote= function (key) {
+
+            notesService.deleteNote(key).then(function (response) {
+
+                if (response.status === 200 && response.statusText === "OK") {
+                    toastr.success("The Note has been deleted.");
+                    $scope.model.getNotes();
+                   
+                }
+
+                else {
+                    $('#myModal').modal('show');
+                };
+
+            }
+            );
+
         };
 
 
+     
+
     }]);
 }());
+
+
+
+
+
+// latest angular seems to have an issue
+//$scope.model.confirm = function () {
+
+//    if (!_.isEqual($scope.model, $scope.originalModel)) {
+
+
+
+//        var modal = $modal.open({
+//            templateUrl: '/app/common/partials/messageModal.html',
+//            controller: 'messageModalCtrl',
+//            backdrop: 'static',
+//            size: 'sm',
+//            resolve: {
+//                $modalInstance: function () { return function () { return modal; } },
+//                config: function () {
+//                    return {
+
+//                        title: "Save Changes",
+//                        message: "Do you want to save your changes before you leave?",
+//                        buttons: [
+//                            { text: "Yes", style: "btn-primary", result: true },
+//                            { text: "No", style: "btn-danger", result: false },
+//                            { text: "Cancel", style: "btn-warning", result: "" }
+//                        ]
+//                    }
+//                }
+//            }
+//        });
+
+//        modal.result.then(function (result) {
+//            // if they want to save before leaving...
+//            if (result === true) {
+//                // save the changes and close form.
+//                $scope.model.saveNotes();
+//                $location.path($scope.redirectPath);
+//            }
+//            else if (result === false) {
+//                // close form by directing away away.
+//                $location.path($scope.redirectPath);
+//            }
+//        });
+//    }
+//    else {
+//        // close the form by directing away.
+//        $location.path($scope.redirectPath);
+//    }
+//};

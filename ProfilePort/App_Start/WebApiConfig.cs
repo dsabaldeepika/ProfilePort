@@ -26,7 +26,7 @@ namespace ProfilePort
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
+                routeTemplate: "api/{controller}/{userId}",
                 defaults: new { id = RouteParameter.Optional }
             );
         }

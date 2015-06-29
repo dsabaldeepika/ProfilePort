@@ -14,7 +14,7 @@
                 .when('/home/:id?', { templateUrl: 'app/home/partials/home.html', controller: 'home' })
                 .when('/profile/:id?', { templateUrl: 'app/profile/partials/profile.html', controller: 'profileCtrl' })
                 .when('/404', { templateUrl: 'app/common/partials/404.html', controller: '404Ctrl' })
-                .when('/note', { templateUrl: 'app/notes/partials/notes.html', controller: 'notesCtrl' })
+                .when('/note/:id?', { templateUrl: 'app/notes/partials/notes.html', controller: 'notesCtrl' })
                 .when('/message/:id?', { templateUrl: 'app/message/partials/message.html', controller: 'messageCtrl' })
                 .when('/contact', { templateUrl: 'app/contact/partials/contact.html', controller: 'contactCtrl' })
                  .when('/test', { templateUrl: 'app/common/partials/test.html', controller: 'coTestCtrl' })

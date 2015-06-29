@@ -42,10 +42,10 @@ namespace DashboardPort.Controllers
         // GET: api/Dashboard/5
         
       [HttpGet]
-        public IHttpActionResult Get(string id)
+        public IHttpActionResult Get(string userId)
         {
             getDashboardVM _myDashboardVM = new getDashboardVM();
-            _myDashboardVM = newDashboard.GetDashboard(id);
+            _myDashboardVM = newDashboard.GetDashboard(userId);
          
             if (_myDashboardVM == null)
             {

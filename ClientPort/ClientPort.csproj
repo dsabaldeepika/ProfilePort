@@ -44,6 +44,7 @@
   <ItemGroup>
     <Content Include="11330048_856747387694230_6401298570085048301_n.jpg" />
     <Content Include="App\common\controllers\coTestCtrl.js" />
+    <Content Include="App\common\directives\restrictCharacters.js" />
     <Content Include="App\common\partials\test.html" />
     <Content Include="App\Home\controllers\homeResources.js" />
     <Content Include="Scripts\angular.min.js.map" />
@@ -82,7 +83,6 @@
     <Content Include="App\common\directives\numbersOnly.js" />
     <Content Include="App\common\directives\setFocus.js" />
     <Content Include="App\common\directives\validatePassword.js" />
-    <Content Include="App\common\directives\validateUsername.js" />
     <Content Include="App\common\partials\errorModal.html" />
     <Content Include="App\common\partials\messageModal.html" />
     <Content Include="App\common\services\constantsService.js" />

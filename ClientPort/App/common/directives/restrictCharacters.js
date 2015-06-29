@@ -1,6 +1,6 @@
 ﻿
 (function () {
-    angular.module('app').directive('validateUsername', function () {
+    angular.module('app').directive('restrictCharacters', function () {
         return {
             require: 'ngModel',
             link: function (scope, element, attrs, ngModel) {
@@ -21,7 +21,7 @@
                     }
                 });
                 element.bind("keypress", function (e) {
-                    var regex = new RegExp(/^[a-zA-Z0-9._-]*$/);
+                    var regex = new RegExp(attrs.ngPattern);
                     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
                     if (!regex.test(key)) {
                         event.preventDefault();

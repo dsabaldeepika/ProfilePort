@@ -8,9 +8,9 @@
                 factory = {};
             var url= constantsService.serverPath
        
-            factory.getUser = function (userId) {
+            factory.getUser = function (id) {
 
-                return $http.get(url+'/home/'+ userId)
+                return $http.get(url+'/home/'+ id)
                     .success(function (data, status, headers, config) {
 
                         return data.User;
