@@ -13,10 +13,9 @@ namespace ProfilePort.Data
     public class ApplicationDbContext : IdentityDbContext<User>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection")
         {
-           this.Configuration.LazyLoadingEnabled = false;
-           this.Configuration.ProxyCreationEnabled = false;
+            this.Configuration.LazyLoadingEnabled = false;
+            this.Configuration.ProxyCreationEnabled = false;
         }
      
         public DbSet<Job> Jobs { get; set; }
@@ -30,7 +29,8 @@ namespace ProfilePort.Data
         public DbSet<Profile> Profiles { get; set; }
         public DbSet<Dashboard> Dashboards { get; set; }
         public DbSet<Layout> Layouts { get; set; }
-       
+       // public DbSet<User> Users { get; set; }
+        public DbSet<Comment> Comments { get; set; }
     }
 }
         

@@ -156,6 +156,22 @@
     <Compile Include="Migrations\201506272156311_updatedtabled.Designer.cs">
       <DependentUpon>201506272156311_updatedtabled.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506291426222_addeddasboard.cs" />
+    <Compile Include="Migrations\201506291426222_addeddasboard.Designer.cs">
+      <DependentUpon>201506291426222_addeddasboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506291435293_addeddasboards.cs" />
+    <Compile Include="Migrations\201506291435293_addeddasboards.Designer.cs">
+      <DependentUpon>201506291435293_addeddasboards.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506291437532_sam.cs" />
+    <Compile Include="Migrations\201506291437532_sam.Designer.cs">
+      <DependentUpon>201506291437532_sam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506291445029_addedda.cs" />
+    <Compile Include="Migrations\201506291445029_addedda.Designer.cs">
+      <DependentUpon>201506291445029_addedda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -195,6 +211,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506272156311_updatedtabled.resx">
       <DependentUpon>201506272156311_updatedtabled.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506291426222_addeddasboard.resx">
+      <DependentUpon>201506291426222_addeddasboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506291435293_addeddasboards.resx">
+      <DependentUpon>201506291435293_addeddasboards.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506291437532_sam.resx">
+      <DependentUpon>201506291437532_sam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506291445029_addedda.resx">
+      <DependentUpon>201506291445029_addedda.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
