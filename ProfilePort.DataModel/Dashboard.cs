@@ -40,8 +40,10 @@ namespace ProfilePort.DataModel
 
         [InverseProperty("Dashboard")]
         public virtual List<Profile> Profile { get; set; }
-        
-       //public virtual Profile Profile { get; set; }
+
+        [InverseProperty("Dashboard")]
+        public virtual List<Comment> Comments { get; set; }
+
 
         [Required]
         public string UserId { get; set; }

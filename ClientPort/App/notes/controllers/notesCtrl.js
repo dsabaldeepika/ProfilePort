@@ -19,34 +19,27 @@
         //        $scope.originalModel = _.cloneDeep($scope.model);
         //    })
         //};
-        
-            var dashboardId = 2;    
 
-            //notesResources.query(function (response) {
+        var dashboardId = 2;
 
-            //    $scope.notes = response;
-            //})
+        //notesResources.query(function (response) {
 
-                $scope.originalModel = _.cloneDeep($scope.note);
+        //    $scope.notes = response;
+        //})
 
 
-                $scope.getNote = function (id) {
+        notessService.getNotes(dashboardId).then(function (response) {
 
-                    notesResources.get({ id:id }, function (response) {
+            $scope.model.notes = "";
+            $scope.originalModel = _.cloneDeep($scope.model);
 
-                        $scope.notes = response;
-                    })
-
-                   
-
-                }
-
+        });
 
         $scope.postNotes = function () {
 
             notessService.postNotes($scope.note).then(function (response) {
 
-                $scope.model.notes = "";
+                $scope.notes = "";
                 $scope.originalModel = _.cloneDeep($scope.model);
 
             });

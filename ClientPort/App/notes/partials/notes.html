@@ -32,13 +32,24 @@
                         <div class="form-group">
                             <textarea style="white-space:pre" class="form-control" id="note" rows="7" ng-model="note" ng-pattern="/^[a-zA-Z0-9., _ \n$@-]*$/" notes-error-check="notes-error-check"></textarea>
 
-
                         </div>
                     </div>
                 </form>
-            </div>
-          
+                
 
+            </div>
+          <div class="well">
+            <div class="bc-widget">
+                <table>
+                    <tr ng-repeat="note in model.notes">
+                        <td >
+                            {{ note }}
+
+                        </td>
+                    </tr>
+                </table>
+                </div>
+            </div>
 
           
 </div>

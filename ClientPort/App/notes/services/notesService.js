@@ -7,9 +7,9 @@
                 factory = {};
 
             //Save notes for a notes 
-            factory.getNotes = function () {
+                factory.getNotes = function (id) {
 
-                return $http.get(url+'/'+id)
+                    return $http.get(url+'/notes')
                     .success(function (data, status, headers, config) {
 
                    
