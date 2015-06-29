@@ -1,31 +1,17 @@
 ﻿
+
 (function () {
 
-    angular.module('app').factory('notesService', ['$http', 'constantsService', 'toastr',
-        function ($http,constantsService,  toastr) {
-            var url = constantsService.serverPath
+    angular.module('app').factory('notesService', ['$http', 'toastr',
+        function ($http, toastr) {
+
+            var serviceBase = constantsService.serverPath,
                 factory = {};
 
-            //Save notes for a notes 
-            factory.getNotes = function () {
+            //Save notes for a user
+            factory.saveNotes = function (note) {
 
-                return $http.get(url+'/'+id)
-                    .success(function (data, status, headers, config) {
-
-                   
-                        return true;
-                    })
-                    .error(function (data, status, headers, config) {
-                       
-
-                        return false;
-                    });
-            }
-        
-
-            //Save notes for a notes 
-            factory.postNotes = function (note) {
-                notes = { title: "title", noteContent: note,dashboardId :"2"};
+                notes = { title: "title", noteContent: note, dashboardId: "2" };
                 return $http.post(url+'/notes', notes)
                     .success(function (data, status, headers, config) {
 
@@ -40,14 +26,49 @@
             }
 
 
+            factory.getNotes = function (leadId) {
 
+                return $http.get('/lead/agentnote/' + leadId)
+                    .success(function (data, status, headers, config) {
 
-           
+                        return data.notes;
+
+                    })
+                    .error(function (data, status, headers, config) {
+                       
+                        return null;
+                    });
+            };
+
+            // return the factory.
             return factory;
         }]);
 
-
 }());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
