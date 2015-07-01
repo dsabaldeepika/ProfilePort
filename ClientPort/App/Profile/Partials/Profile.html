@@ -1,70 +1,72 @@
-﻿
-<div style="padding-bottom:30px">
-    <div class="row">
-        <div class="col-md-3">
-            <div class="well" style="min-height: 300px">
-                <div class="well" style="min-height: 300px">
-                    <div class="bc-widget">
-                        <div class="title">Sabal Prasain</div>
-                        <div class="content">
-
-                            <a class="btn btn-lg btn-default" ng-href="#/connnections/{{$scope.DashboardId}}"><i class="fa fa-file-picture-o"></i>&nbsp;Photo</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+﻿<div id="adminNavBar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container slide-animation">
+        <div class="navbar-header">
+            <button type="button" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand active" href="#/home">
+                <i class="icon-home"></i>
+                <span>Profile Portal</span>
+            </a>
         </div>
-        <div class="col-md-9">
-            <div class="well" style="min-height: 300px">
-                <div class="well" style="min-height: 300px">
-                    <div class="bc-widget">
-                        <div class="title">My Cnnections</div>
-                        <div class="content">
-
-                            <a class="btn btn-lg btn-primary" ng-href="#/connnections/{{$scope.DashboardId}}"><i class="fa fa-archive fa-arrows-h"></i>&nbsp; My Profile</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="collapse navbar-collapse" ng-class="{'in': !navCollapsed}">
+            <ul class="nav navbar-nav">
+                <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#/home">Home</a></li>
+                <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#/note">Note</a></li>
+                <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#/message">Message</a></li>
+            </ul>
         </div>
 
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="well" style="min-height: 300px">
-
-                <div class="bc-widget">
-                    <div class="panel-group" id="accordion">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Notes</a>
-                                </h4>
-                            </div>
-                            <div id="collapseTwo" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <p>Messages <a ng-href="#/note/{{$scope.DashboardId}}">Click Here</a></p>
-                                </div>
-                            </div>
-                        </div><div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Messages</a>
-                                </h4>
-                            </div>
-                            <div id="collapseTwo" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <p>Messages <a ng-href="#/message/{{$scope.DashboardId}}">Click Here</a></p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-    </div>
+    <div ng-show="showSpinner" class="page-splash dissolve-animation">
+    <div data-spinner="spinnerOptions"></div>
+    <div class="page-splash-message page-splash-message-subtle">{{vm.spinnerMessage}}</div>
 </div>
+
+
+    </div>
+
+
+    <div style="padding-top:100px">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well" style="min-height: 300px">
+
+                    <div class="bc-widget">
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Notes</a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p>Notes <a ng-href="#/note/{{$scope.DashboardId}}">Click Here</a></p>
+                                    </div>
+                                </div>
+                            </div><div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Messages</a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p>Messages <a ng-href="#/message/{{$scope.DashboardId}}">Click Here</a></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
 

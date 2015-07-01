@@ -47,6 +47,11 @@
     <Content Include="App\common\directives\restrictCharacters.js" />
     <Content Include="App\common\partials\test.html" />
     <Content Include="App\Home\controllers\homeResources.js" />
+    <Content Include="App\login\controllers\loginCtrl.js" />
+    <Content Include="App\login\controllers\registerCtrl.js" />
+    <Content Include="App\login\partials\login.html" />
+    <Content Include="App\login\partials\register.html" />
+    <Content Include="App\login\services\AuthenicationService.js" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="packages.config" />
     <Content Include="Scripts\angular-sanitize.min.js.map" />
@@ -1006,6 +1011,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App\Home\Directives\" />
+    <Folder Include="App\login\Directives\" />
     <Folder Include="App\message\directive\" />
     <Folder Include="App\notes\directive\" />
     <Folder Include="App\Profile\directives\" />

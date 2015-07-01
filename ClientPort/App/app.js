@@ -8,10 +8,15 @@
 
      
         $rootScope.$on("$routeChangeStart", function () {
-            
+           
         });
 
         $rootScope.$on("httpResponseError", function (event, args) {
+            $Scope.showSpinner = args.show;
+            if (args.message) {
+                $Scope.spinnerMessage = args.message;
+            }
+
             if (args.response.status === 0) {
                 // Do not pop during demo
                 toastr.error("It looks like there has been a disruption in service." +

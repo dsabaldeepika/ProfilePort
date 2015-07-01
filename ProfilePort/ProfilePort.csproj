@@ -266,6 +266,7 @@
     <Compile Include="Controllers\NotesController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SkillsController.cs" />
+    <Compile Include="Controllers\testController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -283,6 +284,8 @@
     <Compile Include="ViewModels\ProfileVM.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\fonts\angular-ui.css" />
+    <Content Include="Content\fonts\angular-ui.min.css" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\angular-toastr.css" />
     <Content Include="Content\angular-toastr.min.css" />
@@ -1172,6 +1175,7 @@
   <ItemGroup>
     <Folder Include="Adapters\MockDataAdapters\" />
     <Folder Include="App_Data\" />
+    <Folder Include="Views\test\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

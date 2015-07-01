@@ -21,33 +21,19 @@
         //    $scope.model.user = result.data;
         //});
 
-        $scope.displayModal = function (messages) {
+        $scope.showSpinner = false;
+        $scope.spinnerMessage = 'Retrieving data...';
 
-            var modal = $modal.open({
-                templateUrl: 'app/common/partials/errorModal.html',
-                controller: 'coErrorModalCtrl',
-                size: 'md',
-                resolve: {
-                    config: function () {
-                        return {
-                            title: 'Save profile Error',
-                            description: 'Please correct the following issues before saving:',
-                            messages: messages,
-
-
-                        };
-                    },
-                    $modalInstance: function () {
-                        return function () {
-                            return modal;
-
-                        }
-                    }
-                }
-            });
-
-            return;
-        }
+        $scope.spinnerOptions = {
+            radius: 40,
+            lines: 8,
+            length: 0,
+            width: 30,
+            speed: 1.7,
+            corners: 1.0,
+            trail: 100,
+            color: '#428bca'
+        };
 
         $scope.saveprofile = function (andClose) {
 
