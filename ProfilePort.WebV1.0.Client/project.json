@@ -1,0 +1,40 @@
+{
+  "authors": [ "Prabal" ],
+  "dependencies": {
+    "angularjs": "1.4.8",
+    "Autofac.Dnx": "4.0.0-alpha2",
+    "AutoMapper": "4.1.1",
+    "bootstrap": "4.0.0-alpha",
+    "EntityFramework.Commands": "7.0.0-rc1-final",
+    "jQuery": "2.1.4",
+    "Microsoft.Dnx.Compilation": "1.0.0-rc1-final",
+    "Newtonsoft.Json": "8.0.1-beta3"
+  },
+  "description": "ProfilePort.WebV1.0.Client Class Library",
+  "frameworks": {
+    "dnx451": {
+      "dependencies": {
+        "CSLA-ASP.NET-MVC5": "4.6.200",
+        "log4net": "2.0.4",
+        "Microsoft.AspNet.Identity.Core": "2.2.1",
+        "Microsoft.AspNet.SignalR.Core": "2.2.0",
+        "Microsoft.AspNet.Web.Optimization": "1.1.3",
+        "Microsoft.Owin": "3.0.1",
+        "Microsoft.Owin.Security.OAuth": "3.0.1"
+      }
+    },
+    "dnxcore50": {
+      "dependencies": {
+        "Microsoft.CSharp": "4.0.1-beta-23409",
+        "System.Collections": "4.0.11-beta-23409",
+        "System.Linq": "4.0.1-beta-23409",
+        "System.Runtime": "4.0.21-beta-23409",
+        "System.Threading": "4.0.11-beta-23409"
+      }
+    }
+  },
+  "licenseUrl": "",
+  "projectUrl": "",
+  "tags": [ "" ],
+  "version": "1.0.0-*"
+}
