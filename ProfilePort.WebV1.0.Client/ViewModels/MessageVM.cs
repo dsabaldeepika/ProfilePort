@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace ProfilePort.Adapters.Interfaces
 {
-   public class MessageVM
+    public class MessageVM
    {
        public int MessageId { get; set; }
        public string To { get; set; }

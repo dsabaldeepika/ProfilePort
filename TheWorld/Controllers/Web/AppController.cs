@@ -1,14 +1,12 @@
-using System;
 using Microsoft.AspNet.Mvc;
 using TheWorld.Models;
 using TheWorld.Services;
 using TheWorld.ViewModels;
-using System.Linq;
 using Microsoft.AspNet.Authorization;
 
 namespace TheWorld.Controllers.Web
 {
-  public class AppController : Controller
+    public class AppController : Controller
   {
     private IMailService _mailService;
     private IWorldRepository _respository;

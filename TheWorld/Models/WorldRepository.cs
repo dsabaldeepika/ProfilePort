@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.Data.Entity;
 using Microsoft.Framework.Logging;
 
 namespace TheWorld.Models
 {
-  public class WorldRepository : IWorldRepository
+    public class WorldRepository : IWorldRepository
   {
     private WorldContext _context;
     private ILogger<WorldRepository> _logger;

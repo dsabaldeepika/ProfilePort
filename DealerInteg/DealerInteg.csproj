@@ -1108,6 +1108,7 @@
     <Compile Include="AdjustmentType.cs" />
     <Compile Include="BuyRate.cs" />
     <Compile Include="ClassCodeAdj.cs" />
+    <Compile Include="DbContext.cs" />
     <Compile Include="DealerDiscount.cs" />
     <Compile Include="DealerScore.cs" />
     <Compile Include="DealerType.cs" />

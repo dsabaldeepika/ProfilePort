@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using ProfilePort.DataModel;
-
-
-namespace ProfilePort.DataModel
+﻿namespace ProfilePort.DataModel
 {
-  public class Favorite
+    public class Favorite
     {
       public int FavoriteId { get; set; }
       public string Name { get; set; }

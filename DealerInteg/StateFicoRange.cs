@@ -10,8 +10,7 @@
 namespace DealerPortalCRM
 {
     using System;
-    using System.Collections.Generic;
-    
+
     public partial class StateFicoRange
     {
         public int ID { get; set; }

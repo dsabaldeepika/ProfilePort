@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNet.Authorization;
 using Microsoft.AspNet.Mvc;
@@ -12,7 +10,7 @@ using TheWorld.ViewModels;
 
 namespace TheWorld.Controllers.Api
 {
-  [Authorize]
+    [Authorize]
   [Route("api/trips")]
   public class TripController : Controller
   {

@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace ProfilePort.Adapters.Interfaces
 {
-     public class JobVM
+    public class JobVM
     {
         public int JobId { get; set; }
         public string JobTitle { get; set; }

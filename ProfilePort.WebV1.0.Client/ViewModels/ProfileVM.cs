@@ -1,12 +1,8 @@
-﻿using ProfilePort.DataModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System;
 
 namespace ProfilePort.Adapters.Interfaces
 {
-        public class ProfileVM:User
+    public class ProfileVM:User
     {
         public int ProfileId { get; set; }
         public string Sex { get; set; }

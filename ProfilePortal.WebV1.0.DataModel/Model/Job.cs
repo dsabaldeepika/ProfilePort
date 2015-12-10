@@ -1,15 +1,8 @@
-﻿using ProfilePort.DataModel;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace ProfilePort.DataModel
 {
-  public  class Job
+    public  class Job
     {
         public int JobId { get; set; }
         public string JobTitle { get; set; }

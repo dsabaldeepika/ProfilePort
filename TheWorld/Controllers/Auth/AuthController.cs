@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Mvc;
 using TheWorld.Models;
@@ -9,7 +6,7 @@ using TheWorld.ViewModels;
 
 namespace TheWorld.Controllers
 {
-  public class AuthController : Controller
+    public class AuthController : Controller
   {
     private SignInManager<WorldUser> _signInManager;
 
