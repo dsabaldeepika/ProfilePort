@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ProfilePort.WebV1.0.Client", "ProfilePort.WebV1.0.Client\ProfilePort.WebV1.0.Client.xproj", "{B6A8F7F0-D12D-4811-BD3A-08FB4C1F7610}"
 EndProject
@@ -11,17 +11,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfilePortal.WebV1.0.Test"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ProfilePortal.WebV1.0.DataModel", "ProfilePortal.WebV1.0.DataModel\ProfilePortal.WebV1.0.DataModel.xproj", "{97E8C9E3-D4CB-4D8E-B93B-3BEB3B5EB645}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{457C4B96-D4B8-4913-BCD8-CF51BEFC0719}"
-	ProjectSection(SolutionItems) = preProject
-		ProfilePort.WebV1.0.Client\global.json = ProfilePort.WebV1.0.Client\global.json
-		TheWorld\global.json = TheWorld\global.json
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DealerInteg", "DealerInteg\DealerInteg.csproj", "{41213C52-D177-4734-8F58-D23086D352D3}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TheWorld", "TheWorld\TheWorld.xproj", "{8E57A3DE-5A99-4781-8A34-268EFB0E21F8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angular_UI", "Angular_UI\Angular_UI.csproj", "{D54B3850-A93D-4208-86D2-4250F6EC9F70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DealerPortalCRM", "DealerPortalCRM\DealerPortalCRM.csproj", "{78EB3101-1354-4748-AF36-F8FC7703E3E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DealerPortalCRM.Tests", "DealerPortalCRM.Tests\DealerPortalCRM.Tests.csproj", "{5D855EB6-273D-44D0-95E6-5E1D02A4DB1E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,11 +55,16 @@ Global
 		{D54B3850-A93D-4208-86D2-4250F6EC9F70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D54B3850-A93D-4208-86D2-4250F6EC9F70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D54B3850-A93D-4208-86D2-4250F6EC9F70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78EB3101-1354-4748-AF36-F8FC7703E3E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78EB3101-1354-4748-AF36-F8FC7703E3E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78EB3101-1354-4748-AF36-F8FC7703E3E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78EB3101-1354-4748-AF36-F8FC7703E3E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D855EB6-273D-44D0-95E6-5E1D02A4DB1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D855EB6-273D-44D0-95E6-5E1D02A4DB1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D855EB6-273D-44D0-95E6-5E1D02A4DB1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D855EB6-273D-44D0-95E6-5E1D02A4DB1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{41213C52-D177-4734-8F58-D23086D352D3} = {457C4B96-D4B8-4913-BCD8-CF51BEFC0719}
 	EndGlobalSection
 EndGlobal

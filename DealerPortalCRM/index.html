@@ -1,0 +1,72 @@
+﻿<!doctype html>
+<html class="no-js" ng-app="eliteApp">
+<head>
+    <meta charset="utf-8">
+    <title>Elite Schedule</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/ui-grid.min.css" rel="stylesheet" />
+    <link href="Content/ui-bootstrap-csp.css" rel="stylesheet" />
+    <link href="Content/fullcalendar.min.css" rel="stylesheet" />
+    <link href="Content/fullcalendar.print.css" rel="stylesheet" />
+    <link href="Content/select.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="applicationHost" class="container body-content admin-appHost">
+
+        <div ui-view></div>
+    </div>
+
+    <div id="footer">
+        <div class="container">
+            <span class="pull-right text-info credit">Elite Schedule - &copy; Steve Michelotti</span>
+        </div>
+    </div>
+    <script src="lib/jquery-2.1.4.min.js"></script>
+    <script src="lib/jquery-ui-1.11.4.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-sanitize.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+    <script src="lib/moment.min.js"></script>
+    <script src="lib/spin.min.js"></script>
+    <script src="lib/toastr.min.js"></script>
+    <script src="lib/AngularUI/ui-router.min.js"></script>
+    <script src="lib/ui-bootstrap-tpls-0.10.0.min.js"></script>
+    <script src="lib/ui-grid.min.js"></script>
+    <script src="lib/angular-ui/ui-bootstrap.min.js"></script>
+    <script src="lib/angular-ui/ui-utils.min.js"></script>
+    <script src="lib/respond.min.js"></script>
+    <script src="lib/select2.min.js"></script>
+    <script src="lib/angular-ui-ieshiv.min.js"></script>
+    <script src="lib/angular-messages.min.js"></script>
+    <script src="lib/angular-loader.min.js"></script>
+    <script src="lib/angular-filters.min.js"></script>
+    <script src="lib/angular-busy.min.js"></script>
+    <script src="lib/angular-aria.min.js"></script>
+    <script src="lib/angular-animate.min.js"></script>
+    <script src="lib/Scripts/lodash.min.js"></script>
+    <script src="lib/Scripts/fullcalendar.js"></script>
+    <!-- inject:js -->
+    <script src="app-user/app.js"></script>
+    <script src="app-user/directives/markdown.directive.js"></script>
+    <script src="app-user/directives/spinner.directive.js"></script>
+    <script src="app-user/home/home.controller.js"></script>
+    <script src="app-user/layout/shell.controller.js"></script>
+
+    <script src="app-user/services/app-spinner.service.js"></script>
+    <script src="app-user/services/elite-api.service.js"></script>
+    <script src="app-user/teams/teams.controller.js"></script>
+    <script src="app-user/teams/team-schedule.controller.js"></script>
+    <script src="app-user/locations/locations.controller.js"></script>
+    <script src="app-user/locations/location-map.controller.js"></script>
+    <!-- endinject -->
+
+
+</body>
+</html>

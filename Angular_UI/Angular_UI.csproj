@@ -68,19 +68,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
-    <Content Include=".bowerrc" />
-    <Content Include=".jshintrc" />
-    <Content Include="bower.json" />
-    <Content Include="package.json" />
-    <Content Include=".idea\.name" />
-    <Content Include=".idea\elite-schedule-admin.iml" />
-    <Content Include="setup\data-games.json" />
-    <Content Include="setup\data-leagues.json" />
-    <Content Include="setup\data-locations.json" />
-    <Content Include="setup\data-teams.json" />
-    <Content Include="setup\elite-schedule-ams-setup.bat" />
-    <Content Include="setup\package.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -89,81 +76,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include=".idea\encodings.xml" />
-    <Content Include=".idea\jsLibraryMappings.xml" />
-    <Content Include=".idea\misc.xml" />
-    <Content Include=".idea\modules.xml" />
-    <Content Include=".idea\scopes\scope_settings.xml" />
-    <Content Include=".idea\vcs.xml" />
-    <Content Include=".idea\workspace.xml" />
-    <Content Include="Content\ui-bootstrap-csp.css" />
-    <Content Include="gulpfile.js" />
-    <Content Include="setup\elite-schedule-ams-seed-data.js" />
-    <Content Include="src\app-user\app.js" />
-    <Content Include="src\app-user\directives\markdown.directive.js" />
-    <Content Include="src\app-user\directives\spinner.directive.js" />
-    <Content Include="src\app-user\home\home.controller.js" />
-    <Content Include="src\app-user\home\home.html" />
-    <Content Include="src\app-user\layout\shell.controller.js" />
-    <Content Include="src\app-user\layout\shell.html" />
-    <Content Include="src\app-user\locations\location-map.controller.js" />
-    <Content Include="src\app-user\locations\location-map.html" />
-    <Content Include="src\app-user\locations\locations.controller.js" />
-    <Content Include="src\app-user\locations\locations.html" />
-    <Content Include="src\app-user\services\app-spinner.service.js" />
-    <Content Include="src\app-user\services\elite-api.service.js" />
-    <Content Include="src\app-user\teams\team-schedule.controller.js" />
-    <Content Include="src\app-user\teams\team-schedule.html" />
-    <Content Include="src\app-user\teams\teams.controller.js" />
-    <Content Include="src\app-user\teams\teams.html" />
-    <Content Include="src\app\app.js" />
-    <Content Include="src\app\constants.js" />
-    <Content Include="src\app\directives\markdown.directive.js" />
-    <Content Include="src\app\directives\spinner.directive.js" />
-    <Content Include="src\app\games\edit-game.controller.js" />
-    <Content Include="src\app\games\edit-game.html" />
-    <Content Include="src\app\games\games-calendar.html" />
-    <Content Include="src\app\games\games-initial-data.service.js" />
-    <Content Include="src\app\games\games.controller.js" />
-    <Content Include="src\app\games\games.html" />
-    <Content Include="src\app\home\home.controller.js" />
-    <Content Include="src\app\home\home.html" />
-    <Content Include="src\app\layout\league-shell.controller.js" />
-    <Content Include="src\app\layout\league-shell.html" />
-    <Content Include="src\app\layout\shell.controller.js" />
-    <Content Include="src\app\layout\shell.html" />
-    <Content Include="src\app\league-home\league-home.controller.js" />
-    <Content Include="src\app\league-home\league-home.html" />
-    <Content Include="src\app\leagues\leagues.controller.js" />
-    <Content Include="src\app\leagues\leagues.html" />
-    <Content Include="src\app\locations\edit-location.controller.js" />
-    <Content Include="src\app\locations\edit-location.html" />
-    <Content Include="src\app\locations\locations.controller.js" />
-    <Content Include="src\app\locations\locations.html" />
-    <Content Include="src\app\services\app-spinner.service.js" />
-    <Content Include="src\app\services\dialogs.service.js" />
-    <Content Include="src\app\services\elite-api.service.js" />
-    <Content Include="src\app\services\state-watcher.service.js" />
-    <Content Include="src\app\shared\confirm-modal.controller.js" />
-    <Content Include="src\app\shared\confirm-modal.html" />
-    <Content Include="src\app\teams\edit-team.controller.js" />
-    <Content Include="src\app\teams\edit-team.html" />
-    <Content Include="src\app\teams\import-teams.controller.js" />
-    <Content Include="src\app\teams\import-teams.html" />
-    <Content Include="src\app\teams\teams.controller.js" />
-    <Content Include="src\app\teams\teams.html" />
-    <Content Include="src\favicon.ico" />
-    <Content Include="src\index-user.html" />
-    <Content Include="src\index.html" />
-    <Content Include="src\styles\main.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="node_modules\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
