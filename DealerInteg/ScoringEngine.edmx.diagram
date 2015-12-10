@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="66c8b74f06774d4a8c75e76e89afd7f2" Name="Diagram1" ZoomLevel="81">
+        <EntityTypeShape EntityType="ScoringEngineModel.Adjustment" Width="1.5" PointX="3" PointY="13.5" />
+        <EntityTypeShape EntityType="ScoringEngineModel.AdjustmentRange" Width="1.5" PointX="3" PointY="20.875" />
+        <EntityTypeShape EntityType="ScoringEngineModel.AdjustmentType" Width="1.5" PointX="0.75" PointY="17.125" />
+        <EntityTypeShape EntityType="ScoringEngineModel.BuyRate" Width="1.5" PointX="9.75" PointY="19.875" />
+        <EntityTypeShape EntityType="ScoringEngineModel.ClassCodeAdj" Width="1.5" PointX="3" PointY="8.5" />
+        <EntityTypeShape EntityType="ScoringEngineModel.DealerDiscount" Width="1.5" PointX="13" PointY="8.5" />
+        <EntityTypeShape EntityType="ScoringEngineModel.DealerScore" Width="1.5" PointX="18.75" PointY="16.875" />
+        <EntityTypeShape EntityType="ScoringEngineModel.DealerType" Width="1.5" PointX="10.75" PointY="8.875" />
+        <EntityTypeShape EntityType="ScoringEngineModel.DocFee" Width="1.5" PointX="19.75" PointY="1.875" />
+        <EntityTypeShape EntityType="ScoringEngineModel.ExcessMileage" Width="1.5" PointX="19.75" PointY="9.875" />
+        <EntityTypeShape EntityType="ScoringEngineModel.ExpressionCatalog" Width="1.5" PointX="12.75" PointY="2.25" />
+        <EntityTypeShape EntityType="ScoringEngineModel.ExpressionUsage" Width="1.5" PointX="12.75" PointY="12.5" />
+        <EntityTypeShape EntityType="ScoringEngineModel.ExpressionUsageDetail" Width="1.5" PointX="15" PointY="2.125" />
+        <EntityTypeShape EntityType="ScoringEngineModel.PricingBase" Width="1.5" PointX="11.75" PointY="20.875" />
+        <EntityTypeShape EntityType="ScoringEngineModel.StateAdjustment" Width="1.5" PointX="10" PointY="12" />
+        <EntityTypeShape EntityType="ScoringEngineModel.StateCode" Width="1.5" PointX="7.75" PointY="8.375" />
+        <EntityTypeShape EntityType="ScoringEngineModel.StateFicoRange" Width="1.5" PointX="10" PointY="4.625" />
+        <EntityTypeShape EntityType="ScoringEngineModel.StateMaxAPR" Width="1.5" PointX="10" PointY="15.875" />
+        <EntityTypeShape EntityType="ScoringEngineModel.TempApplicationModel" Width="1.5" PointX="18.75" PointY="20.875" />
+        <EntityTypeShape EntityType="ScoringEngineModel.TermCap" Width="1.5" PointX="3" PointY="17.25" />
+        <EntityTypeShape EntityType="ScoringEngineModel.Vehicle" Width="1.5" PointX="5.25" PointY="4.5" />
+        <EntityTypeShape EntityType="ScoringEngineModel.VehicleClassType" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="ScoringEngineModel.VehicleMakeModelClass" Width="1.5" PointX="3" PointY="4.25" />
+        <EntityTypeShape EntityType="ScoringEngineModel.VehicleMakeType" Width="1.5" PointX="0.75" PointY="8.5" />
+        <EntityTypeShape EntityType="ScoringEngineModel.VehicleModelType" Width="1.5" PointX="0.75" PointY="0.75" />
+        <AssociationConnector Association="ScoringEngineModel.FK_ScoringEngine_Adjustment_ScoringEngine_AdjustmentType_AdjustmentType_ID" />
+        <AssociationConnector Association="ScoringEngineModel.FK_ScoringEngine_AdjustmentRange_ScoringEngine_AdjustmentType_AdjustmentType_ID" />
+        <AssociationConnector Association="ScoringEngineModel.FK_ScoringEngine_TermCap_ScoringEngine_AdjustmentType_AdjustmentType_ID" />
+        <AssociationConnector Association="ScoringEngineModel.FK_ScoringEngine_ClassCodeAdj_ScoringEngine_VehicleClassType_VehicleClassType_ID" />
+        <AssociationConnector Association="ScoringEngineModel.FK_ScoringEngine_DealerDiscount_ScoringEngine_DealerType_DealerType_ID" />
+        <AssociationConnector Association="ScoringEngineModel.FK_ScoringEngine_DealerDiscount_ScoringEngine_StateCode_StateCode_ID" />
+        <AssociationConnector Association="ScoringEngineModel.FK_ScoringEngine_ExpressionUsageDetail_ScoringEngine_ExpressionCatalog_ExpressionCatalog_ID" />
+        <AssociationConnector Association="ScoringEngineModel.FK_ScoringEngine_ExpressionUsageDetail_ScoringEngine_ExpressionUsage_ExpressionUsage_ID" />
+        <AssociationConnector Association="ScoringEngineModel.FK_ScoringEngine_StateAdjustment_ScoringEngine_StateCode_StateCode_ID" />
+        <AssociationConnector Association="ScoringEngineModel.FK_ScoringEngine_StateCode_ScoringEngine_StateMaxAPR_StateCode_ID" />
+        <AssociationConnector Association="ScoringEngineModel.FK_ScoringEngine_StateFicoRange_ScoringEngine_StateCode_StateCode_ID" />
+        <AssociationConnector Association="ScoringEngineModel.FK_ScoringEngine_Vehicle_ScoringEngine_VehicleMakeModelClass_VehicleMakeModelClass_ID" />
+        <AssociationConnector Association="ScoringEngineModel.FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleClassType_VehicleClassType_ID" />
+        <AssociationConnector Association="ScoringEngineModel.FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleMakeType_VehicleMakeType_ID" />
+        <AssociationConnector Association="ScoringEngineModel.FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleModelType_VehicleModelType_ID" />
+        <AssociationConnector Association="ScoringEngineModel.FK_ScoringEngine_VehicleModelType_ScoringEngine_VehicleMakeType_VehicleMakeType_ID" />
+        <EntityTypeShape EntityType="ScoringEngineModel.ScoringEngineRun" Width="1.5" PointX="12.5" PointY="25.5" />
+        <EntityTypeShape EntityType="ScoringEngineModel.TempScoreEngineResults" Width="1.5" PointX="14.75" PointY="26.125" />
+        <EntityTypeShape EntityType="ScoringEngineModel.TempScoringEngineParamLog" Width="1.5" PointX="17" PointY="26.25" />
+        <AssociationConnector Association="ScoringEngineModel.FK_ScoringEngine_ScoringEngineRun_TempScoreEngineResults_ScoringEngineRun_ID" />
+        <AssociationConnector Association="ScoringEngineModel.FK_ScoringEngine_TempScoringEngineParamLog_TempScoreEngineResults_ID" />
+        <AssociationConnector Association="ScoringEngineModel.FK_ScoringEngine_ExpressionUsage_ScoringEngine_ExpressionUsageDetail_ErrorUsage_ID" />
+        <EntityTypeShape EntityType="ScoringEngineModel.TempExpressionCatalog" Width="1.5" PointX="5.375" PointY="12.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

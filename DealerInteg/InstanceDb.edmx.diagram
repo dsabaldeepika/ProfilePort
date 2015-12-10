@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3ad27453f2594ccaaddb27a99d28848b" Name="Diagram1" ZoomLevel="109">
+        <EntityTypeShape EntityType="InstanceDbModel.CommunicationType" Width="1.5" PointX="1.5" PointY="10.25" />
+        <EntityTypeShape EntityType="InstanceDbModel.Contact" Width="1.5" PointX="1.5" PointY="39.625" />
+        <EntityTypeShape EntityType="InstanceDbModel.ContactAddress" Width="1.5" PointX="1.5" PointY="24.625" />
+        <EntityTypeShape EntityType="InstanceDbModel.ContactCommunication" Width="1.5" PointX="1.5" PointY="14.5" />
+        <EntityTypeShape EntityType="InstanceDbModel.ContactType" Width="1.5" PointX="1.5" PointY="35.625" />
+        <EntityTypeShape EntityType="InstanceDbModel.Dealer" Width="1.5" PointX="3.75" PointY="31.75" />
+        <EntityTypeShape EntityType="InstanceDbModel.DealerTerritory" Width="1.5" PointX="1.5" PointY="20.5" />
+        <EntityTypeShape EntityType="InstanceDbModel.LoanApp" Width="1.5" PointX="8.25" PointY="53.125" />
+        <EntityTypeShape EntityType="InstanceDbModel.LoanAppOrigination" Width="1.5" PointX="3" PointY="59.25" />
+        <EntityTypeShape EntityType="InstanceDbModel.LoanAppSource" Width="1.5" PointX="3" PointY="50.875" />
+        <EntityTypeShape EntityType="InstanceDbModel.LoanAppStatus" Width="1.5" PointX="6" PointY="49.5" />
+        <EntityTypeShape EntityType="InstanceDbModel.LoanAppType" Width="1.5" PointX="6" PointY="61.875" />
+        <EntityTypeShape EntityType="InstanceDbModel.LoanAppVersion" Width="1.5" PointX="10.5" PointY="54.75" />
+        <EntityTypeShape EntityType="InstanceDbModel.Organization" Width="1.5" PointX="1.5" PointY="72.375" />
+        <EntityTypeShape EntityType="InstanceDbModel.OrganizationType" Width="1.5" PointX="1.5" PointY="78.375" />
+        <EntityTypeShape EntityType="InstanceDbModel.PlatformStatus" Width="1.5" PointX="6" PointY="53.25" />
+        <EntityTypeShape EntityType="InstanceDbModel.SalesRep" Width="1.5" PointX="1.5" PointY="30" />
+        <EntityTypeShape EntityType="InstanceDbModel.TradingPartner" Width="1.5" PointX="0.75" PointY="56.875" />
+        <EntityTypeShape EntityType="InstanceDbModel.UserLibrary" Width="1.5" PointX="8.25" PointY="49.125" />
+        <EntityTypeShape EntityType="InstanceDbModel.xDealer" Width="1.5" PointX="6" PointY="57.125" />
+        <EntityTypeShape EntityType="InstanceDbModel.xEntity" Width="1.5" PointX="3" PointY="67.625" />
+        <EntityTypeShape EntityType="InstanceDbModel.xLoanApp" Width="1.5" PointX="13.5" PointY="55.375" />
+        <EntityTypeShape EntityType="InstanceDbModel.xLookup" Width="1.5" PointX="3" PointY="63.375" />
+        <EntityTypeShape EntityType="InstanceDbModel.ApplicantCreditStage" Width="1.5" PointX="15" PointY="84.5" />
+        <EntityTypeShape EntityType="InstanceDbModel.ApplicantIncomeStage" Width="1.5" PointX="15" PointY="136" />
+        <EntityTypeShape EntityType="InstanceDbModel.ApplicationContactStage" Width="1.5" PointX="15" PointY="59.625" />
+        <EntityTypeShape EntityType="InstanceDbModel.ApplicationDealerStage" Width="1.5" PointX="15" PointY="69.625" />
+        <EntityTypeShape EntityType="InstanceDbModel.ApplicationStage" Width="1.5" PointX="15" PointY="75.125" />
+        <EntityTypeShape EntityType="InstanceDbModel.ApplicationTransaction" Width="1.5" PointX="12.75" PointY="82.125" />
+        <EntityTypeShape EntityType="InstanceDbModel.ApplicationVehicleStage" Width="1.5" PointX="15" PointY="64.625" />
+        <EntityTypeShape EntityType="InstanceDbModel.DecisionResult" Width="1.5" PointX="17.25" PointY="94" />
+        <EntityTypeShape EntityType="InstanceDbModel.LoanStructure" Width="1.5" PointX="15" PointY="127.75" />
+        <EntityTypeShape EntityType="InstanceDbModel.LoanAppReview" Width="1.5" PointX="15.75" PointY="53.375" />
+        <EntityTypeShape EntityType="InstanceDbModel.LoanAppReviewResult" Width="1.5" PointX="18" PointY="54" />
+        <EntityTypeShape EntityType="InstanceDbModel.Rule" Width="1.5" PointX="15.75" PointY="49.125" />
+        <EntityTypeShape EntityType="InstanceDbModel.RuleParamType" Width="1.5" PointX="18" PointY="43.75" />
+        <EntityTypeShape EntityType="InstanceDbModel.RuleProfile" Width="1.5" PointX="13.5" PointY="49.875" />
+        <EntityTypeShape EntityType="InstanceDbModel.RuleProfileSet" Width="1.5" PointX="18" PointY="48.375" />
+        <EntityTypeShape EntityType="InstanceDbModel.RuleProfileSetParam" Width="1.5" PointX="20.25" PointY="48.625" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_CommunicationType_dbo_ContactCommunication_CommunicationType_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_Contact_dbo_ContactAddress_Contact_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_Contact_dbo_ContactCommunication_Contact_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_Contact_dbo_Dealer_Contact_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_Contact_dbo_SalesRep_Contact_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_ContactCommunication_dbo_Contact_EmailCommunication_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_ContactCommunication_dbo_Contact_PhoneCommunication_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_ContactType_dbo_Contact_ContactType_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_Organization_dbo_Contact_Organization_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_Addresses_dbo_Dealers_MailingAddress_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_Addresses_dbo_Dealers_PhysicalAddress_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_ContactCommunication_dbo_Contacts_EmailCommunication_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_ContactCommunication_dbo_Contacts_PhoneCommunication_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_ContactCommunication_dbo_Dealers_EmailCommunication_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_ContactCommunication_dbo_Dealers_PhoneCommunication_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_Dealer_dbo_LoanApp_Dealer_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_Dealer_dbo_xDealer_Dealer_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_DealerTerritory_dbo_Dealers_DealerTerritory_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_Organization_dbo_Dealer_Organization_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_SalesRep_dbo_Dealer_SalesRep_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_Organization_dbo_DealerTerritory_Organization_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_LoanApp_dbo_LoanAppVersion_LoanApp_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_LoanApp_dbo_xLoanApp_LoanApp_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_LoanAppOrigination_dbo_LoanApp_LoanAppOrigination_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_LoanAppSource_dbo_LoanApp_LoanAppSource_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_LoanAppStatus_dbo_LoanApp_LoanAppStatus_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_LoanAppType_dbo_LoanApp_LoanAppType_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_LoanAppVersion_dbo_LoanApp_LoanAppVersion_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_Organization_dbo_LoanApp_Organization_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_PlatformStatus_dbo_LoanApp_PlatformStatus_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_SalesRep_dbo_LoanApp_SalesRep_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_TradingPartner_dbo_LoanAppOrigination_TradingPartner_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_TradingPartner_dbo_LoanAppSource_TradingPartner_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_LoanAppVersion_defi_ApplicationTransaction_LoanAppVersion_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_LoanAppVersion_review_LoanAppReview_LoanAppVersion_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_UserLibrary_dbo_LoanAppVersion_AssignedUser_GUID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_Organization_dbo_Organization_ParentOrganization_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_Organization_dbo_SalesRep_Organization_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_Organization_dbo_UserLibrary_Organization_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_Organization_review_RuleProfile_Organization_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_OrganizationType_dbo_Organization_OrganizationType_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_TradingPartner_dbo_xDealer_TradingPartner_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_TradingPartner_dbo_xEntity_TradingPartner_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_TradingPartner_dbo_xLoanApp_TradingPartner_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_dbo_TradingPartner_dbo_xLookup_TradingPartner_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_defi_ApplicantCreditStage_defi_ApplicationTransaction_ApplicationTransaction_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_defi_ApplicantIncomeStage_defi_ApplicationTransaction_ApplicationTransaction_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_defi_ApplicationContactStage_defi_ApplicationTransaction_ApplicationTransaction_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_defi_ApplicationDealerStage_defi_ApplicationTransaction_ApplicationTransaction_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_defi_ApplicationStage_defi_ApplicationTransaction_ApplicationTransaction_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_defi_ApplicationTransaction_defi_DecisionResult_ApplicationTransaction_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_defi_ApplicationVehicleStage_defi_ApplicationTransaction_ApplicationTransaction_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_defi_LoanStructure_defi_ApplicationTransaction_ApplicationTransaction_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_defi_DecisionResult_defi_LoanStructure_LoanStructure_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_review_LoanAppReview_review_LoanAppReviewResult_RuleProfile_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_review_RuleProfile_review_LoanAppReview_RuleProfile_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_review_Rule_review_LoanAppReviewResult_Rule_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_reveiw_Rule_review_RuleProfileSet_Rule_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_reveiw_RuleParamType_review_RuleProfileSetParam_RuleParamType_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_reveiw_RuleProfile_review_RuleProfileSet_RuleProfile_ID" />
+        <AssociationConnector Association="InstanceDbModel.FK_reveiw_RuleProfileSet_review_RuleProfileSetParam_RuleProfileSet_ID" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

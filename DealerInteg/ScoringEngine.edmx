@@ -1,0 +1,2095 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:ssdl="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" xmlns:edm="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:map="http://schemas.microsoft.com/ado/2009/11/mapping/cs" xmlns:codegen="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:huagati="http://www.huagati.com/edmxtools/annotations">
+  <!--Updated by Huagati EDMX Tools version 2.35.5259.25942 on 2015-11-03 13:47:20-->
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ScoringEngineModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Adjustment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdjustmentNumber" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="AdjustmentDiscount" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="AdjustmentType_ID" Type="int" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="Organization_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="AdjustmentRange">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MinTerm" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="MaxTerm" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="AdjustmentDiscount" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="AdjustmentType_ID" Type="int" Nullable="false" />
+          <Property Name="Organization_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="AdjustmentType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="DisplayName" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="Organization_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="BuyRate">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="MinBV" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="MaxBV" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="MinFico" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="MaxFico" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="BuyRateValue" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="Organization_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="ClassCodeAdj">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LTVCap" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="LTVAdj" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="DiscountAdj" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="FinancedCap" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="VehicleClassType_ID" Type="int" />
+          <Property Name="Organization_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="DealerDiscount">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Discount" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="DealerType_ID" Type="int" />
+          <Property Name="StateCode_ID" Type="int" />
+          <Property Name="Organization_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="DealerScore">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Score" Type="nvarchar(max)" />
+          <Property Name="DisAjd" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="LTVCap" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="MinDisc" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="Organization_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="DealerType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="nvarchar(max)" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="Organization_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="DocFee">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MinTerm" Type="int" Nullable="false" />
+          <Property Name="MaxTerm" Type="int" Nullable="false" />
+          <Property Name="MaxMiles" Type="int" Nullable="false" />
+          <Property Name="VehicleAge" Type="int" Nullable="false" />
+          <Property Name="VehicleClass" Type="int" Nullable="false" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="Organization_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="ExcessMileage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MinMileage" Type="int" Nullable="false" />
+          <Property Name="MaxMileage" Type="int" Nullable="false" />
+          <Property Name="LTVAdj" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="DiscAdj" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="TermCap" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="Organization_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="ExpressionCatalog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Expression" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsComposite" Type="bit" Nullable="false" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="Organization_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="ExpressionUsage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ScreenOrModule" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="Organization_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="ExpressionUsageDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="ExecutionSequence" Type="int" Nullable="false" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="ExpressionCatalog_ID" Type="int" />
+          <Property Name="ExpressionUsage_ID" Type="int" />
+          <Property Name="Organization_ID" Type="int" />
+          <Property Name="ErrorUsage_ID" Type="int" />
+          <Property Name="ErrorOnFailure" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PricingBase">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="MinBV" Type="money" />
+          <Property Name="MaxBV" Type="money" />
+          <Property Name="MinLTV" Type="decimal" Precision="18" Scale="6" />
+          <Property Name="MaxLTV" Type="decimal" Precision="18" Scale="6" />
+          <Property Name="PricingRateDiscount" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="Organization_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="ScoringEngineRun">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="RefValue" Type="nvarchar" MaxLength="50" />
+          <Property Name="Organization_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="StateAdjustment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DiscountAdj" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="LTVAdj" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="MaxStateAPR" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="GapCap" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="StateCode_ID" Type="int" />
+          <Property Name="Organization_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="StateCode">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Abbreviation" Type="nvarchar(max)" />
+          <Property Name="SortOrder" Type="int" Nullable="false" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="Organization_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="StateFicoRange">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FicoScoreMin" Type="int" Nullable="false" />
+          <Property Name="FicoScoreMax" Type="int" Nullable="false" />
+          <Property Name="MinAPR" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="StateCode_ID" Type="int" />
+          <Property Name="Organization_ID" Type="int" />
+          <Property Name="MaxAPRDiscountAdj" Type="decimal" Precision="18" Scale="6" />
+        </EntityType>
+        <EntityType Name="StateMaxAPR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="StateCode_ID" Type="int" Nullable="false" />
+          <Property Name="MaxStateAPR" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="MaxVehicleAge" Type="int" />
+          <Property Name="MinVehicleYear" Type="int" />
+          <Property Name="MaxTerm" Type="int" />
+          <Property Name="MinAmount" Type="money" />
+          <Property Name="Organization_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="TempApplicationModel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Value" Type="nvarchar(max)" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="Organization_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="TempExpressionCatalog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Expression" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsComposite" Type="bit" Nullable="false" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="ExpressionParam" Type="nvarchar(max)" />
+          <Property Name="Organization_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="TempScoreEngineResults">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Expression" Type="nvarchar(max)" />
+          <Property Name="Result" Type="nvarchar(max)" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="ScoringEngineRun_ID" Type="bigint" />
+          <Property Name="Organization_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="TempScoringEngineParamLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TempScoreEngineResults_ID" Type="bigint" />
+          <Property Name="ParamName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ParamValue" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="Organization_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="TermCap">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MinFinanceAmt" Type="int" Nullable="false" />
+          <Property Name="MaxFinanceAmt" Type="int" Nullable="false" />
+          <Property Name="AdjustmentCap" Type="int" Nullable="false" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="AdjustmentType_ID" Type="int" Nullable="false" />
+          <Property Name="Organization_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="Vehicle">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="organization_ID" Type="int" />
+          <Property Name="VehicleMakeModelClass_ID" Type="int" />
+          <Property Name="DisplayName" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="VehicleClassType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="Organization_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="VehicleMakeModelClass">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="VehicleModelType_ID" Type="int" />
+          <Property Name="VehicleClassType_ID" Type="int" />
+          <Property Name="VehicleMakeType_ID" Type="int" />
+          <Property Name="Organization_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="VehicleMakeType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="DisplayName" Type="nvarchar" MaxLength="500" />
+          <Property Name="Organization_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="VehicleModelType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="CreatedByID" Type="int" Nullable="false" />
+          <Property Name="ModifiedByID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="VehicleMakeType_ID" Type="int" />
+          <Property Name="DisplayName" Type="nvarchar" MaxLength="500" />
+          <Property Name="Organization_ID" Type="int" />
+        </EntityType>
+        <Association Name="FK_ScoringEngine_DealerDiscount_ScoringEngine_DealerType_DealerType_ID">
+          <End Role="DealerType" Type="Self.DealerType" Multiplicity="0..1" />
+          <End Role="DealerDiscount" Type="Self.DealerDiscount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DealerType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DealerDiscount">
+              <PropertyRef Name="DealerType_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_DealerDiscount_ScoringEngine_StateCode_StateCode_ID">
+          <End Role="StateCode" Type="Self.StateCode" Multiplicity="0..1" />
+          <End Role="DealerDiscount" Type="Self.DealerDiscount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StateCode">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DealerDiscount">
+              <PropertyRef Name="StateCode_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_ExpressionUsageDetail_ScoringEngine_ExpressionCatalog_ExpressionCatalog_ID">
+          <End Role="ExpressionCatalog" Type="Self.ExpressionCatalog" Multiplicity="0..1" />
+          <End Role="ExpressionUsageDetail" Type="Self.ExpressionUsageDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExpressionCatalog">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ExpressionUsageDetail">
+              <PropertyRef Name="ExpressionCatalog_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_ExpressionUsageDetail_ScoringEngine_ExpressionUsage_ExpressionUsage_ID">
+          <End Role="ExpressionUsage" Type="Self.ExpressionUsage" Multiplicity="0..1" />
+          <End Role="ExpressionUsageDetail" Type="Self.ExpressionUsageDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExpressionUsage">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ExpressionUsageDetail">
+              <PropertyRef Name="ExpressionUsage_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_Adjustment_ScoringEngine_AdjustmentType_AdjustmentType_ID">
+          <End Role="AdjustmentType" Type="Self.AdjustmentType" Multiplicity="0..1" />
+          <End Role="Adjustment" Type="Self.Adjustment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdjustmentType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Adjustment">
+              <PropertyRef Name="AdjustmentType_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_AdjustmentRange_ScoringEngine_AdjustmentType_AdjustmentType_ID">
+          <End Role="AdjustmentType" Type="Self.AdjustmentType" Multiplicity="1" />
+          <End Role="AdjustmentRange" Type="Self.AdjustmentRange" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdjustmentType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AdjustmentRange">
+              <PropertyRef Name="AdjustmentType_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_ClassCodeAdj_ScoringEngine_VehicleClassType_VehicleClassType_ID">
+          <End Role="VehicleClassType" Type="Self.VehicleClassType" Multiplicity="0..1" />
+          <End Role="ClassCodeAdj" Type="Self.ClassCodeAdj" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VehicleClassType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ClassCodeAdj">
+              <PropertyRef Name="VehicleClassType_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_ExpressionUsage_ScoringEngine_ExpressionUsageDetail_ErrorUsage_ID">
+          <End Role="ExpressionUsage" Type="Self.ExpressionUsage" Multiplicity="0..1" />
+          <End Role="ExpressionUsageDetail" Type="Self.ExpressionUsageDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExpressionUsage">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ExpressionUsageDetail">
+              <PropertyRef Name="ErrorUsage_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_ScoringEngineRun_TempScoreEngineResults_ScoringEngineRun_ID">
+          <End Role="ScoringEngineRun" Type="Self.ScoringEngineRun" Multiplicity="0..1" />
+          <End Role="TempScoreEngineResults" Type="Self.TempScoreEngineResults" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ScoringEngineRun">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TempScoreEngineResults">
+              <PropertyRef Name="ScoringEngineRun_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_StateAdjustment_ScoringEngine_StateCode_StateCode_ID">
+          <End Role="StateCode" Type="Self.StateCode" Multiplicity="0..1" />
+          <End Role="StateAdjustment" Type="Self.StateAdjustment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StateCode">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StateAdjustment">
+              <PropertyRef Name="StateCode_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_StateCode_ScoringEngine_StateMaxAPR_StateCode_ID">
+          <End Role="StateCode" Type="Self.StateCode" Multiplicity="1" />
+          <End Role="StateMaxAPR" Type="Self.StateMaxAPR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StateCode">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StateMaxAPR">
+              <PropertyRef Name="StateCode_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_StateFicoRange_ScoringEngine_StateCode_StateCode_ID">
+          <End Role="StateCode" Type="Self.StateCode" Multiplicity="0..1" />
+          <End Role="StateFicoRange" Type="Self.StateFicoRange" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StateCode">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StateFicoRange">
+              <PropertyRef Name="StateCode_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_TempScoringEngineParamLog_TempScoreEngineResults_ID">
+          <End Role="TempScoreEngineResults" Type="Self.TempScoreEngineResults" Multiplicity="0..1" />
+          <End Role="TempScoringEngineParamLog" Type="Self.TempScoringEngineParamLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TempScoreEngineResults">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TempScoringEngineParamLog">
+              <PropertyRef Name="TempScoreEngineResults_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_TermCap_ScoringEngine_AdjustmentType_AdjustmentType_ID">
+          <End Role="AdjustmentType" Type="Self.AdjustmentType" Multiplicity="1" />
+          <End Role="TermCap" Type="Self.TermCap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdjustmentType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TermCap">
+              <PropertyRef Name="AdjustmentType_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_Vehicle_ScoringEngine_VehicleMakeModelClass_VehicleMakeModelClass_ID">
+          <End Role="VehicleMakeModelClass" Type="Self.VehicleMakeModelClass" Multiplicity="0..1" />
+          <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VehicleMakeModelClass">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Vehicle">
+              <PropertyRef Name="VehicleMakeModelClass_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleClassType_VehicleClassType_ID">
+          <End Role="VehicleClassType" Type="Self.VehicleClassType" Multiplicity="0..1" />
+          <End Role="VehicleMakeModelClass" Type="Self.VehicleMakeModelClass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VehicleClassType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VehicleMakeModelClass">
+              <PropertyRef Name="VehicleClassType_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleMakeType_VehicleMakeType_ID">
+          <End Role="VehicleMakeType" Type="Self.VehicleMakeType" Multiplicity="0..1" />
+          <End Role="VehicleMakeModelClass" Type="Self.VehicleMakeModelClass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VehicleMakeType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VehicleMakeModelClass">
+              <PropertyRef Name="VehicleMakeType_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleModelType_VehicleModelType_ID">
+          <End Role="VehicleModelType" Type="Self.VehicleModelType" Multiplicity="0..1" />
+          <End Role="VehicleMakeModelClass" Type="Self.VehicleMakeModelClass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VehicleModelType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VehicleMakeModelClass">
+              <PropertyRef Name="VehicleModelType_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_VehicleModelType_ScoringEngine_VehicleMakeType_VehicleMakeType_ID">
+          <End Role="VehicleMakeType" Type="Self.VehicleMakeType" Multiplicity="0..1" />
+          <End Role="VehicleModelType" Type="Self.VehicleModelType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VehicleMakeType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VehicleModelType">
+              <PropertyRef Name="VehicleMakeType_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="GetStateMaxAPR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ScoringEngine">
+          <Parameter Name="StateCode" Type="char" Mode="In" />
+          <Parameter Name="VehicleAge" Type="decimal" Mode="In" />
+          <Parameter Name="VehicleYear" Type="decimal" Mode="In" />
+          <Parameter Name="LoanTerm" Type="decimal" Mode="In" />
+          <Parameter Name="LoanAmount" Type="money" Mode="In" />
+        </Function>
+        <Function Name="TCI_XML_IMPORT_INSERT_CREDITExtract" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ScoringEngine">
+          <Parameter Name="Application_ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="TCI_XML_IMPORT_SCOREExtract_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ScoringEngine">
+          <Parameter Name="Application_ID" Type="int" Mode="In" />
+          <Parameter Name="cmdid" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="ScoringEngineModelStoreContainer">
+          <EntitySet Name="Adjustment" EntityType="Self.Adjustment" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="AdjustmentRange" EntityType="Self.AdjustmentRange" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="AdjustmentType" EntityType="Self.AdjustmentType" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="BuyRate" EntityType="Self.BuyRate" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="ClassCodeAdj" EntityType="Self.ClassCodeAdj" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="DealerDiscount" EntityType="Self.DealerDiscount" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="DealerScore" EntityType="Self.DealerScore" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="DealerType" EntityType="Self.DealerType" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="DocFee" EntityType="Self.DocFee" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="ExcessMileage" EntityType="Self.ExcessMileage" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="ExpressionCatalog" EntityType="Self.ExpressionCatalog" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="ExpressionUsage" EntityType="Self.ExpressionUsage" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="ExpressionUsageDetail" EntityType="Self.ExpressionUsageDetail" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="PricingBase" EntityType="Self.PricingBase" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="ScoringEngineRun" EntityType="Self.ScoringEngineRun" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="StateAdjustment" EntityType="Self.StateAdjustment" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="StateCode" EntityType="Self.StateCode" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="StateFicoRange" EntityType="Self.StateFicoRange" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="StateMaxAPR" EntityType="Self.StateMaxAPR" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="TempApplicationModel" EntityType="Self.TempApplicationModel" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="TempExpressionCatalog" EntityType="Self.TempExpressionCatalog" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="TempScoreEngineResults" EntityType="Self.TempScoreEngineResults" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="TempScoringEngineParamLog" EntityType="Self.TempScoringEngineParamLog" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="TermCap" EntityType="Self.TermCap" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="Vehicle" EntityType="Self.Vehicle" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="VehicleClassType" EntityType="Self.VehicleClassType" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="VehicleMakeModelClass" EntityType="Self.VehicleMakeModelClass" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="VehicleMakeType" EntityType="Self.VehicleMakeType" Schema="ScoringEngine" store:Type="Tables" />
+          <EntitySet Name="VehicleModelType" EntityType="Self.VehicleModelType" Schema="ScoringEngine" store:Type="Tables" />
+          <AssociationSet Name="FK_ScoringEngine_DealerDiscount_ScoringEngine_DealerType_DealerType_ID" Association="Self.FK_ScoringEngine_DealerDiscount_ScoringEngine_DealerType_DealerType_ID">
+            <End Role="DealerType" EntitySet="DealerType" />
+            <End Role="DealerDiscount" EntitySet="DealerDiscount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_DealerDiscount_ScoringEngine_StateCode_StateCode_ID" Association="Self.FK_ScoringEngine_DealerDiscount_ScoringEngine_StateCode_StateCode_ID">
+            <End Role="StateCode" EntitySet="StateCode" />
+            <End Role="DealerDiscount" EntitySet="DealerDiscount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_ExpressionUsageDetail_ScoringEngine_ExpressionCatalog_ExpressionCatalog_ID" Association="Self.FK_ScoringEngine_ExpressionUsageDetail_ScoringEngine_ExpressionCatalog_ExpressionCatalog_ID">
+            <End Role="ExpressionCatalog" EntitySet="ExpressionCatalog" />
+            <End Role="ExpressionUsageDetail" EntitySet="ExpressionUsageDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_ExpressionUsageDetail_ScoringEngine_ExpressionUsage_ExpressionUsage_ID" Association="Self.FK_ScoringEngine_ExpressionUsageDetail_ScoringEngine_ExpressionUsage_ExpressionUsage_ID">
+            <End Role="ExpressionUsage" EntitySet="ExpressionUsage" />
+            <End Role="ExpressionUsageDetail" EntitySet="ExpressionUsageDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_Adjustment_ScoringEngine_AdjustmentType_AdjustmentType_ID" Association="Self.FK_ScoringEngine_Adjustment_ScoringEngine_AdjustmentType_AdjustmentType_ID">
+            <End Role="AdjustmentType" EntitySet="AdjustmentType" />
+            <End Role="Adjustment" EntitySet="Adjustment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_AdjustmentRange_ScoringEngine_AdjustmentType_AdjustmentType_ID" Association="Self.FK_ScoringEngine_AdjustmentRange_ScoringEngine_AdjustmentType_AdjustmentType_ID">
+            <End Role="AdjustmentType" EntitySet="AdjustmentType" />
+            <End Role="AdjustmentRange" EntitySet="AdjustmentRange" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_ClassCodeAdj_ScoringEngine_VehicleClassType_VehicleClassType_ID" Association="Self.FK_ScoringEngine_ClassCodeAdj_ScoringEngine_VehicleClassType_VehicleClassType_ID">
+            <End Role="VehicleClassType" EntitySet="VehicleClassType" />
+            <End Role="ClassCodeAdj" EntitySet="ClassCodeAdj" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_ExpressionUsage_ScoringEngine_ExpressionUsageDetail_ErrorUsage_ID" Association="Self.FK_ScoringEngine_ExpressionUsage_ScoringEngine_ExpressionUsageDetail_ErrorUsage_ID">
+            <End Role="ExpressionUsage" EntitySet="ExpressionUsage" />
+            <End Role="ExpressionUsageDetail" EntitySet="ExpressionUsageDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_ScoringEngineRun_TempScoreEngineResults_ScoringEngineRun_ID" Association="Self.FK_ScoringEngine_ScoringEngineRun_TempScoreEngineResults_ScoringEngineRun_ID">
+            <End Role="ScoringEngineRun" EntitySet="ScoringEngineRun" />
+            <End Role="TempScoreEngineResults" EntitySet="TempScoreEngineResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_StateAdjustment_ScoringEngine_StateCode_StateCode_ID" Association="Self.FK_ScoringEngine_StateAdjustment_ScoringEngine_StateCode_StateCode_ID">
+            <End Role="StateCode" EntitySet="StateCode" />
+            <End Role="StateAdjustment" EntitySet="StateAdjustment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_StateCode_ScoringEngine_StateMaxAPR_StateCode_ID" Association="Self.FK_ScoringEngine_StateCode_ScoringEngine_StateMaxAPR_StateCode_ID">
+            <End Role="StateCode" EntitySet="StateCode" />
+            <End Role="StateMaxAPR" EntitySet="StateMaxAPR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_StateFicoRange_ScoringEngine_StateCode_StateCode_ID" Association="Self.FK_ScoringEngine_StateFicoRange_ScoringEngine_StateCode_StateCode_ID">
+            <End Role="StateCode" EntitySet="StateCode" />
+            <End Role="StateFicoRange" EntitySet="StateFicoRange" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_TempScoringEngineParamLog_TempScoreEngineResults_ID" Association="Self.FK_ScoringEngine_TempScoringEngineParamLog_TempScoreEngineResults_ID">
+            <End Role="TempScoreEngineResults" EntitySet="TempScoreEngineResults" />
+            <End Role="TempScoringEngineParamLog" EntitySet="TempScoringEngineParamLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_TermCap_ScoringEngine_AdjustmentType_AdjustmentType_ID" Association="Self.FK_ScoringEngine_TermCap_ScoringEngine_AdjustmentType_AdjustmentType_ID">
+            <End Role="AdjustmentType" EntitySet="AdjustmentType" />
+            <End Role="TermCap" EntitySet="TermCap" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_Vehicle_ScoringEngine_VehicleMakeModelClass_VehicleMakeModelClass_ID" Association="Self.FK_ScoringEngine_Vehicle_ScoringEngine_VehicleMakeModelClass_VehicleMakeModelClass_ID">
+            <End Role="VehicleMakeModelClass" EntitySet="VehicleMakeModelClass" />
+            <End Role="Vehicle" EntitySet="Vehicle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleClassType_VehicleClassType_ID" Association="Self.FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleClassType_VehicleClassType_ID">
+            <End Role="VehicleClassType" EntitySet="VehicleClassType" />
+            <End Role="VehicleMakeModelClass" EntitySet="VehicleMakeModelClass" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleMakeType_VehicleMakeType_ID" Association="Self.FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleMakeType_VehicleMakeType_ID">
+            <End Role="VehicleMakeType" EntitySet="VehicleMakeType" />
+            <End Role="VehicleMakeModelClass" EntitySet="VehicleMakeModelClass" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleModelType_VehicleModelType_ID" Association="Self.FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleModelType_VehicleModelType_ID">
+            <End Role="VehicleModelType" EntitySet="VehicleModelType" />
+            <End Role="VehicleMakeModelClass" EntitySet="VehicleMakeModelClass" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_VehicleModelType_ScoringEngine_VehicleMakeType_VehicleMakeType_ID" Association="Self.FK_ScoringEngine_VehicleModelType_ScoringEngine_VehicleMakeType_VehicleMakeType_ID">
+            <End Role="VehicleMakeType" EntitySet="VehicleMakeType" />
+            <End Role="VehicleModelType" EntitySet="VehicleModelType" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ScoringEngineModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ScoringEngineEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="GetStateMaxAPR" ReturnType="Collection(Decimal)">
+            <Parameter Name="StateCode" Mode="In" Type="String" />
+            <Parameter Name="VehicleAge" Mode="In" Type="Decimal" />
+            <Parameter Name="VehicleYear" Mode="In" Type="Decimal" />
+            <Parameter Name="LoanTerm" Mode="In" Type="Decimal" />
+            <Parameter Name="LoanAmount" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="TCI_XML_IMPORT_INSERT_CREDITExtract">
+          <Parameter Name="Application_ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="TCI_XML_IMPORT_SCOREExtract_INSERT">
+            <Parameter Name="Application_ID" Mode="In" Type="Int32" />
+            <Parameter Name="cmdid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="Adjustment" EntityType="ScoringEngineModel.Adjustment" />
+          <EntitySet Name="AdjustmentRange" EntityType="ScoringEngineModel.AdjustmentRange" />
+          <EntitySet Name="AdjustmentType" EntityType="ScoringEngineModel.AdjustmentType" />
+          <EntitySet Name="BuyRate" EntityType="ScoringEngineModel.BuyRate" />
+          <EntitySet Name="ClassCodeAdj" EntityType="ScoringEngineModel.ClassCodeAdj" />
+          <EntitySet Name="DealerDiscount" EntityType="ScoringEngineModel.DealerDiscount" />
+          <EntitySet Name="DealerScore" EntityType="ScoringEngineModel.DealerScore" />
+          <EntitySet Name="DealerType" EntityType="ScoringEngineModel.DealerType" />
+          <EntitySet Name="DocFee" EntityType="ScoringEngineModel.DocFee" />
+          <EntitySet Name="ExcessMileage" EntityType="ScoringEngineModel.ExcessMileage" />
+          <EntitySet Name="ExpressionCatalog" EntityType="ScoringEngineModel.ExpressionCatalog" />
+          <EntitySet Name="ExpressionUsage" EntityType="ScoringEngineModel.ExpressionUsage" />
+          <EntitySet Name="ExpressionUsageDetail" EntityType="ScoringEngineModel.ExpressionUsageDetail" />
+          <EntitySet Name="PricingBase" EntityType="ScoringEngineModel.PricingBase" />
+          <EntitySet Name="StateAdjustment" EntityType="ScoringEngineModel.StateAdjustment" />
+          <EntitySet Name="StateCode" EntityType="ScoringEngineModel.StateCode" />
+          <EntitySet Name="StateFicoRange" EntityType="ScoringEngineModel.StateFicoRange" />
+          <EntitySet Name="StateMaxAPR" EntityType="ScoringEngineModel.StateMaxAPR" />
+          <EntitySet Name="TempApplicationModel" EntityType="ScoringEngineModel.TempApplicationModel" />
+          <EntitySet Name="TermCap" EntityType="ScoringEngineModel.TermCap" />
+          <EntitySet Name="Vehicle" EntityType="ScoringEngineModel.Vehicle" />
+          <EntitySet Name="VehicleClassType" EntityType="ScoringEngineModel.VehicleClassType" />
+          <EntitySet Name="VehicleMakeModelClass" EntityType="ScoringEngineModel.VehicleMakeModelClass" />
+          <EntitySet Name="VehicleMakeType" EntityType="ScoringEngineModel.VehicleMakeType" />
+          <EntitySet Name="VehicleModelType" EntityType="ScoringEngineModel.VehicleModelType" />
+          <AssociationSet Name="FK_ScoringEngine_Adjustment_ScoringEngine_AdjustmentType_AdjustmentType_ID" Association="ScoringEngineModel.FK_ScoringEngine_Adjustment_ScoringEngine_AdjustmentType_AdjustmentType_ID">
+            <End Role="AdjustmentType" EntitySet="AdjustmentType" />
+            <End Role="Adjustment" EntitySet="Adjustment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_AdjustmentRange_ScoringEngine_AdjustmentType_AdjustmentType_ID" Association="ScoringEngineModel.FK_ScoringEngine_AdjustmentRange_ScoringEngine_AdjustmentType_AdjustmentType_ID">
+            <End Role="AdjustmentType" EntitySet="AdjustmentType" />
+            <End Role="AdjustmentRange" EntitySet="AdjustmentRange" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_TermCap_ScoringEngine_AdjustmentType_AdjustmentType_ID" Association="ScoringEngineModel.FK_ScoringEngine_TermCap_ScoringEngine_AdjustmentType_AdjustmentType_ID">
+            <End Role="AdjustmentType" EntitySet="AdjustmentType" />
+            <End Role="TermCap" EntitySet="TermCap" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_ClassCodeAdj_ScoringEngine_VehicleClassType_VehicleClassType_ID" Association="ScoringEngineModel.FK_ScoringEngine_ClassCodeAdj_ScoringEngine_VehicleClassType_VehicleClassType_ID">
+            <End Role="VehicleClassType" EntitySet="VehicleClassType" />
+            <End Role="ClassCodeAdj" EntitySet="ClassCodeAdj" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_DealerDiscount_ScoringEngine_DealerType_DealerType_ID" Association="ScoringEngineModel.FK_ScoringEngine_DealerDiscount_ScoringEngine_DealerType_DealerType_ID">
+            <End Role="DealerType" EntitySet="DealerType" />
+            <End Role="DealerDiscount" EntitySet="DealerDiscount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_DealerDiscount_ScoringEngine_StateCode_StateCode_ID" Association="ScoringEngineModel.FK_ScoringEngine_DealerDiscount_ScoringEngine_StateCode_StateCode_ID">
+            <End Role="StateCode" EntitySet="StateCode" />
+            <End Role="DealerDiscount" EntitySet="DealerDiscount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_ExpressionUsageDetail_ScoringEngine_ExpressionCatalog_ExpressionCatalog_ID" Association="ScoringEngineModel.FK_ScoringEngine_ExpressionUsageDetail_ScoringEngine_ExpressionCatalog_ExpressionCatalog_ID">
+            <End Role="ExpressionCatalog" EntitySet="ExpressionCatalog" />
+            <End Role="ExpressionUsageDetail" EntitySet="ExpressionUsageDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_ExpressionUsageDetail_ScoringEngine_ExpressionUsage_ExpressionUsage_ID" Association="ScoringEngineModel.FK_ScoringEngine_ExpressionUsageDetail_ScoringEngine_ExpressionUsage_ExpressionUsage_ID">
+            <End Role="ExpressionUsage" EntitySet="ExpressionUsage" />
+            <End Role="ExpressionUsageDetail" EntitySet="ExpressionUsageDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_StateAdjustment_ScoringEngine_StateCode_StateCode_ID" Association="ScoringEngineModel.FK_ScoringEngine_StateAdjustment_ScoringEngine_StateCode_StateCode_ID">
+            <End Role="StateCode" EntitySet="StateCode" />
+            <End Role="StateAdjustment" EntitySet="StateAdjustment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_StateCode_ScoringEngine_StateMaxAPR_StateCode_ID" Association="ScoringEngineModel.FK_ScoringEngine_StateCode_ScoringEngine_StateMaxAPR_StateCode_ID">
+            <End Role="StateCode" EntitySet="StateCode" />
+            <End Role="StateMaxAPR" EntitySet="StateMaxAPR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_StateFicoRange_ScoringEngine_StateCode_StateCode_ID" Association="ScoringEngineModel.FK_ScoringEngine_StateFicoRange_ScoringEngine_StateCode_StateCode_ID">
+            <End Role="StateCode" EntitySet="StateCode" />
+            <End Role="StateFicoRange" EntitySet="StateFicoRange" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_Vehicle_ScoringEngine_VehicleMakeModelClass_VehicleMakeModelClass_ID" Association="ScoringEngineModel.FK_ScoringEngine_Vehicle_ScoringEngine_VehicleMakeModelClass_VehicleMakeModelClass_ID">
+            <End Role="VehicleMakeModelClass" EntitySet="VehicleMakeModelClass" />
+            <End Role="Vehicle" EntitySet="Vehicle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleClassType_VehicleClassType_ID" Association="ScoringEngineModel.FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleClassType_VehicleClassType_ID">
+            <End Role="VehicleClassType" EntitySet="VehicleClassType" />
+            <End Role="VehicleMakeModelClass" EntitySet="VehicleMakeModelClass" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleMakeType_VehicleMakeType_ID" Association="ScoringEngineModel.FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleMakeType_VehicleMakeType_ID">
+            <End Role="VehicleMakeType" EntitySet="VehicleMakeType" />
+            <End Role="VehicleMakeModelClass" EntitySet="VehicleMakeModelClass" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleModelType_VehicleModelType_ID" Association="ScoringEngineModel.FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleModelType_VehicleModelType_ID">
+            <End Role="VehicleModelType" EntitySet="VehicleModelType" />
+            <End Role="VehicleMakeModelClass" EntitySet="VehicleMakeModelClass" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_VehicleModelType_ScoringEngine_VehicleMakeType_VehicleMakeType_ID" Association="ScoringEngineModel.FK_ScoringEngine_VehicleModelType_ScoringEngine_VehicleMakeType_VehicleMakeType_ID">
+            <End Role="VehicleMakeType" EntitySet="VehicleMakeType" />
+            <End Role="VehicleModelType" EntitySet="VehicleModelType" />
+          </AssociationSet>
+          <EntitySet Name="ScoringEngineRun" EntityType="ScoringEngineModel.ScoringEngineRun" />
+          <EntitySet Name="TempScoreEngineResults" EntityType="ScoringEngineModel.TempScoreEngineResults" />
+          <EntitySet Name="TempScoringEngineParamLog" EntityType="ScoringEngineModel.TempScoringEngineParamLog" />
+          <AssociationSet Name="FK_ScoringEngine_ScoringEngineRun_TempScoreEngineResults_ScoringEngineRun_ID" Association="ScoringEngineModel.FK_ScoringEngine_ScoringEngineRun_TempScoreEngineResults_ScoringEngineRun_ID">
+            <End Role="ScoringEngineRun" EntitySet="ScoringEngineRun" />
+            <End Role="TempScoreEngineResults" EntitySet="TempScoreEngineResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_TempScoringEngineParamLog_TempScoreEngineResults_ID" Association="ScoringEngineModel.FK_ScoringEngine_TempScoringEngineParamLog_TempScoreEngineResults_ID">
+            <End Role="TempScoreEngineResults" EntitySet="TempScoreEngineResults" />
+            <End Role="TempScoringEngineParamLog" EntitySet="TempScoringEngineParamLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScoringEngine_ExpressionUsage_ScoringEngine_ExpressionUsageDetail_ErrorUsage_ID" Association="ScoringEngineModel.FK_ScoringEngine_ExpressionUsage_ScoringEngine_ExpressionUsageDetail_ErrorUsage_ID">
+            <End Role="ExpressionUsage" EntitySet="ExpressionUsage" />
+            <End Role="ExpressionUsageDetail" EntitySet="ExpressionUsageDetail" />
+          </AssociationSet>
+          <EntitySet Name="TempExpressionCatalog" EntityType="ScoringEngineModel.TempExpressionCatalog" />
+        </EntityContainer>
+        <EntityType Name="Adjustment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdjustmentNumber" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="AdjustmentDiscount" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AdjustmentType_ID" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="AdjustmentType" Relationship="ScoringEngineModel.FK_ScoringEngine_Adjustment_ScoringEngine_AdjustmentType_AdjustmentType_ID" FromRole="Adjustment" ToRole="AdjustmentType" />
+          <Property Name="Organization_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="AdjustmentRange">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MinTerm" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="MaxTerm" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="AdjustmentDiscount" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AdjustmentType_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AdjustmentType" Relationship="ScoringEngineModel.FK_ScoringEngine_AdjustmentRange_ScoringEngine_AdjustmentType_AdjustmentType_ID" FromRole="AdjustmentRange" ToRole="AdjustmentType" />
+          <Property Name="Organization_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="AdjustmentType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DisplayName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Adjustment" Relationship="ScoringEngineModel.FK_ScoringEngine_Adjustment_ScoringEngine_AdjustmentType_AdjustmentType_ID" FromRole="AdjustmentType" ToRole="Adjustment" />
+          <NavigationProperty Name="AdjustmentRange" Relationship="ScoringEngineModel.FK_ScoringEngine_AdjustmentRange_ScoringEngine_AdjustmentType_AdjustmentType_ID" FromRole="AdjustmentType" ToRole="AdjustmentRange" />
+          <NavigationProperty Name="TermCap" Relationship="ScoringEngineModel.FK_ScoringEngine_TermCap_ScoringEngine_AdjustmentType_AdjustmentType_ID" FromRole="AdjustmentType" ToRole="TermCap" />
+          <Property Name="Organization_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="BuyRate">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MinBV" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MaxBV" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MinFico" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MaxFico" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="BuyRateValue" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="Organization_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ClassCodeAdj">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LTVCap" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="LTVAdj" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="DiscountAdj" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="FinancedCap" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="VehicleClassType_ID" Type="Int32" />
+          <NavigationProperty Name="VehicleClassType" Relationship="ScoringEngineModel.FK_ScoringEngine_ClassCodeAdj_ScoringEngine_VehicleClassType_VehicleClassType_ID" FromRole="ClassCodeAdj" ToRole="VehicleClassType" />
+          <Property Name="Organization_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DealerDiscount">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Discount" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DealerType_ID" Type="Int32" />
+          <Property Name="StateCode_ID" Type="Int32" />
+          <NavigationProperty Name="DealerType" Relationship="ScoringEngineModel.FK_ScoringEngine_DealerDiscount_ScoringEngine_DealerType_DealerType_ID" FromRole="DealerDiscount" ToRole="DealerType" />
+          <NavigationProperty Name="StateCode" Relationship="ScoringEngineModel.FK_ScoringEngine_DealerDiscount_ScoringEngine_StateCode_StateCode_ID" FromRole="DealerDiscount" ToRole="StateCode" />
+          <Property Name="Organization_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DealerScore">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Score" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DisAjd" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="LTVCap" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="MinDisc" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Organization_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DealerType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="DealerDiscount" Relationship="ScoringEngineModel.FK_ScoringEngine_DealerDiscount_ScoringEngine_DealerType_DealerType_ID" FromRole="DealerType" ToRole="DealerDiscount" />
+          <Property Name="Organization_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DocFee">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MinTerm" Type="Int32" Nullable="false" />
+          <Property Name="MaxTerm" Type="Int32" Nullable="false" />
+          <Property Name="MaxMiles" Type="Int32" Nullable="false" />
+          <Property Name="VehicleAge" Type="Int32" Nullable="false" />
+          <Property Name="VehicleClass" Type="Int32" Nullable="false" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Organization_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ExcessMileage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MinMileage" Type="Int32" Nullable="false" />
+          <Property Name="MaxMileage" Type="Int32" Nullable="false" />
+          <Property Name="LTVAdj" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="DiscAdj" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="TermCap" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="Organization_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ExpressionCatalog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Expression" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsComposite" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="ExpressionUsageDetail" Relationship="ScoringEngineModel.FK_ScoringEngine_ExpressionUsageDetail_ScoringEngine_ExpressionCatalog_ExpressionCatalog_ID" FromRole="ExpressionCatalog" ToRole="ExpressionUsageDetail" />
+          <Property Name="Organization_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ExpressionUsage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ScreenOrModule" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="ExpressionUsageDetail" Relationship="ScoringEngineModel.FK_ScoringEngine_ExpressionUsageDetail_ScoringEngine_ExpressionUsage_ExpressionUsage_ID" FromRole="ExpressionUsage" ToRole="ExpressionUsageDetail" />
+          <Property Name="Organization_ID" Type="Int32" />
+          <NavigationProperty Name="ExpressionUsageDetail1" Relationship="ScoringEngineModel.FK_ScoringEngine_ExpressionUsage_ScoringEngine_ExpressionUsageDetail_ErrorUsage_ID" FromRole="ExpressionUsage" ToRole="ExpressionUsageDetail" />
+        </EntityType>
+        <EntityType Name="ExpressionUsageDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="ExecutionSequence" Type="Int32" Nullable="false" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ExpressionCatalog_ID" Type="Int32" />
+          <Property Name="ExpressionUsage_ID" Type="Int32" />
+          <NavigationProperty Name="ExpressionCatalog" Relationship="ScoringEngineModel.FK_ScoringEngine_ExpressionUsageDetail_ScoringEngine_ExpressionCatalog_ExpressionCatalog_ID" FromRole="ExpressionUsageDetail" ToRole="ExpressionCatalog" />
+          <NavigationProperty Name="ExpressionUsage" Relationship="ScoringEngineModel.FK_ScoringEngine_ExpressionUsageDetail_ScoringEngine_ExpressionUsage_ExpressionUsage_ID" FromRole="ExpressionUsageDetail" ToRole="ExpressionUsage" />
+          <Property Name="Organization_ID" Type="Int32" />
+          <Property Name="ErrorUsage_ID" Type="Int32" />
+          <Property Name="ErrorOnFailure" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ExpressionUsage1" Relationship="ScoringEngineModel.FK_ScoringEngine_ExpressionUsage_ScoringEngine_ExpressionUsageDetail_ErrorUsage_ID" FromRole="ExpressionUsageDetail" ToRole="ExpressionUsage" />
+        </EntityType>
+        <EntityType Name="PricingBase">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MinBV" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="MaxBV" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="MinLTV" Type="Decimal" Precision="18" Scale="6" />
+          <Property Name="MaxLTV" Type="Decimal" Precision="18" Scale="6" />
+          <Property Name="PricingRateDiscount" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="Organization_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="StateAdjustment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DiscountAdj" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="LTVAdj" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="MaxStateAPR" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="GapCap" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="StateCode_ID" Type="Int32" />
+          <NavigationProperty Name="StateCode" Relationship="ScoringEngineModel.FK_ScoringEngine_StateAdjustment_ScoringEngine_StateCode_StateCode_ID" FromRole="StateAdjustment" ToRole="StateCode" />
+          <Property Name="Organization_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="StateCode">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Abbreviation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SortOrder" Type="Int32" Nullable="false" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="DealerDiscount" Relationship="ScoringEngineModel.FK_ScoringEngine_DealerDiscount_ScoringEngine_StateCode_StateCode_ID" FromRole="StateCode" ToRole="DealerDiscount" />
+          <NavigationProperty Name="StateAdjustment" Relationship="ScoringEngineModel.FK_ScoringEngine_StateAdjustment_ScoringEngine_StateCode_StateCode_ID" FromRole="StateCode" ToRole="StateAdjustment" />
+          <NavigationProperty Name="StateMaxAPR" Relationship="ScoringEngineModel.FK_ScoringEngine_StateCode_ScoringEngine_StateMaxAPR_StateCode_ID" FromRole="StateCode" ToRole="StateMaxAPR" />
+          <NavigationProperty Name="StateFicoRange" Relationship="ScoringEngineModel.FK_ScoringEngine_StateFicoRange_ScoringEngine_StateCode_StateCode_ID" FromRole="StateCode" ToRole="StateFicoRange" />
+          <Property Name="Organization_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="StateFicoRange">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FicoScoreMin" Type="Int32" Nullable="false" />
+          <Property Name="FicoScoreMax" Type="Int32" Nullable="false" />
+          <Property Name="MinAPR" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="StateCode_ID" Type="Int32" />
+          <NavigationProperty Name="StateCode" Relationship="ScoringEngineModel.FK_ScoringEngine_StateFicoRange_ScoringEngine_StateCode_StateCode_ID" FromRole="StateFicoRange" ToRole="StateCode" />
+          <Property Name="Organization_ID" Type="Int32" />
+          <Property Name="MaxAPRDiscountAdj" Type="Decimal" Precision="18" Scale="6" />
+        </EntityType>
+        <EntityType Name="StateMaxAPR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="StateCode_ID" Type="Int32" Nullable="false" />
+          <Property Name="MaxStateAPR" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="MaxVehicleAge" Type="Int32" />
+          <Property Name="MinVehicleYear" Type="Int32" />
+          <Property Name="MaxTerm" Type="Int32" />
+          <Property Name="MinAmount" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="StateCode" Relationship="ScoringEngineModel.FK_ScoringEngine_StateCode_ScoringEngine_StateMaxAPR_StateCode_ID" FromRole="StateMaxAPR" ToRole="StateCode" />
+          <Property Name="Organization_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TempApplicationModel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Organization_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TermCap">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MinFinanceAmt" Type="Int32" Nullable="false" />
+          <Property Name="MaxFinanceAmt" Type="Int32" Nullable="false" />
+          <Property Name="AdjustmentCap" Type="Int32" Nullable="false" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AdjustmentType_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AdjustmentType" Relationship="ScoringEngineModel.FK_ScoringEngine_TermCap_ScoringEngine_AdjustmentType_AdjustmentType_ID" FromRole="TermCap" ToRole="AdjustmentType" />
+          <Property Name="Organization_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Vehicle">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="organization_ID" Type="Int32" />
+          <Property Name="VehicleMakeModelClass_ID" Type="Int32" />
+          <Property Name="DisplayName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="VehicleMakeModelClass" Relationship="ScoringEngineModel.FK_ScoringEngine_Vehicle_ScoringEngine_VehicleMakeModelClass_VehicleMakeModelClass_ID" FromRole="Vehicle" ToRole="VehicleMakeModelClass" />
+        </EntityType>
+        <EntityType Name="VehicleClassType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="ClassCodeAdj" Relationship="ScoringEngineModel.FK_ScoringEngine_ClassCodeAdj_ScoringEngine_VehicleClassType_VehicleClassType_ID" FromRole="VehicleClassType" ToRole="ClassCodeAdj" />
+          <NavigationProperty Name="VehicleMakeModelClass" Relationship="ScoringEngineModel.FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleClassType_VehicleClassType_ID" FromRole="VehicleClassType" ToRole="VehicleMakeModelClass" />
+          <Property Name="Organization_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="VehicleMakeModelClass">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="VehicleModelType_ID" Type="Int32" />
+          <Property Name="VehicleClassType_ID" Type="Int32" />
+          <Property Name="VehicleMakeType_ID" Type="Int32" />
+          <NavigationProperty Name="Vehicle" Relationship="ScoringEngineModel.FK_ScoringEngine_Vehicle_ScoringEngine_VehicleMakeModelClass_VehicleMakeModelClass_ID" FromRole="VehicleMakeModelClass" ToRole="Vehicle" />
+          <NavigationProperty Name="VehicleClassType" Relationship="ScoringEngineModel.FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleClassType_VehicleClassType_ID" FromRole="VehicleMakeModelClass" ToRole="VehicleClassType" />
+          <NavigationProperty Name="VehicleMakeType" Relationship="ScoringEngineModel.FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleMakeType_VehicleMakeType_ID" FromRole="VehicleMakeModelClass" ToRole="VehicleMakeType" />
+          <NavigationProperty Name="VehicleModelType" Relationship="ScoringEngineModel.FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleModelType_VehicleModelType_ID" FromRole="VehicleMakeModelClass" ToRole="VehicleModelType" />
+          <Property Name="Organization_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="VehicleMakeType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DisplayName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="VehicleMakeModelClass" Relationship="ScoringEngineModel.FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleMakeType_VehicleMakeType_ID" FromRole="VehicleMakeType" ToRole="VehicleMakeModelClass" />
+          <NavigationProperty Name="VehicleModelType" Relationship="ScoringEngineModel.FK_ScoringEngine_VehicleModelType_ScoringEngine_VehicleMakeType_VehicleMakeType_ID" FromRole="VehicleMakeType" ToRole="VehicleModelType" />
+          <Property Name="Organization_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="VehicleModelType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="VehicleMakeType_ID" Type="Int32" />
+          <Property Name="DisplayName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="VehicleMakeModelClass" Relationship="ScoringEngineModel.FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleModelType_VehicleModelType_ID" FromRole="VehicleModelType" ToRole="VehicleMakeModelClass" />
+          <NavigationProperty Name="VehicleMakeType" Relationship="ScoringEngineModel.FK_ScoringEngine_VehicleModelType_ScoringEngine_VehicleMakeType_VehicleMakeType_ID" FromRole="VehicleModelType" ToRole="VehicleMakeType" />
+          <Property Name="Organization_ID" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_ScoringEngine_Adjustment_ScoringEngine_AdjustmentType_AdjustmentType_ID">
+          <End Type="ScoringEngineModel.AdjustmentType" Role="AdjustmentType" Multiplicity="0..1" />
+          <End Type="ScoringEngineModel.Adjustment" Role="Adjustment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdjustmentType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Adjustment">
+              <PropertyRef Name="AdjustmentType_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_AdjustmentRange_ScoringEngine_AdjustmentType_AdjustmentType_ID">
+          <End Type="ScoringEngineModel.AdjustmentType" Role="AdjustmentType" Multiplicity="1" />
+          <End Type="ScoringEngineModel.AdjustmentRange" Role="AdjustmentRange" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdjustmentType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AdjustmentRange">
+              <PropertyRef Name="AdjustmentType_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_TermCap_ScoringEngine_AdjustmentType_AdjustmentType_ID">
+          <End Type="ScoringEngineModel.AdjustmentType" Role="AdjustmentType" Multiplicity="1" />
+          <End Type="ScoringEngineModel.TermCap" Role="TermCap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdjustmentType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TermCap">
+              <PropertyRef Name="AdjustmentType_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_ClassCodeAdj_ScoringEngine_VehicleClassType_VehicleClassType_ID">
+          <End Type="ScoringEngineModel.VehicleClassType" Role="VehicleClassType" Multiplicity="0..1" />
+          <End Type="ScoringEngineModel.ClassCodeAdj" Role="ClassCodeAdj" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VehicleClassType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ClassCodeAdj">
+              <PropertyRef Name="VehicleClassType_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_DealerDiscount_ScoringEngine_DealerType_DealerType_ID">
+          <End Type="ScoringEngineModel.DealerType" Role="DealerType" Multiplicity="0..1" />
+          <End Type="ScoringEngineModel.DealerDiscount" Role="DealerDiscount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DealerType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DealerDiscount">
+              <PropertyRef Name="DealerType_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_DealerDiscount_ScoringEngine_StateCode_StateCode_ID">
+          <End Type="ScoringEngineModel.StateCode" Role="StateCode" Multiplicity="0..1" />
+          <End Type="ScoringEngineModel.DealerDiscount" Role="DealerDiscount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StateCode">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DealerDiscount">
+              <PropertyRef Name="StateCode_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_ExpressionUsageDetail_ScoringEngine_ExpressionCatalog_ExpressionCatalog_ID">
+          <End Type="ScoringEngineModel.ExpressionCatalog" Role="ExpressionCatalog" Multiplicity="0..1" />
+          <End Type="ScoringEngineModel.ExpressionUsageDetail" Role="ExpressionUsageDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExpressionCatalog">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ExpressionUsageDetail">
+              <PropertyRef Name="ExpressionCatalog_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_ExpressionUsageDetail_ScoringEngine_ExpressionUsage_ExpressionUsage_ID">
+          <End Type="ScoringEngineModel.ExpressionUsage" Role="ExpressionUsage" Multiplicity="0..1" />
+          <End Type="ScoringEngineModel.ExpressionUsageDetail" Role="ExpressionUsageDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExpressionUsage">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ExpressionUsageDetail">
+              <PropertyRef Name="ExpressionUsage_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_StateAdjustment_ScoringEngine_StateCode_StateCode_ID">
+          <End Type="ScoringEngineModel.StateCode" Role="StateCode" Multiplicity="0..1" />
+          <End Type="ScoringEngineModel.StateAdjustment" Role="StateAdjustment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StateCode">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StateAdjustment">
+              <PropertyRef Name="StateCode_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_StateCode_ScoringEngine_StateMaxAPR_StateCode_ID">
+          <End Type="ScoringEngineModel.StateCode" Role="StateCode" Multiplicity="1" />
+          <End Type="ScoringEngineModel.StateMaxAPR" Role="StateMaxAPR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StateCode">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StateMaxAPR">
+              <PropertyRef Name="StateCode_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_StateFicoRange_ScoringEngine_StateCode_StateCode_ID">
+          <End Type="ScoringEngineModel.StateCode" Role="StateCode" Multiplicity="0..1" />
+          <End Type="ScoringEngineModel.StateFicoRange" Role="StateFicoRange" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StateCode">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StateFicoRange">
+              <PropertyRef Name="StateCode_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_Vehicle_ScoringEngine_VehicleMakeModelClass_VehicleMakeModelClass_ID">
+          <End Type="ScoringEngineModel.VehicleMakeModelClass" Role="VehicleMakeModelClass" Multiplicity="0..1" />
+          <End Type="ScoringEngineModel.Vehicle" Role="Vehicle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VehicleMakeModelClass">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Vehicle">
+              <PropertyRef Name="VehicleMakeModelClass_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleClassType_VehicleClassType_ID">
+          <End Type="ScoringEngineModel.VehicleClassType" Role="VehicleClassType" Multiplicity="0..1" />
+          <End Type="ScoringEngineModel.VehicleMakeModelClass" Role="VehicleMakeModelClass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VehicleClassType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VehicleMakeModelClass">
+              <PropertyRef Name="VehicleClassType_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleMakeType_VehicleMakeType_ID">
+          <End Type="ScoringEngineModel.VehicleMakeType" Role="VehicleMakeType" Multiplicity="0..1" />
+          <End Type="ScoringEngineModel.VehicleMakeModelClass" Role="VehicleMakeModelClass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VehicleMakeType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VehicleMakeModelClass">
+              <PropertyRef Name="VehicleMakeType_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_VehicleMakeModelClass_ScoringEngine_VehicleModelType_VehicleModelType_ID">
+          <End Type="ScoringEngineModel.VehicleModelType" Role="VehicleModelType" Multiplicity="0..1" />
+          <End Type="ScoringEngineModel.VehicleMakeModelClass" Role="VehicleMakeModelClass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VehicleModelType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VehicleMakeModelClass">
+              <PropertyRef Name="VehicleModelType_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_VehicleModelType_ScoringEngine_VehicleMakeType_VehicleMakeType_ID">
+          <End Type="ScoringEngineModel.VehicleMakeType" Role="VehicleMakeType" Multiplicity="0..1" />
+          <End Type="ScoringEngineModel.VehicleModelType" Role="VehicleModelType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VehicleMakeType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VehicleModelType">
+              <PropertyRef Name="VehicleMakeType_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ScoringEngineRun">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="RefValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TempScoreEngineResults" Relationship="ScoringEngineModel.FK_ScoringEngine_ScoringEngineRun_TempScoreEngineResults_ScoringEngineRun_ID" FromRole="ScoringEngineRun" ToRole="TempScoreEngineResults" />
+          <Property Name="Organization_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TempScoreEngineResults">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Expression" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Result" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ScoringEngineRun_ID" Type="Int64" />
+          <NavigationProperty Name="ScoringEngineRun" Relationship="ScoringEngineModel.FK_ScoringEngine_ScoringEngineRun_TempScoreEngineResults_ScoringEngineRun_ID" FromRole="TempScoreEngineResults" ToRole="ScoringEngineRun" />
+          <NavigationProperty Name="TempScoringEngineParamLog" Relationship="ScoringEngineModel.FK_ScoringEngine_TempScoringEngineParamLog_TempScoreEngineResults_ID" FromRole="TempScoreEngineResults" ToRole="TempScoringEngineParamLog" />
+          <Property Name="Organization_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TempScoringEngineParamLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TempScoreEngineResults_ID" Type="Int64" />
+          <Property Name="ParamName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ParamValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="TempScoreEngineResults" Relationship="ScoringEngineModel.FK_ScoringEngine_TempScoringEngineParamLog_TempScoreEngineResults_ID" FromRole="TempScoringEngineParamLog" ToRole="TempScoreEngineResults" />
+          <Property Name="Organization_ID" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_ScoringEngine_ScoringEngineRun_TempScoreEngineResults_ScoringEngineRun_ID">
+          <End Type="ScoringEngineModel.ScoringEngineRun" Role="ScoringEngineRun" Multiplicity="0..1" />
+          <End Type="ScoringEngineModel.TempScoreEngineResults" Role="TempScoreEngineResults" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ScoringEngineRun">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TempScoreEngineResults">
+              <PropertyRef Name="ScoringEngineRun_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_TempScoringEngineParamLog_TempScoreEngineResults_ID">
+          <End Type="ScoringEngineModel.TempScoreEngineResults" Role="TempScoreEngineResults" Multiplicity="0..1" />
+          <End Type="ScoringEngineModel.TempScoringEngineParamLog" Role="TempScoringEngineParamLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TempScoreEngineResults">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TempScoringEngineParamLog">
+              <PropertyRef Name="TempScoreEngineResults_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScoringEngine_ExpressionUsage_ScoringEngine_ExpressionUsageDetail_ErrorUsage_ID">
+          <End Type="ScoringEngineModel.ExpressionUsage" Role="ExpressionUsage" Multiplicity="0..1" />
+          <End Type="ScoringEngineModel.ExpressionUsageDetail" Role="ExpressionUsageDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExpressionUsage">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ExpressionUsageDetail">
+              <PropertyRef Name="ErrorUsage_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TempExpressionCatalog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Expression" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsComposite" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedByID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedByID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ExpressionParam" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Organization_ID" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ScoringEngineModelStoreContainer" CdmEntityContainer="ScoringEngineEntities">
+          <FunctionImportMapping FunctionImportName="GetStateMaxAPR" FunctionName="ScoringEngineModel.Store.GetStateMaxAPR" />
+          <FunctionImportMapping FunctionImportName="TCI_XML_IMPORT_INSERT_CREDITExtract" FunctionName="ScoringEngineModel.Store.TCI_XML_IMPORT_INSERT_CREDITExtract" />
+          <FunctionImportMapping FunctionImportName="TCI_XML_IMPORT_SCOREExtract_INSERT" FunctionName="ScoringEngineModel.Store.TCI_XML_IMPORT_SCOREExtract_INSERT" />
+          <EntitySetMapping Name="Adjustment">
+            <EntityTypeMapping TypeName="ScoringEngineModel.Adjustment">
+              <MappingFragment StoreEntitySet="Adjustment">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="AdjustmentType_ID" ColumnName="AdjustmentType_ID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="AdjustmentDiscount" ColumnName="AdjustmentDiscount" />
+                <ScalarProperty Name="AdjustmentNumber" ColumnName="AdjustmentNumber" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdjustmentRange">
+            <EntityTypeMapping TypeName="ScoringEngineModel.AdjustmentRange">
+              <MappingFragment StoreEntitySet="AdjustmentRange">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="AdjustmentType_ID" ColumnName="AdjustmentType_ID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="AdjustmentDiscount" ColumnName="AdjustmentDiscount" />
+                <ScalarProperty Name="MaxTerm" ColumnName="MaxTerm" />
+                <ScalarProperty Name="MinTerm" ColumnName="MinTerm" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdjustmentType">
+            <EntityTypeMapping TypeName="ScoringEngineModel.AdjustmentType">
+              <MappingFragment StoreEntitySet="AdjustmentType">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BuyRate">
+            <EntityTypeMapping TypeName="ScoringEngineModel.BuyRate">
+              <MappingFragment StoreEntitySet="BuyRate">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="BuyRateValue" ColumnName="BuyRateValue" />
+                <ScalarProperty Name="MaxFico" ColumnName="MaxFico" />
+                <ScalarProperty Name="MinFico" ColumnName="MinFico" />
+                <ScalarProperty Name="MaxBV" ColumnName="MaxBV" />
+                <ScalarProperty Name="MinBV" ColumnName="MinBV" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClassCodeAdj">
+            <EntityTypeMapping TypeName="ScoringEngineModel.ClassCodeAdj">
+              <MappingFragment StoreEntitySet="ClassCodeAdj">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="VehicleClassType_ID" ColumnName="VehicleClassType_ID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="FinancedCap" ColumnName="FinancedCap" />
+                <ScalarProperty Name="DiscountAdj" ColumnName="DiscountAdj" />
+                <ScalarProperty Name="LTVAdj" ColumnName="LTVAdj" />
+                <ScalarProperty Name="LTVCap" ColumnName="LTVCap" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DealerDiscount">
+            <EntityTypeMapping TypeName="ScoringEngineModel.DealerDiscount">
+              <MappingFragment StoreEntitySet="DealerDiscount">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="StateCode_ID" ColumnName="StateCode_ID" />
+                <ScalarProperty Name="DealerType_ID" ColumnName="DealerType_ID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DealerScore">
+            <EntityTypeMapping TypeName="ScoringEngineModel.DealerScore">
+              <MappingFragment StoreEntitySet="DealerScore">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="MinDisc" ColumnName="MinDisc" />
+                <ScalarProperty Name="LTVCap" ColumnName="LTVCap" />
+                <ScalarProperty Name="DisAjd" ColumnName="DisAjd" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DealerType">
+            <EntityTypeMapping TypeName="ScoringEngineModel.DealerType">
+              <MappingFragment StoreEntitySet="DealerType">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocFee">
+            <EntityTypeMapping TypeName="ScoringEngineModel.DocFee">
+              <MappingFragment StoreEntitySet="DocFee">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="VehicleClass" ColumnName="VehicleClass" />
+                <ScalarProperty Name="VehicleAge" ColumnName="VehicleAge" />
+                <ScalarProperty Name="MaxMiles" ColumnName="MaxMiles" />
+                <ScalarProperty Name="MaxTerm" ColumnName="MaxTerm" />
+                <ScalarProperty Name="MinTerm" ColumnName="MinTerm" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExcessMileage">
+            <EntityTypeMapping TypeName="ScoringEngineModel.ExcessMileage">
+              <MappingFragment StoreEntitySet="ExcessMileage">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="TermCap" ColumnName="TermCap" />
+                <ScalarProperty Name="DiscAdj" ColumnName="DiscAdj" />
+                <ScalarProperty Name="LTVAdj" ColumnName="LTVAdj" />
+                <ScalarProperty Name="MaxMileage" ColumnName="MaxMileage" />
+                <ScalarProperty Name="MinMileage" ColumnName="MinMileage" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExpressionCatalog">
+            <EntityTypeMapping TypeName="ScoringEngineModel.ExpressionCatalog">
+              <MappingFragment StoreEntitySet="ExpressionCatalog">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="IsComposite" ColumnName="IsComposite" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Expression" ColumnName="Expression" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExpressionUsage">
+            <EntityTypeMapping TypeName="ScoringEngineModel.ExpressionUsage">
+              <MappingFragment StoreEntitySet="ExpressionUsage">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ScreenOrModule" ColumnName="ScreenOrModule" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExpressionUsageDetail">
+            <EntityTypeMapping TypeName="ScoringEngineModel.ExpressionUsageDetail">
+              <MappingFragment StoreEntitySet="ExpressionUsageDetail">
+                <ScalarProperty Name="ErrorOnFailure" ColumnName="ErrorOnFailure" />
+                <ScalarProperty Name="ErrorUsage_ID" ColumnName="ErrorUsage_ID" />
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="ExpressionUsage_ID" ColumnName="ExpressionUsage_ID" />
+                <ScalarProperty Name="ExpressionCatalog_ID" ColumnName="ExpressionCatalog_ID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="ExecutionSequence" ColumnName="ExecutionSequence" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PricingBase">
+            <EntityTypeMapping TypeName="ScoringEngineModel.PricingBase">
+              <MappingFragment StoreEntitySet="PricingBase">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="PricingRateDiscount" ColumnName="PricingRateDiscount" />
+                <ScalarProperty Name="MaxLTV" ColumnName="MaxLTV" />
+                <ScalarProperty Name="MinLTV" ColumnName="MinLTV" />
+                <ScalarProperty Name="MaxBV" ColumnName="MaxBV" />
+                <ScalarProperty Name="MinBV" ColumnName="MinBV" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StateAdjustment">
+            <EntityTypeMapping TypeName="ScoringEngineModel.StateAdjustment">
+              <MappingFragment StoreEntitySet="StateAdjustment">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="StateCode_ID" ColumnName="StateCode_ID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="GapCap" ColumnName="GapCap" />
+                <ScalarProperty Name="MaxStateAPR" ColumnName="MaxStateAPR" />
+                <ScalarProperty Name="LTVAdj" ColumnName="LTVAdj" />
+                <ScalarProperty Name="DiscountAdj" ColumnName="DiscountAdj" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StateCode">
+            <EntityTypeMapping TypeName="ScoringEngineModel.StateCode">
+              <MappingFragment StoreEntitySet="StateCode">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StateFicoRange">
+            <EntityTypeMapping TypeName="ScoringEngineModel.StateFicoRange">
+              <MappingFragment StoreEntitySet="StateFicoRange">
+                <ScalarProperty Name="MaxAPRDiscountAdj" ColumnName="MaxAPRDiscountAdj" />
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="StateCode_ID" ColumnName="StateCode_ID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="MinAPR" ColumnName="MinAPR" />
+                <ScalarProperty Name="FicoScoreMax" ColumnName="FicoScoreMax" />
+                <ScalarProperty Name="FicoScoreMin" ColumnName="FicoScoreMin" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StateMaxAPR">
+            <EntityTypeMapping TypeName="ScoringEngineModel.StateMaxAPR">
+              <MappingFragment StoreEntitySet="StateMaxAPR">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="MinAmount" ColumnName="MinAmount" />
+                <ScalarProperty Name="MaxTerm" ColumnName="MaxTerm" />
+                <ScalarProperty Name="MinVehicleYear" ColumnName="MinVehicleYear" />
+                <ScalarProperty Name="MaxVehicleAge" ColumnName="MaxVehicleAge" />
+                <ScalarProperty Name="MaxStateAPR" ColumnName="MaxStateAPR" />
+                <ScalarProperty Name="StateCode_ID" ColumnName="StateCode_ID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TempApplicationModel">
+            <EntityTypeMapping TypeName="ScoringEngineModel.TempApplicationModel">
+              <MappingFragment StoreEntitySet="TempApplicationModel">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TermCap">
+            <EntityTypeMapping TypeName="ScoringEngineModel.TermCap">
+              <MappingFragment StoreEntitySet="TermCap">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="AdjustmentType_ID" ColumnName="AdjustmentType_ID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="AdjustmentCap" ColumnName="AdjustmentCap" />
+                <ScalarProperty Name="MaxFinanceAmt" ColumnName="MaxFinanceAmt" />
+                <ScalarProperty Name="MinFinanceAmt" ColumnName="MinFinanceAmt" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vehicle">
+            <EntityTypeMapping TypeName="ScoringEngineModel.Vehicle">
+              <MappingFragment StoreEntitySet="Vehicle">
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="VehicleMakeModelClass_ID" ColumnName="VehicleMakeModelClass_ID" />
+                <ScalarProperty Name="organization_ID" ColumnName="organization_ID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehicleClassType">
+            <EntityTypeMapping TypeName="ScoringEngineModel.VehicleClassType">
+              <MappingFragment StoreEntitySet="VehicleClassType">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehicleMakeModelClass">
+            <EntityTypeMapping TypeName="ScoringEngineModel.VehicleMakeModelClass">
+              <MappingFragment StoreEntitySet="VehicleMakeModelClass">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="VehicleMakeType_ID" ColumnName="VehicleMakeType_ID" />
+                <ScalarProperty Name="VehicleClassType_ID" ColumnName="VehicleClassType_ID" />
+                <ScalarProperty Name="VehicleModelType_ID" ColumnName="VehicleModelType_ID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehicleMakeType">
+            <EntityTypeMapping TypeName="ScoringEngineModel.VehicleMakeType">
+              <MappingFragment StoreEntitySet="VehicleMakeType">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehicleModelType">
+            <EntityTypeMapping TypeName="ScoringEngineModel.VehicleModelType">
+              <MappingFragment StoreEntitySet="VehicleModelType">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="VehicleMakeType_ID" ColumnName="VehicleMakeType_ID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ScoringEngineRun">
+            <EntityTypeMapping TypeName="ScoringEngineModel.ScoringEngineRun">
+              <MappingFragment StoreEntitySet="ScoringEngineRun">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="RefValue" ColumnName="RefValue" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TempScoreEngineResults">
+            <EntityTypeMapping TypeName="ScoringEngineModel.TempScoreEngineResults">
+              <MappingFragment StoreEntitySet="TempScoreEngineResults">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="ScoringEngineRun_ID" ColumnName="ScoringEngineRun_ID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="Result" ColumnName="Result" />
+                <ScalarProperty Name="Expression" ColumnName="Expression" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TempScoringEngineParamLog">
+            <EntityTypeMapping TypeName="ScoringEngineModel.TempScoringEngineParamLog">
+              <MappingFragment StoreEntitySet="TempScoringEngineParamLog">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="ParamValue" ColumnName="ParamValue" />
+                <ScalarProperty Name="ParamName" ColumnName="ParamName" />
+                <ScalarProperty Name="TempScoreEngineResults_ID" ColumnName="TempScoreEngineResults_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TempExpressionCatalog">
+            <EntityTypeMapping TypeName="ScoringEngineModel.TempExpressionCatalog">
+              <MappingFragment StoreEntitySet="TempExpressionCatalog">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="ExpressionParam" ColumnName="ExpressionParam" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="IsComposite" ColumnName="IsComposite" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Expression" ColumnName="Expression" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
