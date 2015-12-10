@@ -1,0 +1,79 @@
+﻿@model Portal.Core.Models.ScoringEngine.BuyRate
+
+@{
+    ViewBag.Title = "Create Buy Rate";
+}
+
+<h2>Create Buy Rate</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MinBV, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MinBV)
+                @Html.ValidationMessageFor(model => model.MinBV)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MaxBV, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MaxBV)
+                @Html.ValidationMessageFor(model => model.MaxBV)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MinFico, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MinFico)
+                @Html.ValidationMessageFor(model => model.MinFico)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MaxFico, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MaxFico)
+                @Html.ValidationMessageFor(model => model.MaxFico)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BuyRateValue, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BuyRateValue)
+                @Html.ValidationMessageFor(model => model.BuyRateValue)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Active</label>
+            <div class="col-md-10">
+                @Html.CheckBox("IsActive", true)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

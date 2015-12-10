@@ -1,0 +1,56 @@
+﻿@model IEnumerable<DealerPortalCRM.ViewModels.VehicleMakeModelClassViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Vehicle Make Model Class</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+<table class="table table-striped">
+    <tr>
+        <th>
+            Vehicle Make
+        </th>
+        <th>
+            Vehicle Model
+        </th>
+        <th>
+            Vehicle Class
+        </th>
+        <th>
+            Modified By
+        </th>
+        <th>
+            Modified Date
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleMakeTypeDisplayName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleModelTypeDisplayName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleClassTypeDisplayName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleMakeModelClassModifiedByID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleMakeModelClassModifiedDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.VehicleMakeModelClassID }) 
+        </tr>
+    }
+
+</table>

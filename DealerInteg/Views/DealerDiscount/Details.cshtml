@@ -1,0 +1,57 @@
+﻿@model DealerPortalCRM.ViewModels.DealerDiscountViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details - Dealer Discount</h2>
+
+<div>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Discount
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DealerDiscountDiscount)
+        </dd>
+
+        <dt>
+            Created By
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DealerDiscountCreatedByID)
+        </dd>
+
+        <dt>
+            Modified By
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DealerDiscountModifiedByID)
+        </dd>
+
+        <dt>
+            Created Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DealerDiscountCreatedDate)
+        </dd>
+
+        <dt>
+            Modified Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DealerDiscountModifiedDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DealerDiscountID}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

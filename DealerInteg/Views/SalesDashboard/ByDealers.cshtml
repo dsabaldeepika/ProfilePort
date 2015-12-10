@@ -1,0 +1,54 @@
+﻿@model DealerPortalCRM.ViewModels.SalesDashboardDisplayViewModel
+<ol class="breadcrumb">
+    <li><a href="#">Dealer Portal</a></li>
+    <li><a href="#">Veros</a></li>
+    <li><a href="#">Sales Dashboard</a></li>
+    <li class="active">Dealers</li>
+</ol>
+<div class="row text-center">
+@if (Model != null)
+{
+    if (Model.liSalesDashboardViewModel != null)
+    {
+        for (int i = 0; i < Model.liSalesDashboardViewModel.Count; i++)
+        {
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h5>
+                            <b>@Html.DisplayFor(item => Model.liSalesDashboardViewModel[i].DealerName) </b>
+                        </h5>
+                        <a href="Main?DealerID=@Html.DisplayFor(item => Model.liSalesDashboardViewModel[i].DealerID)">
+                            <span>Dealer Acct#: @Html.DisplayFor(item => Model.liSalesDashboardViewModel[i].DealerAccountNumber)</span>
+                        </a>
+                    </div>
+                    <div class="panel-body cm-panel-fixed-high">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td class="col-xs-3"><p class="text-primary">[@Html.DisplayFor(item => Model.liSalesDashboardViewModel[i].TotalNew)]</p></td>
+                                    <td class="col-xs-3"><p class="text-danger">[@Html.DisplayFor(item => Model.liSalesDashboardViewModel[i].TotalPending)]</p></td>
+                                    <td class="col-xs-3"><p class="text-success">[@Html.DisplayFor(item => Model.liSalesDashboardViewModel[i].TotalFunded)]</p></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-xs-3"><p class="text-primary">New</p></td>
+                                    <td class="col-xs-3"><p class="text-danger">Pending</p></td>
+                                    <td class="col-xs-3"><p class="text-success">Funded</p></td>
+                                </tr>
+                                @if (Model.liSalesDashboardViewModel[i].TotalOutstandingStips > 0 || Model.liSalesDashboardViewModel[i].TotalCounterOffers > 0 || Model.liSalesDashboardViewModel[i].TotalInProgress > 0)
+                                {
+                                    <tr>
+                                        <td colspan="3"><span class="glyphicon glyphicon-exclamation-sign cm-glyphicon-red-alert" aria-hidden="true"></span></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+}
+</div>

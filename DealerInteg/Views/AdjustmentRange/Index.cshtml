@@ -1,0 +1,115 @@
+﻿@model IEnumerable<DealerPortalCRM.ViewModels.AdjustmentRangeViewModel>
+
+@{
+    ViewBag.Title = "Adjustment Range";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section DataTableScript{
+    @Scripts.Render("~/bundles/dataTables")
+    @Scripts.Render("~/bundles/dataTables/extensions")
+    <script src="~/Scripts/editable/adjustmentrange.js"></script>
+    <script src="~/Scripts/dataservice.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            TableEditable.init();
+        });
+
+        $.extend(true, $.fn.dataTable.defaults, {
+            "searching": false,
+            "paging": false,
+            "ordering": false
+        });
+    </script>
+}
+@section DataTableStyle
+{
+    @Styles.Render("~/Content/css/dataTables")
+    @Styles.Render("~/Content/css/dataTables/extensions")
+
+    <style type="text/css">
+        table.dataTable {
+            margin-top: 0px !important;
+        }
+        /* Validation styles ------ */
+        .error-class {
+            color: #EA5200;
+            font-weight: bold;
+            padding-bottom: 2px;
+            padding-left: 2px;
+            font-size: 9px;
+        }
+    </style>
+}
+<h2>Adjustment Range</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table id="tblAdjRange" class="table">
+    <thead>
+        <tr>
+            <th>
+                Min Term
+            </th>
+            <th>
+                Max Term
+            </th>
+            <th>
+                Adjustment Discount
+            </th>
+            <th>
+                Adjustment Type
+            </th>
+            <th>
+                Modified By
+            </th>
+            <th>
+                Modified Date
+            </th>
+            <th>Edit</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.MinTerm)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaxTerm)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdjustmentDiscount)%
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdjustmentTypeDisplayName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdjustmentRangeModifiedByID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdjustmentRangeModifiedDate)
+                </td>
+                <td>
+                   
+                    <a  class="edit" href="javascript:;">
+                        Edit
+                    </a>
+                    <span style="display:none"> @Html.DisplayFor(modelItem => item.AdjustmentRangeID)</span>
+                </td>
+                <td>
+                    <a class="delete" href="javascript:;">
+
+                    </a>
+                </td>
+                @*<td style="display:none">@Html.DisplayFor(modelItem => item.AdjustmentRangeID)</td>*@
+            </tr>
+        }
+    </tbody>
+</table>

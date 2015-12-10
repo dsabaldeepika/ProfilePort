@@ -1,0 +1,61 @@
+﻿@model IEnumerable<DealerPortalCRM.ViewModels.DealerScoreViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Dealer Score</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+             Score
+        </th>
+        <th>
+            Discount Adjustment
+        </th>
+        <th>
+            LTV Cap
+        </th>
+        <th>
+            Minimum Discount
+        </th>
+        <th>
+            Modified By
+        </th>
+        <th>
+            Modified Date
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DealerScoreScore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DealerScoreDisAjd) %
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DealerScoreLTVCap) %
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DealerScoreMinDisc) %
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DealerScoreModifiedByID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DealerScoreModifiedDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.DealerScoreID }) 
+        </td>
+    </tr>
+}
+
+</table>

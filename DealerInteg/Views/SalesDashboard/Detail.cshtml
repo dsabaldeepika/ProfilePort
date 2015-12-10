@@ -1,0 +1,47 @@
+﻿@model DealerPortalCRM.ViewModels.SalesDashboardDetailDisplayViewModel
+<ol class="breadcrumb">
+    <li><a href="#">Dealer Portal</a></li>
+    <li><a href="#">Veros</a></li>
+    <li><a href="#">Sales Dashboard</a></li>
+    <li class="active">Detailed Data</li>
+</ol>
+
+<div class="row text-center">
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th>AppID</th>
+                <th>Date Opened</th>
+                <th>Dealer</th>
+                <th>Sales Rep</th>
+                <th>Status</th>
+                <th>Status Reason</th>
+                <th>Status Date</th>
+                <th>Stip Status</th>
+                <th>Refresh</th>
+            </tr>
+        </thead>
+        <tbody>
+        @if (Model != null)
+        {
+            if (Model.liSalesDashboardDetailViewModel != null)
+            {
+                for (int i = 0; i < Model.liSalesDashboardDetailViewModel.Count; i++)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(item => Model.liSalesDashboardDetailViewModel[i].ApplicationID)</td>
+                        <td>@Html.DisplayFor(item => Model.liSalesDashboardDetailViewModel[i].DateOpened)</td>
+                        <td>@Html.DisplayFor(item => Model.liSalesDashboardDetailViewModel[i].DealerName)</td>
+                        <td>@Html.DisplayFor(item => Model.liSalesDashboardDetailViewModel[i].SalesRepName)</td>
+                        <td>@Html.DisplayFor(item => Model.liSalesDashboardDetailViewModel[i].Status)</td>
+                        <td>@Html.DisplayFor(item => Model.liSalesDashboardDetailViewModel[i].StatusReason)</td>
+                        <td>@Html.DisplayFor(item => Model.liSalesDashboardDetailViewModel[i].StatusDate)</td>
+                        <td>@Html.DisplayFor(item => Model.liSalesDashboardDetailViewModel[i].StipStatus)</td>
+                        <td><a href="Refresh?ApplicationID=10293&SalesDashboardStatus=@Request.Params["SalesDashboardStatus"]&SalesRepID=@Request.Params["SalesRepID"]&DealerID=@Request.Params["DealerID"]"><span class="glyphicon glyphicon-refresh cm-glyphicon-green-refresh" aria-hidden="true"></span></a></td>
+                    </tr>
+                }
+            }
+        }
+        </tbody>
+    </table>
+</div>

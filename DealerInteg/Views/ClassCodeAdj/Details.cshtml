@@ -1,0 +1,82 @@
+﻿@model DealerPortalCRM.ViewModels.ClassCodeAdjViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details - Class Code Adjustments</h2>
+
+<div>
+    <h4>ClassCodeAdj</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            LTV Cap
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassCodeAdjLTVCap)
+        </dd>
+
+        <dt>
+            LTV Adjustments
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassCodeAdjLTVAdj)
+        </dd>
+
+        <dt>
+            Discount Adjustments
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassCodeAdjDiscountAdj)
+        </dd>
+
+        <dt>
+            Financed Cap
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassCodeAdjFinancedCap)
+        </dd>
+
+        <dt>
+            Created By
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassCodeAdjCreatedByID)
+        </dd>
+
+        <dt>
+           Modified By
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassCodeAdjModifiedByID)
+        </dd>
+
+        <dt>
+            Created Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassCodeAdjCreatedDate)
+        </dd>
+
+        <dt>
+            Modified Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassCodeAdjModifiedDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ClassCodeAdjID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

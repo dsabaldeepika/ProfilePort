@@ -1,0 +1,82 @@
+﻿@model DealerPortalCRM.ViewModels.DealerScoreViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details - Dealer Score</h2>
+
+<div>
+
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Score
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DealerScoreScore)
+        </dd>
+
+        <dt>
+            Discount Adjustment
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DealerScoreDisAjd)
+        </dd>
+
+        <dt>
+            LTV Cap
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DealerScoreLTVCap)
+        </dd>
+
+        <dt>
+            Minimum Discount
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DealerScoreMinDisc)
+        </dd>
+
+        <dt>
+            Created By
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DealerScoreCreatedByID)
+        </dd>
+
+        <dt>
+            Modified by
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DealerScoreModifiedByID)
+        </dd>
+
+        <dt>
+            Created Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DealerScoreCreatedDate)
+        </dd>
+
+        <dt>
+            Modified Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DealerScoreModifiedDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DealerScoreID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

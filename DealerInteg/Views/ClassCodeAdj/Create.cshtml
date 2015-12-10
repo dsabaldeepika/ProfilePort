@@ -1,0 +1,71 @@
+﻿@model DealerPortalCRM.ViewModels.ClassCodeAdjViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Class Code Adjustment</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            <label class="control-label col-md-2">LTV Cap</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ClassCodeAdjLTVCap)
+                @Html.ValidationMessageFor(model => model.ClassCodeAdjLTVCap)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">LTV Adjustment</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ClassCodeAdjLTVAdj)
+                @Html.ValidationMessageFor(model => model.ClassCodeAdjLTVAdj)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Discount Adjustment</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ClassCodeAdjDiscountAdj)
+                @Html.ValidationMessageFor(model => model.ClassCodeAdjDiscountAdj)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Financed Cap</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ClassCodeAdjFinancedCap)
+                @Html.ValidationMessageFor(model => model.ClassCodeAdjFinancedCap)
+            </div>
+        </div>
+
+       <div class="form-group">
+            <label class="control-label col-md-2">Class Type</label>
+            <div class="col-md-10">
+                @Html.DropDownListFor(x => x.VehicleClassTypeID, new SelectList(Model.liVehicleClassType, "ID", "Name"))
+            </div>
+        </div>    
+        
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

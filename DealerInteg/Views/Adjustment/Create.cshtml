@@ -1,0 +1,63 @@
+﻿@model DealerPortalCRM.ViewModels.AdjustmentViewModel
+
+@{
+    ViewBag.Title = "Create Adjustment";
+}
+
+<h2>Create Adjustment</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Adjustment Number</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AdjustmentNumber)
+                @Html.ValidationMessageFor(model => model.AdjustmentNumber)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Adjustment Discount</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AdjustmentDiscount)
+                @Html.ValidationMessageFor(model => model.AdjustmentDiscount)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Adjustment Type</label>
+            <div class="col-md-10">
+                @Html.DropDownListFor(x => x.AdjustmentTypeID, new SelectList(Model.liAdjustmentType, "ID", "DisplayName"))
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Active</label>
+            <div class="col-md-10">
+                @Html.CheckBox("AdjustmentIsActive", true)
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

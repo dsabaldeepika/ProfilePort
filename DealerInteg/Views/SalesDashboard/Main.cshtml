@@ -1,0 +1,58 @@
+﻿@model DealerPortalCRM.ViewModels.SalesDashboardDisplayViewModel
+<ol class="breadcrumb">
+    <li><a href="#">Dealer Portal</a></li>
+    <li><a href="#">Veros</a></li>
+    <li><a href="#">Sales Dashboard</a></li>
+    <li class="active">Main</li>
+</ol>
+
+<div class="row text-center">
+@if (Model != null)
+{
+    if (Model.liSalesDashboardViewModel.Count > 0)
+    {
+        <div class="col-md-12 col-sm-6 hero-feature">
+            <div class="panel panel-default">
+                <div class="panel-heading text-left"><span class="glyphicon glyphicon-exclamation-sign cm-glyphicon-red-alert" aria-hidden="true"></span> Alerts</div>
+                <div class="panel-body">
+                    <div class="well text-left ">
+                        <div><h4><span class="text-danger text-left"><strong>@Html.DisplayFor(item => Model.liSalesDashboardViewModel[0].TotalOutstandingStips)</strong></span> <span class="text-muted">Applications Outstanding Stips</span></h4></div>
+                        <div><h4><span class="text-danger text-left"><strong>@Html.DisplayFor(item => Model.liSalesDashboardViewModel[0].TotalCounterOffers)</strong></span> <span class="text-muted">Applications with a Counter Offer</span></h4></div>
+                        <div><h4><span class="text-danger text-left"><strong>@Html.DisplayFor(item => Model.liSalesDashboardViewModel[0].TotalInProgress)</strong></span> <span class="text-muted">Applications are In Progress</span></h4></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 hero-feature">
+            <div class="panel panel-default cm-panel-fixed-high">
+                <div class="panel-heading">
+                </div>
+                <div class="panel-body">
+                    <h2><span class="text-primary">@Html.DisplayFor(item => Model.liSalesDashboardViewModel[0].TotalNew)</span></h2>
+                    <a href="Detail?SalesDashboardStatus=New&DealerID=@Request.Params["DealerID"]&SalesRepID=@Request.Params["SalesRepID"]">New Applications</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 hero-feature">
+            <div class="panel panel-default cm-panel-fixed-high">
+                <div class="panel-heading">
+                </div>
+                <div class="panel-body">
+                    <h2><span class="text-danger">@Html.DisplayFor(item => Model.liSalesDashboardViewModel[0].TotalPending)</span></h2>
+                    <a href="Detail?SalesDashboardStatus=Pending&DealerID=@Request.Params["DealerID"]&SalesRepID=@Request.Params["SalesRepID"]">Pending Applications</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 hero-feature">
+            <div class="panel panel-default cm-panel-fixed-high">
+                <div class="panel-heading">
+                </div>
+                <div class="panel-body">
+                    <h2><span class="text-success">@Html.DisplayFor(item => Model.liSalesDashboardViewModel[0].TotalFunded)</span></h2>
+                    <a href="Detail?SalesDashboardStatus=Funded&DealerID=@Request.Params["DealerID"]&SalesRepID=@Request.Params["SalesRepID"]">Funded Applications</a>
+                </div>
+            </div>
+        </div>
+    }
+}
+</div>

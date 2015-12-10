@@ -1,0 +1,67 @@
+﻿@model IEnumerable<DealerPortalCRM.ViewModels.ClassCodeAdjViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Class Code Adjustments</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            LTV Cap
+        </th>
+        <th>
+           LTV Adjustments
+        </th>
+        <th>
+            Discount Adjustments
+        </th>
+        <th>
+            Financed Cap
+        </th>
+        <th>
+            Vehicle Class
+        </th>
+        <th>
+            Modified By
+        </th>
+        <th>
+            Modified Date
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassCodeAdjLTVCap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassCodeAdjLTVAdj) %
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassCodeAdjDiscountAdj) %
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassCodeAdjFinancedCap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleClassTypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassCodeAdjModifiedByID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassCodeAdjModifiedDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ClassCodeAdjID }) 
+        </td>
+    </tr>
+}
+
+</table>

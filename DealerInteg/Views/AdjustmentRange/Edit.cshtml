@@ -1,0 +1,64 @@
+﻿@model DealerPortalCRM.ViewModels.AdjustmentRangeViewModel
+
+@{
+    ViewBag.Title = "Edit Adjustment Range";
+}
+
+<h2>Edit Adjustment Range</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.AdjustmentRangeID)
+        @Html.HiddenFor(model => model.AdjustmentRangeCreatedDate)
+        @Html.HiddenFor(model => model.AdjustmentRangeCreatedByID)
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Min Term</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MinTerm)
+                @Html.ValidationMessageFor(model => model.MinTerm)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Max Term</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MaxTerm)
+                @Html.ValidationMessageFor(model => model.MaxTerm)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Adjustment Discount</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AdjustmentDiscount)
+                @Html.ValidationMessageFor(model => model.AdjustmentDiscount)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Adjustment Type</label>
+            <div class="col-md-10">
+                @Html.DropDownListFor(x => x.AdjustmentTypeID, new SelectList(Model.liAdjustmentType, "ID", "DisplayName"))
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+

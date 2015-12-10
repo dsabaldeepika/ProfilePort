@@ -1,0 +1,61 @@
+﻿﻿@model IEnumerable<DealerPortalCRM.ViewModels.StateFICORangeViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>State FICO Range</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Minimum FICO Score
+        </th>
+        <th>
+            Maximum FICO Score
+        </th>
+        <th>
+            Minimum APR
+        </th>
+        <th>
+            State Name
+        </th>
+         <th>
+            Modified By
+        </th>
+        <th>
+            Modified Date
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelitem => item.StateFICORangeFicoScoreMin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StateFICORangeFicoScoreMax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StateFICORangeMinAPR) %
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StateCodeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StateFICORangeModifiedByID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StateFICORangeModifiedDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.StateFICORangeID }) 
+        </td>
+    </tr>
+}
+
+</table>

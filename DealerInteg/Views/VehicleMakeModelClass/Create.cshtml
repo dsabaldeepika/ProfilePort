@@ -1,0 +1,55 @@
+﻿@model DealerPortalCRM.ViewModels.VehicleMakeModelClassViewModel
+
+@{
+    ViewBag.Title = "Create Make Model View";
+}
+
+<h2>Create Vehicle Make Model Class</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true)
+
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Vehicle Make</label>
+            <div class="col-md-10">
+                @Html.DropDownListFor(x => x.VehicleMakeTypeID, new SelectList(Model.liVehicleMakeType, "ID", "Name"), "--Select--")
+                @Html.ValidationMessageFor(x => x.VehicleMakeTypeID, "", new { })
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Vehicle Model</label>
+            <div class="col-md-10">
+                @Html.DropDownListFor(x => x.VehicleModelTypeID, new SelectList(Model.liVehicleModelType, "ID", "Name"))
+                @Html.ValidationMessageFor(x => x.VehicleModelTypeID, "", new { })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Vehicle Class</label>
+            <div class="col-md-10">
+                @Html.DropDownListFor(x => x.VehicleClassTypeID, new SelectList(Model.liVehicleClassType, "ID", "Name"))
+                @Html.ValidationMessageFor(x => x.VehicleClassTypeID, "", new { })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

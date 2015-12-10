@@ -1,0 +1,67 @@
+﻿@model IEnumerable<DealerPortalCRM.ViewModels.StateAdjustmentViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>State Adjustment</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Discount Adjustment
+        </th>
+        <th>
+            LTV Adjustment
+        </th>
+        <th>
+            Max State APR
+        </th>
+        <th>
+            Gap Cap
+        </th>
+        <th>
+            State Name
+        </th>
+        <th>
+            Modified By
+        </th>
+        <th>
+            Modified Date
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StateAdjustmentDiscountAdj) %
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StateAdjustmentLTVAdj) %
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StateAdjustmentMaxStateAPR) %
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StateAdjustmentGapCap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StateCodeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StateAdjustmentModifiedByID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StateAdjustmentModifiedDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.StateAdjustmentID}) 
+        </td>
+    </tr>
+}
+
+</table>

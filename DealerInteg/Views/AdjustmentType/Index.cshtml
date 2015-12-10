@@ -1,0 +1,56 @@
+﻿@model List<Com.CoreLane.ScoringEngine.Models.AdjustmentType>
+
+@{
+    ViewBag.Title = "Adjustment Types";
+}
+
+<h2>Adjustment Types</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Type
+        </th>
+        <th>
+            Display Name
+        </th>
+        <th>
+            Modified By
+        </th>
+        <th>
+            Modified Date
+        </th>
+        <th>
+            Active
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DisplayName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedByID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedDate)
+        </td>
+        <td>
+            @if (item.IsActive)
+            { <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>}
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) 
+        </td>
+    </tr>
+}
+
+</table>

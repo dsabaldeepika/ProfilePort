@@ -1,0 +1,83 @@
+﻿@model DealerPortalCRM.ViewModels.ExcessMileageViewModel
+
+@{
+    ViewBag.Title = "Edit Excess Mileage";
+}
+
+<h2>Edit Excess Mileage</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>ExcessMileage</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.ExcessMileageID)
+        @Html.HiddenFor(model => model.ExcessMileageCreatedDate)
+        @Html.HiddenFor(model => model.ExcessMileageCreatedByID)
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Minimum Mileage</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ExcessMileageMinMileage)
+                @Html.ValidationMessageFor(model => model.ExcessMileageMinMileage)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Maximum Mileage</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ExcessMileageMaxMileage)
+                @Html.ValidationMessageFor(model => model.ExcessMileageMaxMileage)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">LTV Adjustment</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ExcessMileageLTVAdj)
+                @Html.ValidationMessageFor(model => model.ExcessMileageLTVAdj)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Discount Adjustment</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ExcessMileageDiscAdj)
+                @Html.ValidationMessageFor(model => model.ExcessMileageDiscAdj)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">TermCap</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ExcessMileageTermCap)
+                @Html.ValidationMessageFor(model => model.ExcessMileageTermCap)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Active</label>
+            <div class="col-md-10">
+                @Html.CheckBox("ExcessMileageIsActive")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

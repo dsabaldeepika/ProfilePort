@@ -1,0 +1,49 @@
+﻿@model DealerPortalCRM.ViewModels.SalesDashboardViewModel
+
+
+@{
+    ViewBag.Title = "SalesDashBoardTest";
+}
+
+<h2>SalesDashBoardTest</h2>
+<table class="table">
+    <tr>
+        <th>
+            Sales rep
+        </th>
+        <th>
+           New Applications
+        </th>
+        <th>
+            Pending Applications
+        </th>
+        <th>
+            Funded Applications
+        </th>
+    </tr>
+
+  
+        <tr>
+           
+            <td>
+           
+                        NA     
+            </td>
+
+            <td>
+                @Html.DisplayFor(model => model.TotalNew)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.TotalPending)
+            </td>
+
+            <td>
+                @Html.DisplayFor(model => model.TotalFunded)
+            </td>
+
+           
+            
+        </tr>
+  
+
+</table>

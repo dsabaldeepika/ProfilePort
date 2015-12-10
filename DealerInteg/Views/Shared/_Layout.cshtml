@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=100">
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/validation")
+ 
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Dealer Portal CRM", "Index", "Home", null, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <!-- 
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" id="dropdownCommonMenu" data-toggle="dropdown">Sales Dashboard</a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownCommonMenu">
+                            @if (User.IsInRole("Executive") || User.IsInRole("Administrator") || User.IsInRole("ITUser") || User.IsInRole("Manager") || User.IsInRole("SalesRep"))
+                            {
+                                <li role="menuitem">@Html.ActionLink("Sales Dashboard Main", "Main", "SalesDashboard")</li>
+                                <li role="menuitem">@Html.ActionLink("Sales Dashboard by Dealers", "ByDealers", "SalesDashboard")</li>
+                            }
+                           
+                            @if (User.IsInRole("Executive") || User.IsInRole("Administrator") || User.IsInRole("ITUser") || User.IsInRole("Manager"))
+                            {
+                                
+                                <li role="menuitem">@Html.ActionLink("Sales Dashboard by Sales Reps", "BySalesReps", "SalesDashboard")</li>
+                            }
+                        </ul>
+                    </li>
+                </ul>
+                -->
+
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" id="dropdownCommonMenu" data-toggle="dropdown">Data Management</a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownCommonMenu">
+                                <li role="menuitem">@Html.ActionLink("Adjustment Type", "Index", "AdjustmentType")</li>
+                                <li role="menuitem">@Html.ActionLink("Adjustment", "Index", "Adjustment")</li>
+                                <li role="menuitem">@Html.ActionLink("Adjustment Range", "Index", "AdjustmentRange")</li>
+                                <li role="menuitem">@Html.ActionLink("Buy Rate", "Index", "BuyRate")</li>
+                                <li role="menuitem">@Html.ActionLink("Class Code Adjustment", "Index", "ClassCodeAdj")</li>
+                                <li role="menuitem">@Html.ActionLink("Dealer Discount", "Index", "DealerDiscount")</li>
+                                <li role="menuitem">@Html.ActionLink("Doc Fee", "Index", "DocFee")</li>
+                                <li role="menuitem">@Html.ActionLink("Excess Mileage", "Index", "ExcessMileage")</li>
+                                <li role="menuitem">@Html.ActionLink("Pricing Base", "Index", "PricingBase")</li>
+                                <li role="menuitem">@Html.ActionLink("State Adjustment", "Index", "StateAdjustment")</li>
+                                <li role="menuitem">@Html.ActionLink("State Code", "Index", "StateCode")</li>
+                                <li role="menuitem">@Html.ActionLink("State FICO Range", "Index", "StateFicoRange")</li>
+                                <li role="menuitem">@Html.ActionLink("Term Cap", "Index", "TermCap")</li>
+                                @*<li role="menuitem">@Html.ActionLink("Vehicle Make", "Index", "VehicleMakeType")</li>*@
+                                <li role="menuitem">@Html.ActionLink("Vehicle Model", "Index", "VehicleModelType")</li>
+                                <li role="menuitem">@Html.ActionLink("Vehicle Class", "Index", "VehicleClassType")</li>
+                                <li role="menuitem">@Html.ActionLink("Vehicle Make Model Class", "Index", "VehicleMakeModelClass")</li>
+                       </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="navbar-text">Hello, @User.Identity.Name!</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Dealer Portal CRM <a href="/Demo/Users">&nbsp;</a></p>
+        </footer>
+    </div>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

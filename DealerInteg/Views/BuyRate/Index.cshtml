@@ -1,0 +1,74 @@
+﻿@model List<Com.CoreLane.ScoringEngine.Models.BuyRate>
+
+@{
+    ViewBag.Title = "Buy Rate";
+}
+
+<h2>Buy Rate</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Min BV
+        </th>
+        <th>
+            Max BV
+        </th>
+        <th>
+            Min Fico
+        </th>
+        <th>
+            Max Fico
+        </th>
+        <th>
+            Buy Rate Value
+        </th>
+        <th>
+            Modified By
+        </th>
+        <th>
+            Modified Date
+        </th>
+        <th>
+            Active 
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MinBV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxBV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MinFico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxFico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BuyRateValue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedByID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedDate)
+        </td>
+        <td>
+            @if (item.IsActive != null)
+            { <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>}
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) 
+        </td>
+    </tr>
+}
+
+</table>

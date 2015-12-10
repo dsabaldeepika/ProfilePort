@@ -1,0 +1,111 @@
+﻿@model IEnumerable<DealerPortalCRM.ViewModels.VehicleMakeModelClassViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleMakeTypeID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleMakeTypeType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleMakeTypeDisplayName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleModelTypeID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleModelTypeType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleModelTypeDisplayName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleClassTypeID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleClassTypeType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleClassTypeDisplayName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleMakeModelClassID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleMakeModelClassCreatedByID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleMakeModelClassModifiedByID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleMakeModelClassCreatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleMakeModelClassModifiedDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleMakeTypeID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleMakeTypeType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleMakeTypeDisplayName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleModelTypeID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleModelTypeType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleModelTypeDisplayName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleClassTypeID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleClassTypeType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleClassTypeDisplayName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleMakeModelClassID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleMakeModelClassCreatedByID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleMakeModelClassModifiedByID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleMakeModelClassCreatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleMakeModelClassModifiedDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

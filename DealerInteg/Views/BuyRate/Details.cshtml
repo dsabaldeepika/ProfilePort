@@ -1,0 +1,90 @@
+﻿@model Portal.Core.Models.ScoringEngine.BuyRate
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BuyRate</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MinBV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinBV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxBV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxBV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinFico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinFico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxFico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxFico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BuyRateValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BuyRateValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedByID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedByID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedByID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedByID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

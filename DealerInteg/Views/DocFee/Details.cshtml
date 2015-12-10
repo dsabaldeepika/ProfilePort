@@ -1,0 +1,89 @@
+﻿@model Com.CoreLane.ScoringEngine.Models.DocFee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details - Doc Fee</h2>
+
+<div>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+           Minimum Term
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinTerm)
+        </dd>
+
+        <dt>
+            Maximum Term
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxTerm)
+        </dd>
+
+        <dt>
+            Maximum Miles
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxMiles)
+        </dd>
+
+        <dt>
+            Vehicle Age
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehicleAge)
+        </dd>
+
+        <dt>
+            Vehicle Class
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehicleClass)
+        </dd>
+
+         <dt>
+            Created By
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedByID)
+        </dd>
+
+        <dt>
+            Modified By
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedByID)
+        </dd>
+
+        <dt>
+            Created Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            Modified Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

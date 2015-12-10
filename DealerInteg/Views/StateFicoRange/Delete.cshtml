@@ -1,0 +1,80 @@
+﻿@model Com.CoreLane.ScoringEngine.Models.StateFicoRange
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete State FICO Range</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FicoScoreMin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FicoScoreMin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FicoScoreMax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FicoScoreMax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FicoScoreAPR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FicoScoreAPR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedByID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedByID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedByID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedByID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<DealerPortalCRM.ViewModels.AdjustmentViewModel>
+
+@{
+    ViewBag.Title = "Adjustments";
+}
+
+<h2>Adjustments</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Adjustment Number
+        </th>
+        <th>
+            Adjustment Discount
+        </th>
+        <th>
+            Adjustment Type
+        </th>
+        <th>
+            Modified By
+        </th>
+        <th>
+            Modified Date
+        </th>
+        <th>
+            Active
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdjustmentNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdjustmentDiscount) %
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdjustmentTypeDisplayName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdjustmentModifiedByID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdjustmentModifiedDate)
+        </td>
+        <td>
+            @if (item.AdjustmentIsActive)
+                { <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>}
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AdjustmentID }) 
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,90 @@
+﻿@model DealerPortalCRM.ViewModels.PricingBaseViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PricingBase</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PricingBaseMinBV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PricingBaseMinBV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PricingBaseMaxBV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PricingBaseMaxBV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PricingBaseMinLTV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PricingBaseMinLTV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PricingBaseMaxLTV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PricingBaseMaxLTV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PricingBasePricingRateDiscount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PricingBasePricingRateDiscount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PricingBaseCreatedByID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PricingBaseCreatedByID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PricingBaseModifiedByID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PricingBaseModifiedByID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PricingBaseCreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PricingBaseCreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PricingBaseModifiedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PricingBaseModifiedDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PricingBaseID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

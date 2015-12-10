@@ -1,0 +1,66 @@
+﻿@model DealerPortalCRM.ViewModels.AdjustmentViewModel
+
+@{
+    ViewBag.Title = "Adjustment Detail";
+}
+
+<h2>Adjustment Detail</h2>
+
+<div>
+    <h4>Adjustment</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AdjustmentNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdjustmentNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdjustmentDiscount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdjustmentDiscount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdjustmentCreatedByID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdjustmentCreatedByID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdjustmentModifiedByID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdjustmentModifiedByID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdjustmentCreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdjustmentCreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdjustmentModifiedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdjustmentModifiedDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AdjustmentID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

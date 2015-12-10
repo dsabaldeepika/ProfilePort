@@ -1,0 +1,67 @@
+﻿@model List<Com.CoreLane.ScoringEngine.Models.DocFee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Doc Fee</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Minimum Term
+        </th>
+        <th>
+            Maximum Term
+        </th>
+        <th>
+            Maximum Miles
+        </th>
+        <th>
+            Vehicle Age
+        </th>
+        <th>
+            Vehicle Class
+        </th>
+        <th>
+            Modified By
+        </th>
+        <th>
+            Modified Date
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MinTerm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxTerm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxMiles)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleAge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleClass)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedByID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) 
+        </td>
+    </tr>
+}
+
+</table>

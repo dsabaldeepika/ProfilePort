@@ -1,0 +1,50 @@
+﻿@model DealerPortalCRM.ViewModels.VehicleModelTypeViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Vehicle Model</h2>
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Vehicle Make</label>
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.VehicleMakeTypeID, new SelectList(Model.liVehicleMakeType, "Id", "Name"), new { @id = "VehicleMakeType", @style = "width:200px;", @onchange = "javascript:GetModel(this.value);" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Vehicle Model</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.VehicleModelTypeName)
+                @Html.ValidationMessageFor(model => model.VehicleModelTypeName)
+                @*<select id="ddlmodel" name="ddlmodel" style="width: 200px">*@
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

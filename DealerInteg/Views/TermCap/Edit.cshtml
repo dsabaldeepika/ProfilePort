@@ -1,0 +1,61 @@
+﻿@model DealerPortalCRM.ViewModels.TermCapViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit Term Cap</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.TermCapID)
+        @Html.HiddenFor(model => model.TermCapCreatedByID)
+        @Html.HiddenFor(model => model.TermCapCreatedDate)
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Min Finance Amount</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TermCapMinFinanceAmt)
+                @Html.ValidationMessageFor(model => model.TermCapMinFinanceAmt)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Max Finance Amount</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TermCapMaxFinanceAmt)
+                @Html.ValidationMessageFor(model => model.TermCapMaxFinanceAmt)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Adjustment Cap</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TermCapAdjustmentCap)
+                @Html.ValidationMessageFor(model => model.TermCapAdjustmentCap)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Adjustment Type</label>
+            <div class="col-md-10">
+                @Html.DropDownListFor(x => x.AdjustmentTypeID, new SelectList(Model.liAdjustmentType, "ID", "DisplayName"))
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,0 +1,112 @@
+﻿@model IEnumerable<DealerPortalCRM.ViewModels.PricingBaseViewModel>
+
+@{
+    ViewBag.Title = "Pricing Base";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section DataTableScript{
+    @Scripts.Render("~/bundles/dataTables")
+    @Scripts.Render("~/bundles/dataTables/extensions")
+    <script src="~/Scripts/editable/pricingbase.js"></script>
+    <script src="~/Scripts/dataservice.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            TableEditable.init();
+        });
+
+        $.extend(true, $.fn.dataTable.defaults, {
+            "searching": false,
+            "paging": false,
+            "ordering": false
+        });
+    </script>
+}
+@section DataTableStyle
+{
+    @Styles.Render("~/Content/css/dataTables")
+    @Styles.Render("~/Content/css/dataTables/extensions")
+
+    <style type="text/css">
+        table.dataTable {
+            margin-top: 0px !important;
+        }
+        /* Validation styles ------ */
+        .error-class {
+            color: #EA5200;
+            font-weight: bold;
+            padding-bottom: 2px;
+            padding-left: 2px;
+            font-size: 9px;
+        }
+    </style>
+}
+
+<h2>Pricing Base</h2>
+
+<table id ="tblPricingBase" class="table">
+    <thead>
+        <tr>
+            <th>
+                Minimum Book Value
+            </th>
+            <th>
+                Maximum Book Value
+            </th>
+            <th>
+                Minimum LTV
+            </th>
+            <th>
+                Maximum LTV
+            </th>
+            <th>
+                Rate Discount
+            </th>
+            <th>
+                Active
+            </th>
+            <th>Edit</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PricingBaseMinBV)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PricingBaseMaxBV)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PricingBaseMinLTV)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PricingBaseMaxLTV)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PricingBasePricingRateDiscount) %
+                </td>
+                <td>
+                    @if (item.PricingBaseIsActive)
+                    { <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>}
+                </td>
+                <td>
+
+                    <a class="edit" href="javascript:;">
+                        Edit
+                    </a>
+                    <span style="display:none"> @Html.DisplayFor(modelItem => item.PricingBaseID)</span>
+                </td>
+                <td>
+                    <a class="delete" href="javascript:;">
+
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    </table>
+

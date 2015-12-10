@@ -1,0 +1,72 @@
+﻿@model Com.CoreLane.ScoringEngine.Models.DocFee
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Doc Fee</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Minimum Term</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MinTerm)
+                @Html.ValidationMessageFor(model => model.MinTerm)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Maximum Term</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MaxTerm)
+                @Html.ValidationMessageFor(model => model.MaxTerm)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Maximum Miles</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MaxMiles)
+                @Html.ValidationMessageFor(model => model.MaxMiles)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Vehicle Age</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.VehicleAge)
+                @Html.ValidationMessageFor(model => model.VehicleAge)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Vehicle Class</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.VehicleClass)
+                @Html.ValidationMessageFor(model => model.VehicleClass)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,90 @@
+﻿@model DealerPortalCRM.ViewModels.ExcessMileageViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ExcessMileage</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mimimum Mileage
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExcessMileageMinMileage)
+        </dd>
+
+        <dt>
+            Maximum Mileage
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExcessMileageMaxMileage)
+        </dd>
+
+        <dt>
+            LTV Adjustment
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExcessMileageLTVAdj)
+        </dd>
+
+        <dt>
+            Discount Adjustment
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExcessMileageDiscAdj)
+        </dd>
+
+        <dt>
+            Term Cap
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExcessMileageTermCap)
+        </dd>
+
+        <dt>
+            Created By
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExcessMileageCreatedByID)
+        </dd>
+
+        <dt>
+            Modified By
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExcessMileageModifiedByID)
+        </dd>
+
+        <dt>
+            Created Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExcessMileageCreatedDate)
+        </dd>
+
+        <dt>
+            Modified Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExcessMileageModifiedDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ExcessMileageID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

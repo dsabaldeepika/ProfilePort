@@ -1,0 +1,74 @@
+﻿@model IEnumerable<DealerPortalCRM.ViewModels.ExcessMileageViewModel>
+
+@{
+    ViewBag.Title = "Excess Mileage";
+}
+
+<h2>Excess Mileage</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Min Mileage
+        </th>
+        <th>
+            Max Mileage
+        </th>
+        <th>
+            LTV Adj
+        </th>
+        <th>
+            Disc Adj
+        </th>
+        <th>
+            Term Cap
+        </th>
+        <th>
+            Modified By
+        </th>
+        <th>
+            Modified Date
+        </th>
+        <th>
+            Active
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExcessMileageMinMileage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExcessMileageMaxMileage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExcessMileageLTVAdj) %
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExcessMileageDiscAdj) %
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExcessMileageTermCap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExcessMileageModifiedByID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExcessMileageModifiedDate)
+        </td>
+        <td>
+            @if (item.ExcessMileageIsActive)
+            { <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>}
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ExcessMileageID }) 
+        </td>
+    </tr>
+}
+
+</table>
